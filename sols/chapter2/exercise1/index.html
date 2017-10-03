@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    <title>2.1 - Statistical Learning with Python</title>
+
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">2.1</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../about/">About</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../../..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../about/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#exercise-21">Exercise 2.1</a></li>
+        
+            <li class="second-level"><a href="#a-extremely-large-sample-few-predictors">(a) Extremely large sample, few predictors</a></li>
+            
+        
+            <li class="second-level"><a href="#b-awful-lot-of-predictors-small-sample">(b) Awful lot of predictors, small sample</a></li>
+            
+        
+            <li class="second-level"><a href="#c-highly-non-linear-relationship">(c) Highly non-linear relationship</a></li>
+            
+        
+            <li class="second-level"><a href="#d-extremely-high-variance">(d) Extremely high variance</a></li>
+            
+        
+            <li class="second-level"><a href="#further-reading">Further reading</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="exercise-21">Exercise 2.1</h1>
+<p>To answer to this exercise, we need to understand the <b>sources of error</b> in a statistical learning method. For regression, assuming <span>\(Y = f(X) + \varepsilon\)</span>, where <span>\(E[\varepsilon]=0\)</span> and <span>\(Var[\varepsilon]=\sigma_\varepsilon^2\)</span>, we can always obtain a decomposition of the test mean squared error, <span>\(E[(Y - \hat{f}(x_0))^2\)</span>, into the sum of the irreducible error, the squared bias and the variance [1, page 223]:</p>
+<p>\begin{align}
+\mathrm{E}\Big[\big(Y - \hat{f}(x)\big)^2 \Big|\, X=x_0 \Big]
+ &amp; =  \varepsilon^2 + \mathrm{Bias}^2\big[\hat{f}(x_0)\big] + \mathrm{Var}\left[ \hat{f}(x_0) \right] , \
+\end{align}
+where <span>\(\varepsilon\)</span> is the noise or irreducible error, </p>
+<span>\[\begin{align}
+ \mathrm{Bias}\big[\hat{f}(x_0)\big] = \mathrm{E}\big[\hat{f}(x_0) - f(x_0)\big],
+\end{align}\]</span><p>and</p>
+<span>\[\begin{align}
+\mathrm{Var}\big[\hat{f}(x_0)\big] = \mathrm{E}[\hat{f}(x_0)^2] - \mathrm{E}[\hat{f}(x_0)]^2.
+\end{align}\]</span><p>Since the irreducible error corresponds to the lowest achievable error, a good test set performance of a statistical learning method requires low variance as well as low squared bias.</p>
+<p>When we approximate a problem (possibly very complex), by a simpler model we introduce an error known as <b>bias</b>.
+The simplest non-trivial example might be approximating a non-linear relationship (for example, a quadratic one) by a linear function of parameters and predictors. In this case, will have a always non-zero test error, regardless of how well we fit the model parameters, how large the training set is, or even how small the noise is (even zero). The more the true model deviates from a linear one, the larger this error will be.</p>
+<p>On the other hand, <b>variance</b> refers to the amount by which the estimation function would change if it was estimated using a different training set.
+The training set is used to estimate the model parameters, which means that we obtain different estimates from different training sets. We hope however that this difference is small, and we say that between estimates from different training sets is small, in which case we say that the learning method has low variance.
+On the other hand, a method for which small changes in the training set might lead to large changes in the estimated model parameters is referred as a method with high variance.</p>
+<p>In general, more flexible methods have less bias and have higher variance. This is referred to as the  <b>bias-variance trade-off</b> since a low test mean squared error requires both low bias and low variance.</p>
+<h3 id="a-extremely-large-sample-few-predictors">(a) Extremely large sample, few predictors</h3>
+<p>A flexible method is expected to be <strong>better</strong>. </p>
+<p>Since the sample size is extremely large and the number of predictors is small, a more flexible method would be able to better fit the data, while not fitting the noise due to the very large sample size. In other words a more flexible model would have the upside of a less bias, without much risk of <a href="https://www.youtube.com/watch?v=DQWI1kvmwRg">overfitting</a>.</p>
+<h3 id="b-awful-lot-of-predictors-small-sample">(b) Awful lot of predictors, small sample</h3>
+<p>A flexible method is expected to be  <strong>worse</strong>.</p>
+<p>It is very likely that when the number of predictors is extremely large and the number of observations is small a flexible model would fit the noise, meaning that, given another random data set of the same distribuition, the fit would likely be significantly different. Therefore one would be better off using a less flexible method, which will have more bias, but will be less likely to overfit.</p>
+<h3 id="c-highly-non-linear-relationship">(c) Highly non-linear relationship</h3>
+<p>A flexible method is expected to be  <strong>better</strong>.</p>
+<p>A more flexible method will likely be necessary to model a highly non-linear relationship, otherwise the model will be too biased and not capture the non-linearities of the model. No matter how large the sample size, a less flexible model would always be limited.</p>
+<h3 id="d-extremely-high-variance">(d) Extremely high variance</h3>
+<p>A flexible method is expected to be  <strong>worse</strong>.</p>
+<p>Since the variance is extremely high, a more flexible model will fit the noise more and thus very likely overfit. A less flexible model will be more likely to still capture the essential 'features' of the model without picking up extraneous ones induced by the noise.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>The bias-variance decomposition is a fundamental aspect of machine learning which is present not only in regression. This decomposition has been generalized to more general loss functions and to classification learning methods. See, for example, [2].</p>
+<ul>
+<li>[1] Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. <a href="https://web.stanford.edu/~hastie/ElemStatLearn/">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a>. Springer, 2009.</li>
+<li>[2] James, Gareth M. <a href="http://www-bcf.usc.edu/~gareth/research/bv.pdf">"Variance and bias for general loss functions."</a>  Machine learning 51.2 (2003): 115-135. </li>
+</ul></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../../..';
+    </script>
+    <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <script src="../../../mathjax-config.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

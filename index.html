@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="./img/favicon.ico">
+
+    <title>Statistical Learning with Python</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">Statistical Learning with Python</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="sols/chapter2/exercise1/">2.1</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="about/">About</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="sols/chapter2/exercise1/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#an-introduction-to-statistical-learning-with-applications-in-r-with-python">An Introduction to Statistical Learning: with Applications in R... with Python!</a></li>
+        
+            <li class="second-level"><a href="#solutions">Solutions</a></li>
+            
+        
+            <li class="second-level"><a href="#motivation">Motivation</a></li>
+            
+        
+            <li class="second-level"><a href="#technical-requirements-and-how-to-install">Technical requirements, and How to Install</a></li>
+            
+        
+            <li class="second-level"><a href="#how-to-colaborate">How to colaborate</a></li>
+            
+        
+            <li class="second-level"><a href="#main-references">Main references</a></li>
+            
+        
+            <li class="second-level"><a href="#learning-resources">Learning resources</a></li>
+            
+        
+            <li class="second-level"><a href="#other-solutions-to-islr">Other solutions to ISLR</a></li>
+            
+        
+            <li class="second-level"><a href="#mit-license">MIT License</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="an-introduction-to-statistical-learning-with-applications-in-r-with-python">An Introduction to Statistical Learning: with Applications in R... with Python!</h1>
+<p>This page contains the solutions to the exercises proposed in</p>
+<ul>
+<li><strong>'An Introduction to Statistical Learning with Applications in R' (ISLR) by James, Witten, Hastie and Tibshirani</strong> [1].</li>
+</ul>
+<p>Both conceptual and applied exercises were solved.
+An effort was made to detail all the answers and to provide a set of bibliographical references that we found useful.
+The exercises were solved using Python instead of R.
+You are welcome to <a href="./#how-to-colaborate">collaborate</a>.</p>
+<p>Note [03.October.2017]: we will release each chapter's solutions on a monthly basis (at least).</p>
+<h2 id="solutions">Solutions</h2>
+<table>
+<thead>
+<tr>
+<th>Chapter 2</th>
+<th>Chapter 3</th>
+<th>Chapter 4</th>
+<th>Chapter 5</th>
+<th>Chapter 6</th>
+<th>Chapter 7</th>
+<th>Chapter 8</th>
+<th>Chapter 9</th>
+<th>Chapter 10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./sols/chapter2/exercise1">2.1</a></td>
+<td><a href="./sols/chapter3/exercise1">3.1</a></td>
+<td><a href="./sols/chapter4/exercise1">4.1</a></td>
+<td><a href="./sols/chapter5/exercise1">5.1</a></td>
+<td><a href="./sols/chapter6/exercise1">6.1</a></td>
+<td><a href="./sols/chapter7/exercise1">7.1</a></td>
+<td><a href="./sols/chapter8/exercise1">8.1</a></td>
+<td><a href="./sols/chapter9/exercise1">9.1</a></td>
+<td><a href="./sols/chapter10/exercise1">10.1</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise2">2.2</a></td>
+<td><a href="./sols/chapter3/exercise2">3.2</a></td>
+<td><a href="./sols/chapter4/exercise2">4.2</a></td>
+<td><a href="./sols/chapter5/exercise2">5.2</a></td>
+<td><a href="./sols/chapter6/exercise2">6.2</a></td>
+<td><a href="./sols/chapter7/exercise2">7.2</a></td>
+<td><a href="./sols/chapter8/exercise2">8.2</a></td>
+<td><a href="./sols/chapter9/exercise2">9.2</a></td>
+<td><a href="./sols/chapter10/exercise2">10.2</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise3">2.3</a></td>
+<td><a href="./sols/chapter3/exercise3">3.3</a></td>
+<td><a href="./sols/chapter4/exercise3">4.3</a></td>
+<td><a href="./sols/chapter5/exercise3">5.3</a></td>
+<td><a href="./sols/chapter6/exercise3">6.3</a></td>
+<td><a href="./sols/chapter7/exercise3">7.3</a></td>
+<td><a href="./sols/chapter8/exercise3">8.3</a></td>
+<td><a href="./sols/chapter9/exercise3">9.3</a></td>
+<td><a href="./sols/chapter10/exercise3">10.3</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise4">2.4</a></td>
+<td><a href="./sols/chapter3/exercise4">3.4</a></td>
+<td><a href="./sols/chapter4/exercise4">4.4</a></td>
+<td><a href="./sols/chapter5/exercise4">5.4</a></td>
+<td><a href="./sols/chapter6/exercise4">6.4</a></td>
+<td><a href="./sols/chapter7/exercise4">7.4</a></td>
+<td><a href="./sols/chapter8/exercise4">8.4</a></td>
+<td><a href="./sols/chapter9/exercise4">9.4</a></td>
+<td><a href="./sols/chapter10/exercise4">10.4</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise5">2.5</a></td>
+<td><a href="./sols/chapter3/exercise5">3.5</a></td>
+<td><a href="./sols/chapter4/exercise5">4.5</a></td>
+<td><a href="./sols/chapter5/exercise5">5.5</a></td>
+<td><a href="./sols/chapter6/exercise5">6.5</a></td>
+<td><a href="./sols/chapter7/exercise5">7.5</a></td>
+<td><a href="./sols/chapter8/exercise5">8.5</a></td>
+<td><a href="./sols/chapter9/exercise5">9.5</a></td>
+<td><a href="./sols/chapter10/exercise5">10.5</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise6">2.6</a></td>
+<td><a href="./sols/chapter3/exercise6">3.6</a></td>
+<td><a href="./sols/chapter4/exercise6">4.6</a></td>
+<td><a href="./sols/chapter5/exercise6">5.6</a></td>
+<td><a href="./sols/chapter6/exercise6">6.6</a></td>
+<td><a href="./sols/chapter7/exercise6">7.6</a></td>
+<td><a href="./sols/chapter8/exercise6">8.6</a></td>
+<td><a href="./sols/chapter9/exercise6">9.6</a></td>
+<td><a href="./sols/chapter10/exercise6">10.6</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise7">2.7</a></td>
+<td><a href="./sols/chapter3/exercise7">3.7</a></td>
+<td><a href="./sols/chapter4/exercise7">4.7</a></td>
+<td><a href="./sols/chapter5/exercise7">5.7</a></td>
+<td><a href="./sols/chapter6/exercise7">6.7</a></td>
+<td><a href="./sols/chapter7/exercise7">7.7</a></td>
+<td><a href="./sols/chapter8/exercise7">8.7</a></td>
+<td><a href="./sols/chapter9/exercise7">9.7</a></td>
+<td><a href="./sols/chapter10/exercise7">10.7</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise8">2.8</a></td>
+<td><a href="./sols/chapter3/exercise8">3.8</a></td>
+<td><a href="./sols/chapter4/exercise8">4.8</a></td>
+<td><a href="./sols/chapter5/exercise8">5.8</a></td>
+<td><a href="./sols/chapter6/exercise8">6.8</a></td>
+<td><a href="./sols/chapter7/exercise8">7.8</a></td>
+<td><a href="./sols/chapter8/exercise8">8.8</a></td>
+<td><a href="./sols/chapter9/exercise8">9.8</a></td>
+<td><a href="./sols/chapter10/exercise8">10.8</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise9">2.9</a></td>
+<td><a href="./sols/chapter3/exercise9">3.9</a></td>
+<td><a href="./sols/chapter4/exercise9">4.9</a></td>
+<td><a href="./sols/chapter5/exercise9">5.9</a></td>
+<td><a href="./sols/chapter6/exercise9">6.9</a></td>
+<td><a href="./sols/chapter7/exercise9">7.9</a></td>
+<td><a href="./sols/chapter8/exercise9">8.9</a></td>
+<td></td>
+<td><a href="./sols/chapter10/exercise9">10.9</a></td>
+</tr>
+<tr>
+<td><a href="./sols/chapter2/exercise10">2.10</a></td>
+<td><a href="./sols/chapter3/exercise10">3.10</a></td>
+<td><a href="./sols/chapter4/exercise10">4.10</a></td>
+<td></td>
+<td><a href="./sols/chapter6/exercise10">6.10</a></td>
+<td><a href="./sols/chapter7/exercise10">7.10</a></td>
+<td><a href="./sols/chapter8/exercise10">8.10</a></td>
+<td></td>
+<td><a href="./sols/chapter10/exercise10">10.10</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="./sols/chapter3/exercise11">3.11</a></td>
+<td><a href="./sols/chapter4/exercise11">4.11</a></td>
+<td></td>
+<td><a href="./sols/chapter6/exercise11">6.11</a></td>
+<td><a href="./sols/chapter7/exercise11">7.11</a></td>
+<td><a href="./sols/chapter8/exercise11">8.11</a></td>
+<td></td>
+<td><a href="./sols/chapter10/exercise11">10.11</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="./sols/chapter3/exercise12">3.12</a></td>
+<td><a href="./sols/chapter4/exercise12">4.12</a></td>
+<td></td>
+<td></td>
+<td><a href="./sols/chapter7/exercise12">7.12</a></td>
+<td><a href="./sols/chapter8/exercise12">8.12</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="./sols/chapter3/exercise13">3.13</a></td>
+<td><a href="./sols/chapter4/exercise13">4.13</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="./sols/chapter3/exercise14">3.14</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="./sols/chapter3/exercise15">3.15</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!--
+Markdown table created by: http://www.tablesgenerator.com/markdown_tables#
+To update the table, go to the website above and import 'islp/islp-docs/docs/markdown_table.tgn' 
+-->
+
+<h2 id="motivation">Motivation</h2>
+<p>The main motivation of this project was learning.
+Today there are several good books and other resources from which to learn the material we covered, and we spent some time choosing a good learning project.
+We chose <em>ISLR</em> because it is an excellent, clear introduction to statistical learning, that  keeps a nice balance between theory, intuition, mathematical rigour and programming.
+<strong>Our main goal was to use the exercises as an excuse to improve our proficiency using Python's data science stack.</strong>
+We had done other data science projects with Python, but, as we imagined, we still had a bit more to learn (and still do!).
+Since the book was written with R in mind, it made the use of Python a cool additional challenge.
+We are strong advocates of the <a href="https://en.wikipedia.org/wiki/Active_learning">active learning</a> principles, and this project, once more, reinforced them in our minds.
+If you're starting out in machine learning with Python (or R!), we recommend you try it!</p>
+<h2 id="technical-requirements-and-how-to-install">Technical requirements, and How to Install</h2>
+<p>This project was developed using Python 3.5 on Jupyter notebooks (Jupyter Lab, in fact).
+We tried to stay within the standard Python data science stack as much as possible.
+Accordingly, our main Python packages were numpy, matplotlib, pandas, seaborn, statsmodels and scikit-learn.
+You should be able to run this with the standard Python setup, and the additional libraries we list below.</p>
+<p>If you're just starting out with Python, here's a more complete 'how-to'. We recommend using <a href="https://www.continuum.io/anaconda-overview">Anaconda</a> whether you are using Linux, Mac or Windows. Anaconda allows you to easily manage several Python environments.
+An environment is a collection of installed Python packages.
+Imagine that you have two projects with different requirements: a recent one with, say, Python 3.5 and matplotlib 4.0, and a legacy project with Python 2.7 and matplotlib 3.5.
+A good environment manager helps you install libraries and allows you to switch between both environments easily, avoiding dependencies migraines.
+You can even work on both at the same time.
+You don't want to know what the alternative is, to not using an environment manager.
+So after installing Anaconda, the easiest way is to create a new environment and just install the libraries we list below one by one.
+After this is done, just make sure the desired environment is active (for example, on Linux and Mac, type 'source activate <nameofyourenvironment>', and you're good to go). </p>
+<p>Here's the list of packages we installed:</p>
+<ul>
+<li>jupyterlab (but this should run just as well on regular ipython notebooks)</li>
+<li>numpy</li>
+<li>pandas</li>
+<li>matplotlib</li>
+<li>sklearn</li>
+<li>seaborn</li>
+<li>ipywidgets (so that a seaborn import warning goes away)</li>
+<li>statsmodels</li>
+<li>mlxtend </li>
+</ul>
+<p>In addition, we chose mkdocs to present these solutions in a website format, for a better presentation. We might change to a different scheme in the future (any suggestions), but meanwhile we used these libraries:</p>
+<ul>
+<li>mkdocs</li>
+<li>mkdocs-cinder</li>
+<li>pymdown-extensions #for latex </li>
+</ul>
+<h2 id="how-to-colaborate">How to colaborate</h2>
+<p>If you want to collaborate, you can open an issue in our GitHub project and give us your suggestions on how to improve these solutions.
+On GitHub, you can also fork this project and send a pull request to fix any mistakes that you have found.
+Alternatively, you can also go for the classical way of collaboration and send us an <a href="mailto:botlnec.team@gmail.com">e-mail</a>.
+Any effort to improve the quality of these solutions will be appreciated.</p>
+<h2 id="main-references">Main references</h2>
+<p>In addition to thinking hard about them, to solve the exercises we followed several references.
+Besides ISLR [1], which is <a href="http://www-bcf.usc.edu/~gareth/ISL/">available for free</a> and explains almost everything you need to know to solve the exercises, 
+we also read some other books that provide a self-contained introduction to the field of statistical learning [2, 3, 4]. 
+We also spent some quality time on <a href="https://stats.stackexchange.com">CrossValidate</a>.
+For the Python data science stack we think Wes McKinney's book [5] is a good choice, as well as Jake VanderPlas' [6].
+Additional references for some of the exercises are scattered througout the solutions.</p>
+<ul>
+<li>[1] <a href="https://smile.amazon.com/Elements-Statistical-Learning-Prediction-Statistics/dp/0387848576">James, G., Witten, D., Hastie, T., Tibshirani, R., 2015, An Introduction to Statistical Learning with Applications in R, Springer.</a> <a href="http://www-bcf.usc.edu/~gareth/ISL/">[available for free]</a></li>
+<li>[2] <a href="https://smile.amazon.com/Elements-Statistical-Learning-Prediction-Statistics/dp/0387848576">Hastie, T., Tibshirani, R. 2006, The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Springer.</a> <a href="https://statweb.stanford.edu/~tibs/ElemStatLearn/">[available for free]</a></li>
+<li>[3] <a href="https://smile.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738">Bishop, C.M., 2006, Pattern Recognition and Machine Learning, Springer.</a></li>
+<li>[4] <a href="https://smile.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020">Murphy, K.P., 2012, Machine Learning: A Probabilistic Perspective, MIT Press.</a></li>
+<li>[5] <a href="https://smile.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793">McKinney, W., 2012, Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython</a></li>
+<li>[6] <a href="https://smile.amazon.com/Python-Data-Science-Handbook-Essential/dp/1491912057">Jake VanderPlas, 2016, Python Data Science Handbook: Essential Tools for Working with Data, O'Reilly Media.</a></li>
+</ul>
+<h2 id="learning-resources">Learning resources</h2>
+<p>Fortunately, online resources are becoming more and more an essential tool for self-learning strategies.
+During the course of this project, we found several resources that can help you on your learning path. 
+Here are the best ones we found. </p>
+<ul>
+<li><a href="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about">Stanford's online course by the authors of ISLR</a></li>
+<li><a href="https://www.coursera.org/learn/machine-learning">Andrew Ng's Machine Learning course</a></li>
+</ul>
+<h2 id="other-solutions-to-islr">Other solutions to ISLR</h2>
+<p>There are other solutions to ISLR, though most of them do not use Python.
+Below you can find a link to the solutions we found that were reasonably complete.
+We did a occasional check with some of these, and they might be a good complementary resource.
+A special mention to <a href="https://github.com/JWarmenhoven/ISLR-python">JWarmenhoven's github repo</a>, which uses Python to reproduce figures, tables and calculations of the main text of the chapters and labs.
+Please let us know if you find any other significant solutions. </p>
+<ul>
+<li><a href="https://github.com/JWarmenhoven/ISLR-python">JWarmenhoven: Python for the chapters text and labs</a></li>
+<li><a href="https://github.com/jcrouser/islr-python">James Crouser's Exercises and Python Labs</a></li>
+<li><a href="https://github.com/asadoughi/stat-learning">Asadoughi's</a></li>
+<li><a href="http://waxworksmath.com/Authors/G_M/James/james.html">John Weatherwax's solutions to the conceptual and practical exercises in R</a></li>
+<li><a href="https://rpubs.com/ppaquay/">Pierre Pacquay's</a></li>
+<li><a href="http://yahwes.github.io/ISLR/">yahwes'</a></li>
+</ul>
+<h2 id="mit-license">MIT License</h2>
+<p>Copyright (c) [2017] [ISLP]</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./mathjax-config.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 0.16.1
+Build Date UTC : 2017-10-03 16:42:52
+-->
