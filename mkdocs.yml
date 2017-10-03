@@ -1,0 +1,17 @@
+site_name: Statistical Learning with Python
+pages:
+  - Home: index.md
+  - '2':
+      - '2.1': 'sols/chapter2/exercise1.md'
+  - About: about.md
+theme: cinder
+
+
+
+markdown_extensions:
+   - pymdownx.arithmatex
+
+
+extra_javascript:
+  - mathjax-config.js
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML

@@ -1,0 +1,4 @@
+.ipynb*
+.*.ipynb*
+*.term
+islp-docs/site/*
