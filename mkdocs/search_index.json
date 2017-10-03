@@ -136,6 +136,46 @@
             "title": "(c) Cluster analysis"
         },
         {
+            "location": "/sols/chapter2/exercise5/",
+            "text": "Exercise 2.5\n\n\nA very flexible approach (versus a less flexible)\n\n\nAdvantages\n\n\n\n\nLess bias.\n\n\nGiven enough data, better results.\n\n\n\n\nDisadvantages\n\n\n\n\nMore risk of overfitting.  \n\n\nHarder to train.\n\n\nLonger to train.\n\n\nComputational more demanding.\n\n\nLess clear interpretability.\n\n\n\n\nWhen is one approach preferable?\n\n\nMore flexible\n\n\n\n\nLarge sample size and small number of predictors.\n\n\nNon-linear relationship between the predictors and response.\n\n\n\n\nLess flexible\n\n\n\n\nSmall sample size and large number of predictors.\n\n\nHigh variance of the error terms.",
+            "title": "2.5"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#exercise-25",
+            "text": "",
+            "title": "Exercise 2.5"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#a-very-flexible-approach-versus-a-less-flexible",
+            "text": "",
+            "title": "A very flexible approach (versus a less flexible)"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#advantages",
+            "text": "Less bias.  Given enough data, better results.",
+            "title": "Advantages"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#disadvantages",
+            "text": "More risk of overfitting.    Harder to train.  Longer to train.  Computational more demanding.  Less clear interpretability.",
+            "title": "Disadvantages"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#when-is-one-approach-preferable",
+            "text": "",
+            "title": "When is one approach preferable?"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#more-flexible",
+            "text": "Large sample size and small number of predictors.  Non-linear relationship between the predictors and response.",
+            "title": "More flexible"
+        },
+        {
+            "location": "/sols/chapter2/exercise5/#less-flexible",
+            "text": "Small sample size and large number of predictors.  High variance of the error terms.",
+            "title": "Less flexible"
+        },
+        {
             "location": "/about/",
             "text": "This is a project by \nbotlnec\n, a group of friends working in different areas of data science. \n\n\nThis project was developed by two members of the Botlnec team and is included in a set of activities that this group of friends has been developping.\n\n\nPedro Marcelino\n\n\nPedro works as a researcher at \nLNEC\n and he is also a PhD candidate at \nIST\n.\nCurrently, he is developing a new approach to the maintenance management of transport infrastructures using machine learning.\nIn his spare time, he likes to work on TreeTree2, read books and play sports. \n\n\nJo\u00e3o Rico\n\n\nJo\u00e3o is a researcher at LNEC interested in machine and human learning.",
             "title": "About"
