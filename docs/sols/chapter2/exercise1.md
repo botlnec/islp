@@ -7,7 +7,7 @@ To answer to this exercise, we need to understand the <b>sources of error</b> in
 \mathrm{E}\Big[\big(Y - \hat{f}(x)\big)^2 \Big|\, X=x_0 \Big]
  & =  \sigma_\varepsilon^2 + \mathrm{Bias}^2\big[\hat{f}(x_0)\big] + \mathrm{Var}\left[ \hat{f}(x_0) \right] , \\
 \end{align}
-where $\varepsilon$ is the noise or irreducible error, 
+where $\sigma_\varepsilon^2$ is the noise or irreducible error, 
 
 \begin{align}
  \mathrm{Bias}\big[\hat{f}(x_0)\big] = \mathrm{E}\big[\hat{f}(x_0) - f(x_0)\big],
