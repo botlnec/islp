@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>2.5 - Statistical Learning with Python</title>
+    <title>2.6 - Statistical Learning with Python</title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -93,14 +93,14 @@
 
                         
                             
-<li class="active">
-    <a href="./">2.5</a>
+<li >
+    <a href="../exercise5/">2.5</a>
 </li>
 
                         
                             
-<li >
-    <a href="../exercise6/">2.6</a>
+<li class="active">
+    <a href="./">2.6</a>
 </li>
 
                         
@@ -125,12 +125,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../exercise4/">
+                        <a rel="next" href="../exercise5/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../exercise6/">
+                        <a rel="prev" href="../../../about/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -146,20 +146,9 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#exercise-25">Exercise 2.5</a></li>
+        <li class="first-level active"><a href="#exercise-26">Exercise 2.6</a></li>
         
-            <li class="second-level"><a href="#a-very-flexible-approach-versus-a-less-flexible">A very flexible approach (versus a less flexible)</a></li>
-            
-                <li class="third-level"><a href="#advantages">Advantages</a></li>
-            
-                <li class="third-level"><a href="#disadvantages">Disadvantages</a></li>
-            
-        
-            <li class="second-level"><a href="#when-is-one-approach-preferable">When is one approach preferable?</a></li>
-            
-                <li class="third-level"><a href="#more-flexible">More flexible</a></li>
-            
-                <li class="third-level"><a href="#less-flexible">Less flexible</a></li>
+            <li class="second-level"><a href="#references">References</a></li>
             
         
     
@@ -167,31 +156,30 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="exercise-25">Exercise 2.5</h1>
-<h3 id="a-very-flexible-approach-versus-a-less-flexible">A very flexible approach (versus a less flexible)</h3>
-<h4 id="advantages">Advantages</h4>
+<h1 id="exercise-26">Exercise 2.6</h1>
+<p>That this exercise does not ask for a precise definition of parametric and non-parametric methods and that the main text does also not provide one (section 2.1.2) is a sign that this definition is not consensual, and in fact it depends on the context in which it is used in statistics [1].
+For our purposes we follow both the main text and Murphy [2] (and a few others [3-6]), for a definition of a parametric and non-parametric model (and by model, this we mean a probability distribution or density, or a regression function).
+So, for our purposes, a parametric model means two thin
+gs: (1) strong, explicit assumptions about the form of the model, (2) which is parametrized by a finite, fixed number of parameters that does not change with the amount of data.
+(Yes, the first part of this definition is vague.)
+Conversely, a non-parametric model means that, in general, the number of parameters depends on the amount of data and that we try to keep assumptions as weak as possible.
+'Non-parametric' is thus an unfortunate name since it does not mean 'no parameters'.
+On the contrary, they do contain parameters (often many more) but these tend to determine the model complexity rather than the form.
+The typical examples of a parametric and non-parametric models are linear regression and KNN, respectively.
+Another good example, is the one from the text and figures 2.4, 2.5 and 2.6.</p>
+<p>The advantages of a parametric approach are, in general, that it requires less observations, is faster and more computationally tractable, and more robust (less misguided by noise).
+The disadvantages are the stronger assumptions that make the model less flexible, perhaps unable to capture the underlying adequately regardless of the amount of training data.</p>
+<p>There are also other types of models such as semi-parametric models [6], which have two components: a parametric and a non-parametric one.
+One can also have a non-parametric model by using a parametric model but aditionally adapting the number of parameters as needed (say the degree of the polynomial in a linear regression).</p>
+<h3 id="references">References</h3>
 <ul>
-<li>Less bias.</li>
-<li>Given enough data, better results.</li>
-</ul>
-<h4 id="disadvantages">Disadvantages</h4>
-<ul>
-<li>More risk of overfitting.  </li>
-<li>Harder to train.</li>
-<li>Longer to train.</li>
-<li>Computational more demanding.</li>
-<li>Less clear interpretability.</li>
-</ul>
-<h3 id="when-is-one-approach-preferable">When is one approach preferable?</h3>
-<h4 id="more-flexible">More flexible</h4>
-<ul>
-<li>Large sample size and small number of predictors.</li>
-<li>Non-linear relationship between the predictors and response.</li>
-</ul>
-<h4 id="less-flexible">Less flexible</h4>
-<ul>
-<li>Small sample size and large number of predictors.</li>
-<li>High variance of the error terms.</li>
+<li>[1] https://en.wikipedia.org/wiki/Nonparametric_statistics#Definitions</li>
+<li>[1] Murphy, Kevin P. Machine learning: a probabilistic perspective. MIT press, 2012.</li>
+<li>[2] Domingos, Pedro. "A few useful things to know about machine learning." Communications of the ACM 55.10 (2012): 78-87.</li>
+<li>[3] Wasserman, Larry. All of statistics: a concise course in statistical inference. Springer Science &amp; Business Media, 2013.</li>
+<li>[4] Bishop, C.M.: Pattern Recognition and Machine Learning (Information Science and Statistics). Springer-Verlag New York, Inc., Secaucus, NJ, USA (2006)</li>
+<li>[5] Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep learning. MIT press, 2016.</li>
+<li>[6] Wellner, Jon A., Chris AJ Klaassen, and Ya'acov Ritov. "Semiparametric models: a review of progress since BKRW (1993)." (2006): 25-44.</li>
 </ul></div>
         
     </div>
