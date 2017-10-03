@@ -148,7 +148,7 @@
 <p>To answer to this exercise, we need to understand the <b>sources of error</b> in a statistical learning method. For regression, assuming <span>\(Y = f(X) + \varepsilon\)</span>, where <span>\(E[\varepsilon]=0\)</span> and <span>\(Var[\varepsilon]=\sigma_\varepsilon^2\)</span>, we can always obtain a decomposition of the test mean squared error, <span>\(E[(Y - \hat{f}(x_0))^2\)</span>, into the sum of the irreducible error, the squared bias and the variance [1, page 223]:</p>
 <p>\begin{align}
 \mathrm{E}\Big[\big(Y - \hat{f}(x)\big)^2 \Big|\, X=x_0 \Big]
- &amp; =  \varepsilon^2 + \mathrm{Bias}^2\big[\hat{f}(x_0)\big] + \mathrm{Var}\left[ \hat{f}(x_0) \right] , \
+ &amp; =  \sigma_\varepsilon^2 + \mathrm{Bias}^2\big[\hat{f}(x_0)\big] + \mathrm{Var}\left[ \hat{f}(x_0) \right] , \
 \end{align}
 where <span>\(\varepsilon\)</span> is the noise or irreducible error, </p>
 <span>\[\begin{align}
