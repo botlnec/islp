@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>Statistical Learning with Python</title>
+    <title>2.2 - Statistical Learning with Python</title>
 
-    <link href="/css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="/css/base.css" rel="stylesheet">
-    <link href="/css/cinder.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/highlight.css">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -54,7 +54,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="">Statistical Learning with Python</a>
+            <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -65,24 +65,24 @@
                 
                 
                     <li >
-                        <a href="">Home</a>
+                        <a href="../../..">Home</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">2 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="/sols/chapter2/exercise1">2.1</a>
+    <a href="../exercise1/">2.1</a>
 </li>
 
                         
                             
-<li >
-    <a href="/sols/chapter2/exercise2">2.2</a>
+<li class="active">
+    <a href="./">2.2</a>
 </li>
 
                         
@@ -92,7 +92,7 @@
                 
                 
                     <li >
-                        <a href="/about">About</a>
+                        <a href="../../../about/">About</a>
                     </li>
                 
                 
@@ -106,13 +106,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../exercise1/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../../../about/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -125,16 +125,38 @@
 
     <div class="container">
         
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#exercise-22">Exercise 2.2</a></li>
+        
+            <li class="second-level"><a href="#a-ceo-salary">(a) CEO salary</a></li>
+            
+        
+            <li class="second-level"><a href="#b-new-product-launch-success-or-failure">(b) New product launch: success or failure?</a></li>
+            
+        
+            <li class="second-level"><a href="#c-change-in-the-us-dollar">(c) Change in the US dollar</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-        <p style="text-align: center"><a href="">Home</a></p>
-      </div>
-    </div>
-
-
+<h1 id="exercise-22">Exercise 2.2</h1>
+<h3 id="a-ceo-salary">(a) CEO salary</h3>
+<p><strong>Regression</strong>, since the variable we are interested in, CEO salary, is quantitative.
+Since we want to understand the factors affecting CEO salary we are most interested in <strong>inference</strong>.
+The number of predictors is 3, and the sample size is 500 <strong>(p=3, n=500)</strong>.</p>
+<h3 id="b-new-product-launch-success-or-failure">(b) New product launch: success or failure?</h3>
+<p><strong>Classification</strong>, because we are studying the outcome of the launch of a new product, which we are representing in one of two categories: success or failure.
+In this case we wish to know whether a new launch will be a success or a failure more than understand why, so we are more interested in <strong>prediction</strong>.
+The number of predictors is 13, and the sample size is 20 <strong>(p=13, n=20)</strong>.</p>
+<h3 id="c-change-in-the-us-dollar">(c) Change in the US dollar</h3>
+<p><strong>Regression</strong>, since the variable we want to predict is a real number, and we are more interested in <strong>prediction</strong>.
+The number of predictors is 3, and the sample size is 52 <strong>(p=3, n=52)</strong>. </p></div>
+        
     </div>
 
     <footer class="col-md-12 text-center">
@@ -143,16 +165,16 @@
         <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
     </footer>
 
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/bootstrap-3.0.3.min.js"></script>
-    <script src="/js/highlight.pack.js"></script>
+    <script src="../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script>
-    var base_url = '';
+    var base_url = '../../..';
     </script>
-    <script data-main="/mkdocs/js/search.js" src="/mkdocs/js/require.js"></script>
-    <script src="/js/base.js"></script>
-    <script src="/mathjax-config.js"></script>
+    <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
