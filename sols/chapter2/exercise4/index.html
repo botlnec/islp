@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    <title>2.4 - Statistical Learning with Python</title>
+
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../exercise1/">2.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise2/">2.2</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">2.4</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../about/">About</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../exercise2/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../about/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#exercise-24">Exercise 2.4</a></li>
+        
+            <li class="second-level"><a href="#a-classification">(a) Classification</a></li>
+            
+        
+            <li class="second-level"><a href="#b-regression">(b) Regression</a></li>
+            
+        
+            <li class="second-level"><a href="#c-cluster-analysis">(c) Cluster analysis</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="exercise-24">Exercise 2.4</h1>
+<h3 id="a-classification">(a) Classification</h3>
+<p><strong>Spam filters</strong>. 
+Any self-respecting email service has a good spam filter: ideally it keeps any undesired email away from your inbox, and let's through every email you're interested in.
+The response has just two categories: 'spam' or 'not spam', and the predictors can include several different variables: whether you have corresponded with the sender, whether you have their email address in some of your non-spam emails, the words and sequences of words of the emails (for example, if the email includes any reference to a 'Nigerian prince'), whether similar emails have already been tagged as spam by other users, etc.
+The main goal is <strong>prediction</strong> because the most important task is to accurately be able to predict whether a future email message is spam or not-spam. 
+An important aspect in this case is the rate of false positives and false negatives.
+In the case of email it is usually much more acceptable to have false negatives (spam that got through to your inbox) than false positives (important email that was classified as spam and you have never noticed). </p>
+<p><strong>Digit recognition. (or text or speech or facial recognition)</strong> 
+An important task required everyday around the world is the recognition of handwritten digits and addresses for postal service or document scanning and OCR (Optical Character Recognition).
+Depending on how we define the learning task, the predictors can be the original digital photographs or scans of the documents, or just a cropped, grayscale image of a single digit (that is, a N by M matrix of real numbers, each describing the gray scale value of a single pixel).
+The response might be one of ten digits (0 to 9) or it might include commas and the full numbers (not just the digits), depending on how we decide to define the task.
+Again here the main goal is <strong>prediction</strong>, since the most important thing is to recognize a correct address or bank account number from a letter or document. </p>
+<p><strong>Social analysis</strong>. Classify people into supporters of <a href="https://en.wikipedia.org/wiki/Sporting_Clube_de_Portugal">Sporting</a>, supporters of <a href="https://en.wikipedia.org/wiki/S.L._Benfica">Benfica</a>, neither or both (so the response is one of these four categories).
+As predictors, include factors such as age, nationality, address, income, education, gender, whether they appreciate classical music, their criminal record, etc.
+Here the main goal is <strong>inference</strong>, since more than predicting whether someone supports a specific club we are interested in understanding and studying the different factors and discovering interesting relationships between them.</p>
+<p><strong>Other examples</strong>: fraud detection, medical diagnosis, stock prediction (buy, sell, hold), astronomical objects classification, choosing <a href="http://www.geekwire.com/2016/jeff-bezos-sees-future-amazon-echo-alexa-healthcare/">strawberries</a> or <a href="https://cloud.google.com/blog/big-data/2016/08/how-a-japanese-cucumber-farmer-is-using-deep-learning-and-tensorflow">cucumbers</a>.</p>
+<h3 id="b-regression">(b) Regression</h3>
+<p><strong>Galton's original 'regression' to the mean</strong>. 
+Study the height of children and its relationship to the height of their parents.
+Here the response is the height of the child and the predictor is the height of both parents (or the mean of both).
+The main goal would be <strong>inference</strong>, since we are trying to better understand, from a scientific perspective, how much genetics influences an individual's height.
+Unless, of course, you are an overly zealous future parent trying to predict the chances of your child playing in the NBA given your own height and your partner's - in which case your main goal might be prediction.
+This problem is <a href="https://en.wikipedia.org/wiki/Regression_toward_the_mean">where the name 'regression' comes from</a> and, perhaps surprisingly, <a href="https://www.wired.com/2009/03/predicting-height-the-victorian-approach-beats-modern-genomics/">Galton's statistical method</a> has stood the test of time quite well.</p>
+<p><strong>House prices</strong>. Buying a house is probably the biggest investment that many people do during their life time.
+Accordingly, it is natural that people want to know the value of a house in order to do the best deal possible.
+The main goal in this cases is <strong>prediction</strong>, since we want to predict house's price considering a set of predictors. 
+There are several factors used to predict house's price. 
+For example, a <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/kernels">Kaggle competition</a> in which we participated, suggests a total of 79 predictors to predict the final price of each house in Boston.</p>
+<p><strong>Weather</strong>.
+The response can be temperature, wind velocity or precipitation amount in different locations, and the predictors can be the same variables for previous times.
+The goal is both <strong>prediction</strong> (will it rain too much this month and ruin the plantations; will there be enough snow for the snowtrip?) and <strong>inference</strong> (what causes hurricanes, or the current climate change?). </p>
+<p><strong>Other examples</strong>:
+returns of investment in stocks, predicting school grades from amount and type of study, predicting the popularity of a book, film, article or tweet.</p>
+<h3 id="c-cluster-analysis">(c) Cluster analysis</h3>
+<p><strong>Outlier detection</strong>.
+If you can define a distance between the data points or a density function in the predictors space, you can use cluster analysis to identify candidate outliers such as the data points farther from the majority of the points, or those in sparser regions.</p>
+<p><strong>Market research</strong>. 
+Using cluster analysis, market researchers can group consumers into market segments according to their similarities.
+This can provide a better understanding on group characteristics, as well as it can provide useful insights about how different groups of consumers/potential customer behave and relate with different groups.</p>
+<p><strong>Recommender systems</strong>.
+Will you think watching 'Pulp Fiction' is time well spent?
+If enough is known about you, including some of your film preferences (and perhaps how many times you have watched 'Stalker' or 'Pulp Fiction') and some similar data about other people, we can have an indication of whether will you think rewatching 'Pulp Fiction' is worth your time...
+Are you 'closer' to the people who think the answer is 'No' or to the ones that think 'Yes'?</p>
+<p><strong>Other examples</strong>:
+gene sequencing, data compression, social network analysis, representation learning, topography classification.</p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../../..';
+    </script>
+    <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <script src="../../../mathjax-config.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
