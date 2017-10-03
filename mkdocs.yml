@@ -6,6 +6,7 @@ pages:
       - '2.2': 'sols/chapter2/exercise2.md'
       - '2.4': 'sols/chapter2/exercise4.md'
       - '2.5': 'sols/chapter2/exercise5.md'
+      - '2.6': 'sols/chapter2/exercise6.md'
   - About: about.md
 theme: cinder
 
