@@ -3,6 +3,7 @@ pages:
   - Home: index.md
   - '2':
       - '2.1': 'sols/chapter2/exercise1.md'
+      - '2.2': 'sols/chapter2/exercise2.md'
   - About: about.md
 theme: cinder
 
