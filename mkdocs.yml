@@ -10,7 +10,7 @@ pages:
       - '2.7': 'sols/chapter2/exercise7.md'
       - '2.8': 'sols/chapter2/exercise8.md'
       - '2.9': 'sols/chapter2/exercise9.md'
-      # - '2.10': 'sols/chapter2/exercise10.md'                
+      - '2.10': 'sols/chapter2/exercise10.md'                
   - About: about.md
 theme: cinder
 
