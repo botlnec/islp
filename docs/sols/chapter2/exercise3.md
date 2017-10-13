@@ -8,8 +8,8 @@ In (a) we provide a rough sketch of the general case, which is merely illustrati
 
 ```python
 # the functions chosen here were chosen just as a rough, quick way to sketch the functions in a plot
-# they do not represent in any way a analytical formula for these quantities or anything of the sort
-# these formulas would depend anyway on the model and fitting procedure in any case
+# they do not represent in any way an analytical formula for these quantities or anything of the sort
+# these formulas would depend on the model and fitting procedure in any case
 
 import numpy as np
 import matplotlib.pyplot as plt
