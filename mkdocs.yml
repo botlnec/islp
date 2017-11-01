@@ -13,7 +13,9 @@ pages:
       - '2.9': 'sols/chapter2/exercise9.md'
       - '2.10': 'sols/chapter2/exercise10.md'   
   - '3':
-      - '3.1': 'sols/chapter3/exercise1.md'             
+      - '3.1': 'sols/chapter3/exercise1.md'
+      - '3.2': 'sols/chapter3/exercise2.md' 
+      - '3.3': 'sols/chapter3/exercise3.md'             
   - About: about.md
 theme: cinder
 
