@@ -406,6 +406,46 @@
             "title": "Further reading"
         },
         {
+            "location": "/sols/chapter3/exercise2/",
+            "text": "Exercise 3.2\n\n\nBoth models share a similar principle: the output values are computed based on their K closest points (nearest neighbours) value.\n\n\nThe KNN classifier starts by identifying the K nearest neighbours. Then, the output of each K observation is considered and, by majority vote, we determine the label of our observation. Example: if we are trying to classify an observation as 'blue' or 'red', and in the K nearest neighbours we have two of them classified as 'blue' and one as 'red', our observation will be classified as 'blue'. Notice that if we have a tie, a common solution is to increase or decrease K.\n\n\nRegarding the KNN regression method, it also starts by identifying the K nearest neighbours. However, in this situation, we compute our output averaging the output of the K nearest neighbours. Example: if our K nearest neighbours have as output the values 3,4 and 5, our output will be (3+4+5)/3 = 4.",
+            "title": "3.2"
+        },
+        {
+            "location": "/sols/chapter3/exercise2/#exercise-32",
+            "text": "Both models share a similar principle: the output values are computed based on their K closest points (nearest neighbours) value.  The KNN classifier starts by identifying the K nearest neighbours. Then, the output of each K observation is considered and, by majority vote, we determine the label of our observation. Example: if we are trying to classify an observation as 'blue' or 'red', and in the K nearest neighbours we have two of them classified as 'blue' and one as 'red', our observation will be classified as 'blue'. Notice that if we have a tie, a common solution is to increase or decrease K.  Regarding the KNN regression method, it also starts by identifying the K nearest neighbours. However, in this situation, we compute our output averaging the output of the K nearest neighbours. Example: if our K nearest neighbours have as output the values 3,4 and 5, our output will be (3+4+5)/3 = 4.",
+            "title": "Exercise 3.2"
+        },
+        {
+            "location": "/sols/chapter3/exercise3/",
+            "text": "Exercise 3.3\n\n\n(a)\n\n\n\\(Y = \\beta_0 + \\beta_1 \\times GPA + \\beta_2 \\times IQ + \\beta_3 \\times Gender + \\beta_4 \\times GPA \\times IQ + \\beta_5 \\times GPA \\times Gender\\)\n\n\nFor a fixed value of GPA and IQ, the difference between female and male is given by:\n\n\n\\(Y_{female} - Y_{male} = \\beta_3 + \\beta_5 \\times GPA = 35 - 10 GPA\\)\n, \n\n\nwhich depends on GPA. It is clear that in the normal range of the GPA (0 to 4.0), the difference in expected salary between female and male ranges linearly from 35 to -5. In particular, if GPA > 3.5, males earn on average more than females. Therefore, \n the correct answer is (iii)\n.\n\n\n(b)\n\n\nThe \npredicted salary is 137.1 (thousand dollars)\n. Given the coefficients from the fit, GPA = 4.0, IQ = 110 and Gender = 1, the model predicts:\n\n\n\\(Y = \\beta_0 + \\beta_1 GPA + \\beta_2 IQ + \\beta_3 Gender + \\beta_4 (GPA \\times IQ) + \\beta_5 (GPA \\times Gender)\\)\n\n\n\\(Y = 50 + 20 \\times 4.0 + 0.07 \\times 110 + 35 \\times 1  + 0.01 \\times 4.0 \\times 110 + (-10) \\times 4.0 \\times 1\\)\n = 137.1\n\n\n(c)\n\n\nFalse\n. Although the coefficient for the GPA/IQ interaction term is very small, specially when compared to the other coefficients, this does not indicate whether there is an interaction effect. First, this coefficient is multiplied by the product  of IQ and GPA which ranges from 0 to a few hundred, so that the contribution to the response would tipically add up to a value between 2 and 6, let's say. Secondly, and more importantly, evidence for the interaction effect has to be evaluated with a t-statistic or an F-statistic for a null hypothesis (\n\\(H_0: \\beta_4 = 0\\)\n), yielding a certain p-value. This requires the standard error of which we have no information, and therefore cannot conclude whether there is evidence for a interaction effect.\n\n\nAdditional calculations\n\n\n50 + 20*4 + 0.07*110 + 35*1 + 0.01*4*110 + (-10)*4*1\n\n\n\n\n137.1",
+            "title": "3.3"
+        },
+        {
+            "location": "/sols/chapter3/exercise3/#exercise-33",
+            "text": "",
+            "title": "Exercise 3.3"
+        },
+        {
+            "location": "/sols/chapter3/exercise3/#a",
+            "text": "\\(Y = \\beta_0 + \\beta_1 \\times GPA + \\beta_2 \\times IQ + \\beta_3 \\times Gender + \\beta_4 \\times GPA \\times IQ + \\beta_5 \\times GPA \\times Gender\\)  For a fixed value of GPA and IQ, the difference between female and male is given by:  \\(Y_{female} - Y_{male} = \\beta_3 + \\beta_5 \\times GPA = 35 - 10 GPA\\) ,   which depends on GPA. It is clear that in the normal range of the GPA (0 to 4.0), the difference in expected salary between female and male ranges linearly from 35 to -5. In particular, if GPA > 3.5, males earn on average more than females. Therefore,   the correct answer is (iii) .",
+            "title": "(a)"
+        },
+        {
+            "location": "/sols/chapter3/exercise3/#b",
+            "text": "The  predicted salary is 137.1 (thousand dollars) . Given the coefficients from the fit, GPA = 4.0, IQ = 110 and Gender = 1, the model predicts:  \\(Y = \\beta_0 + \\beta_1 GPA + \\beta_2 IQ + \\beta_3 Gender + \\beta_4 (GPA \\times IQ) + \\beta_5 (GPA \\times Gender)\\)  \\(Y = 50 + 20 \\times 4.0 + 0.07 \\times 110 + 35 \\times 1  + 0.01 \\times 4.0 \\times 110 + (-10) \\times 4.0 \\times 1\\)  = 137.1",
+            "title": "(b)"
+        },
+        {
+            "location": "/sols/chapter3/exercise3/#c",
+            "text": "False . Although the coefficient for the GPA/IQ interaction term is very small, specially when compared to the other coefficients, this does not indicate whether there is an interaction effect. First, this coefficient is multiplied by the product  of IQ and GPA which ranges from 0 to a few hundred, so that the contribution to the response would tipically add up to a value between 2 and 6, let's say. Secondly, and more importantly, evidence for the interaction effect has to be evaluated with a t-statistic or an F-statistic for a null hypothesis ( \\(H_0: \\beta_4 = 0\\) ), yielding a certain p-value. This requires the standard error of which we have no information, and therefore cannot conclude whether there is evidence for a interaction effect.",
+            "title": "(c)"
+        },
+        {
+            "location": "/sols/chapter3/exercise3/#additional-calculations",
+            "text": "50 + 20*4 + 0.07*110 + 35*1 + 0.01*4*110 + (-10)*4*1  137.1",
+            "title": "Additional calculations"
+        },
+        {
             "location": "/about/",
             "text": "This is a project by \nbotlnec\n, a group of friends working in different areas of data science. \n\n\nThis project was developed by two members of the Botlnec team and is included in a set of activities that this group of friends has been developping.\n\n\nPedro Marcelino\n\n\nPedro works as a researcher at \nLNEC\n and he is also a PhD candidate at \nIST\n.\nCurrently, he is developing a new approach to the maintenance management of transport infrastructures using machine learning.\nIn his spare time, he likes to work on TreeTree2, read books and play sports. \n\n\nJo\u00e3o Rico\n\n\nJo\u00e3o is a researcher at LNEC interested in machine and human learning.",
             "title": "About"

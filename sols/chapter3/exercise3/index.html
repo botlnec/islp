@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.1 - Statistical Learning with Python</title>
+    <title>3.3 - Statistical Learning with Python</title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -144,8 +144,8 @@
                         <ul class="dropdown-menu">
                         
                             
-<li class="active">
-    <a href="./">3.1</a>
+<li >
+    <a href="../exercise1/">3.1</a>
 </li>
 
                         
@@ -156,8 +156,8 @@
 
                         
                             
-<li >
-    <a href="../exercise3/">3.3</a>
+<li class="active">
+    <a href="./">3.3</a>
 </li>
 
                         
@@ -182,12 +182,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../../chapter2/exercise10/">
+                        <a rel="next" href="../exercise2/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../exercise2/">
+                        <a rel="prev" href="../../../about/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -203,15 +203,18 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#exercise-31">Exercise 3.1</a></li>
+        <li class="first-level active"><a href="#exercise-33">Exercise 3.3</a></li>
         
-            <li class="second-level"><a href="#additional-comment">Additional comment</a></li>
+            <li class="second-level"><a href="#a">(a)</a></li>
             
         
-            <li class="second-level"><a href="#auxiliary-calculations">Auxiliary calculations</a></li>
+            <li class="second-level"><a href="#b">(b)</a></li>
             
         
-            <li class="second-level"><a href="#further-reading">Further reading</a></li>
+            <li class="second-level"><a href="#c">(c)</a></li>
+            
+        
+            <li class="second-level"><a href="#additional-calculations">Additional calculations</a></li>
             
         
     
@@ -219,82 +222,24 @@
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="exercise-31">Exercise 3.1</h1>
-<p>The t-statistics computed on Table 3.4 are computed individually for each coefficient since they are independent variables. Accordingly, there are 4 null hypotheses that we are testing:</p>
-<ol>
-<li><span>\(H_0\)</span> for "TV": <strong>in the presence of</strong> Radio and Newspaper ads (and in addition to the intercept), there is no relationship between TV and Sales;</li>
-<li><span>\(H_0\)</span> for "Radio": <strong>in the presence of</strong> TV and Newspaper ads (and in addition to the intercept), there is no relationship between Radio and Sales;</li>
-<li><span>\(H_0\)</span> for "Newspaper": <strong>in the presence of</strong> TV and Radio ads (and in addition to the intercept), there is no relationship between Newspaper and Sales;</li>
-<li><span>\(H_0\)</span> for the intercept: <strong>in the absence of</strong> TV, Radio and Newspaper ads, Sales are zero;</li>
-</ol>
-<p>versus the 4 corresponding alternative hypotheses:</p>
-<p><span>\(H_a\)</span>: There is some relationship between TV/Radio/Newspaper and Sales, or Sales are non-zero in the absence of the other variables.</p>
-<p><br><br>
-Mathematically, this can be written as</p>
-<p><span>\(H_0:\)</span> <span>\(\beta_i=0\)</span>, for <span>\(i = 0,1,2,3\)</span>,</p>
-<p>versus the 4 corresponding alternative hypotheses</p>
-<p><span>\(H_a:\)</span> <span>\(\beta_i\neq0\)</span>, for <span>\(i = 0,1,2,3\)</span>.</p>
-<p>As can been seen on Table 3.4 (and below with Python), for all the variables the p-value is practically zero, except for <em>Newspaper</em> for which it is very high, namely .86, much larger than the typical confidence levels, 0.05, 0.01 and 0.001.  Given the t-statistics and the p-values we can reject the null hypothesis for the intercept, TV and Radio, but not for Newspaper.</p>
-<p>This means that we can conclude that <strong>there is a relationship between TV and Sales, and between Radio and Sales</strong>. Also rejecting <span>\(\beta_0=0\)</span>, allows us to conclude that <strong>in the absence of TV, Radio and Newspaper, Sales are non-zero</strong>. Not being able to reject the null hypothesis <span>\(\beta_{Newspaper}=0\)</span>, suggests that there is indeed <strong>no relationship between Newspaper and Sales, in the presence of TV and Radio</strong>.</p>
-<h3 id="additional-comment">Additional comment</h3>
-<p>At a 5% p-value, there would be a 19% chance of having one appear as significant out of 3 variables, even if there was no relationship for all of them. </p>
-<p>(<span>\(1-.95^4\)</span>) </p>
-<h2 id="auxiliary-calculations">Auxiliary calculations</h2>
-<pre><code class="python">import pandas as pd
-import statsmodels.api as sm
-
-df = pd.read_csv('../data/Advertising.csv')
-
-from statsmodels.formula.api import ols
-model = ols(&quot;Sales ~ TV + Radio + Newspaper&quot;, df).fit()
-print(model.summary())
+<h1 id="exercise-33">Exercise 3.3</h1>
+<h2 id="a">(a)</h2>
+<p><span>\(Y = \beta_0 + \beta_1 \times GPA + \beta_2 \times IQ + \beta_3 \times Gender + \beta_4 \times GPA \times IQ + \beta_5 \times GPA \times Gender\)</span></p>
+<p>For a fixed value of GPA and IQ, the difference between female and male is given by:</p>
+<p><span>\(Y_{female} - Y_{male} = \beta_3 + \beta_5 \times GPA = 35 - 10 GPA\)</span>, </p>
+<p>which depends on GPA. It is clear that in the normal range of the GPA (0 to 4.0), the difference in expected salary between female and male ranges linearly from 35 to -5. In particular, if GPA &gt; 3.5, males earn on average more than females. Therefore, <strong> the correct answer is (iii)</strong>.</p>
+<h2 id="b">(b)</h2>
+<p>The <strong>predicted salary is 137.1 (thousand dollars)</strong>. Given the coefficients from the fit, GPA = 4.0, IQ = 110 and Gender = 1, the model predicts:</p>
+<p><span>\(Y = \beta_0 + \beta_1 GPA + \beta_2 IQ + \beta_3 Gender + \beta_4 (GPA \times IQ) + \beta_5 (GPA \times Gender)\)</span></p>
+<p><span>\(Y = 50 + 20 \times 4.0 + 0.07 \times 110 + 35 \times 1  + 0.01 \times 4.0 \times 110 + (-10) \times 4.0 \times 1\)</span> = 137.1</p>
+<h2 id="c">(c)</h2>
+<p><strong>False</strong>. Although the coefficient for the GPA/IQ interaction term is very small, specially when compared to the other coefficients, this does not indicate whether there is an interaction effect. First, this coefficient is multiplied by the product  of IQ and GPA which ranges from 0 to a few hundred, so that the contribution to the response would tipically add up to a value between 2 and 6, let's say. Secondly, and more importantly, evidence for the interaction effect has to be evaluated with a t-statistic or an F-statistic for a null hypothesis (<span>\(H_0: \beta_4 = 0\)</span>), yielding a certain p-value. This requires the standard error of which we have no information, and therefore cannot conclude whether there is evidence for a interaction effect.</p>
+<h2 id="additional-calculations">Additional calculations</h2>
+<pre><code class="python">50 + 20*4 + 0.07*110 + 35*1 + 0.01*4*110 + (-10)*4*1
 </code></pre>
 
-<pre><code>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                  Sales   R-squared:                       0.897
-Model:                            OLS   Adj. R-squared:                  0.896
-Method:                 Least Squares   F-statistic:                     570.3
-Date:                Tue, 24 Oct 2017   Prob (F-statistic):           1.58e-96
-Time:                        10:19:37   Log-Likelihood:                -386.18
-No. Observations:                 200   AIC:                             780.4
-Df Residuals:                     196   BIC:                             793.6
-Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-Intercept      2.9389      0.312      9.422      0.000       2.324       3.554
-TV             0.0458      0.001     32.809      0.000       0.043       0.049
-Radio          0.1885      0.009     21.893      0.000       0.172       0.206
-Newspaper     -0.0010      0.006     -0.177      0.860      -0.013       0.011
-==============================================================================
-Omnibus:                       60.414   Durbin-Watson:                   2.084
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):              151.241
-Skew:                          -1.327   Prob(JB):                     1.44e-33
-Kurtosis:                       6.332   Cond. No.                         454.
-==============================================================================
-
-Warnings:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</code></pre>
-<h2 id="further-reading">Further reading</h2>
-<p>ISL:</p>
-<ul>
-<li>Page 67, 68</li>
-<li>Footnote page 68</li>
-</ul>
-<p><span>\(H_0\)</span>:</p>
-<ul>
-<li><a href="http://quant.stackexchange.com/questions/16056/null-and-alternative-hypothesis-for-multiple-linear-regression">http://quant.stackexchange.com/questions/16056/null-and-alternative-hypothesis-for-multiple-linear-regression</a></li>
-</ul>
-<p>Multiple regression:</p>
-<ul>
-<li><a href="https://www.datarobot.com/blog/multiple-regression-using-statsmodels/">https://www.datarobot.com/blog/multiple-regression-using-statsmodels/</a></li>
-<li><a href="https://www.coursera.org/learn/regression-modeling-practice/lecture/xQRab/python-lesson-1-multiple-regression">https://www.coursera.org/learn/regression-modeling-practice/lecture/xQRab/python-lesson-1-multiple-regression</a></li>
-<li><a href="http://www.scipy-lectures.org/packages/statistics/index.html#multiple-regression-including-multiple-factors">http://www.scipy-lectures.org/packages/statistics/index.html#multiple-regression-including-multiple-factors</a></li>
-<li><a href="http://stackoverflow.com/questions/11479064/multiple-linear-regression-in-python">http://stackoverflow.com/questions/11479064/multiple-linear-regression-in-python</a></li>
-</ul></div>
+<pre><code>137.1
+</code></pre></div>
         
     </div>
 
