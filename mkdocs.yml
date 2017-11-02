@@ -30,7 +30,17 @@ pages:
       - '4.10': 'sols/chapter4/exercise10.md'
       - '4.11': 'sols/chapter4/exercise11.md'
       - '4.12': 'sols/chapter4/exercise12.md'
-      - '4.13': 'sols/chapter4/exercise13.md'                  
+      - '4.13': 'sols/chapter4/exercise13.md'
+  - '5':
+      - '5.1': 'sols/chapter5/exercise1.md'
+      - '5.2': 'sols/chapter5/exercise2.md'
+      - '5.3': 'sols/chapter5/exercise3.md'
+      - '5.4': 'sols/chapter5/exercise4.md'
+      - '5.5': 'sols/chapter5/exercise5.md'
+      - '5.6': 'sols/chapter5/exercise6.md'
+      - '5.7': 'sols/chapter5/exercise7.md'
+      - '5.8': 'sols/chapter5/exercise8.md'
+      - '5.9': 'sols/chapter5/exercise9.md'                  
   - About: about.md
 theme: cinder
 
