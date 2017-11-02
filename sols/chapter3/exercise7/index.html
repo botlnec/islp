@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>8.3 - Statistical Learning with Python</title>
+    <title>3.7 - Statistical Learning with Python</title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -139,49 +139,49 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">3 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../chapter3/exercise1/">3.1</a>
+    <a href="../exercise1/">3.1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise2/">3.2</a>
+    <a href="../exercise2/">3.2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise3/">3.3</a>
+    <a href="../exercise3/">3.3</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise4/">3.4</a>
+    <a href="../exercise4/">3.4</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise5/">3.5</a>
+    <a href="../exercise5/">3.5</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise6/">3.6</a>
+    <a href="../exercise6/">3.6</a>
 </li>
 
                         
                             
-<li >
-    <a href="../../chapter3/exercise7/">3.7</a>
+<li class="active">
+    <a href="./">3.7</a>
 </li>
 
                         
@@ -496,79 +496,79 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">8 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../exercise1/">8.1</a>
+    <a href="../../chapter8/exercise1/">8.1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise2/">8.2</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">8.3</a>
+    <a href="../../chapter8/exercise2/">8.2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise4/">8.4</a>
+    <a href="../../chapter8/exercise3/">8.3</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise5/">8.5</a>
+    <a href="../../chapter8/exercise4/">8.4</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise6/">8.6</a>
+    <a href="../../chapter8/exercise5/">8.5</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise7/">8.7</a>
+    <a href="../../chapter8/exercise6/">8.6</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise8/">8.8</a>
+    <a href="../../chapter8/exercise7/">8.7</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise9/">8.9</a>
+    <a href="../../chapter8/exercise8/">8.8</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise10/">8.10</a>
+    <a href="../../chapter8/exercise9/">8.9</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise11/">8.11</a>
+    <a href="../../chapter8/exercise10/">8.10</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise12/">8.12</a>
+    <a href="../../chapter8/exercise11/">8.11</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise12/">8.12</a>
 </li>
 
                         
@@ -725,12 +725,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../exercise2/">
+                        <a rel="next" href="../exercise6/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../exercise4/">
+                        <a rel="prev" href="../../chapter4/exercise1/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -746,12 +746,29 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-37">Exercise 3.7</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 8 will be out in Abril 2018.</p></div>
+<h1 id="exercise-37">Exercise 3.7</h1>
+<p>To show that  <span>\(R^2=r^2 \equiv cor^2(X,Y)\)</span> for simple linear regression of <span>\(Y\)</span> onto <span>\(X\)</span>, we will use the following formulas from the text (where we have used the simplifying assumption that <span>\(\bar{x}=\bar{y}=0\)</span>):</p>
+<span>\[
+\begin{align}
+cor(X,Y) &amp; = \frac{\sum_i(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_i(x_i - \bar{x})^2}\sqrt{\sum_i(y_i - \bar{y})^2}} = \frac{\sum_i x_i y_i}{\sqrt{\sum_i x_i^2}\sqrt{\sum_i y_i^2}},\\
+\hat{\beta}_0 &amp; = \bar{y} -\hat{\beta}_1 \bar{x} = 0, \\
+\hat{\beta}_1 &amp; = \frac{\sum_i(x_i - \bar{x})(y_i - \bar{y})}{\sum_i(x_i - \bar{x})^2} = \frac{\sum_i x_i y_i}{\sum_i x_i^2}, \\
+R^2 &amp; = 1 - \frac{RSS}{TSS} = 1 - \frac{\sum_i(y_i - \hat{y})^2}{\sum_i(y_i - \bar{y})^2}= 1 - \frac{\sum_i(y_i - \hat{\beta}_1 x_i)^2}{\sum_i y_i^2}.
+\end{align}
+\]</span><p>Expanding the numerator in the last expression and plugging in the formula for <span>\(\hat{\beta}_1\)</span>, we obtain</p>
+<span>\[
+\begin{align}
+R^2 &amp; = 1 - \frac{\sum_i(y_i^2 - 2\hat{\beta}_1 x_i y_i + \hat{\beta}_1^2 x_i^2 )}{\sum_i y_i^2} = \frac{ 2\hat{\beta}_1 \sum_ i x_i y_i - \hat{\beta}_1^2 \sum_i x_i^2 }{\sum_i y_i^2} = \\
+  &amp; = \frac{ 2 (\sum_i x_i y_i) ( \sum_ i x_i y_i)/ (\sum_i x_i^2) -( \sum_ i x_i y_i)^2 (\sum_i x_i^2)/ (\sum_i x_i^2)^2  }{\sum_i y_i^2} = \frac{(\sum_i x_i y_i)^2}{\sum_i x_i^2 \sum_i y_i^2},
+\end{align}
+\]</span><p>which we can see is equal to <span>\(cor^2(X,Y)\)</span>.</p></div>
         
     </div>
 
