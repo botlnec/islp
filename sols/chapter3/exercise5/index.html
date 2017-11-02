@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>8.6 - Statistical Learning with Python</title>
+    <title>3.5 - Statistical Learning with Python</title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -139,37 +139,37 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">3 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../chapter3/exercise1/">3.1</a>
+    <a href="../exercise1/">3.1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise2/">3.2</a>
+    <a href="../exercise2/">3.2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise3/">3.3</a>
+    <a href="../exercise3/">3.3</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise4/">3.4</a>
+    <a href="../exercise4/">3.4</a>
 </li>
 
                         
                             
-<li >
-    <a href="../../chapter3/exercise5/">3.5</a>
+<li class="active">
+    <a href="./">3.5</a>
 </li>
 
                         
@@ -484,79 +484,79 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">8 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../exercise1/">8.1</a>
+    <a href="../../chapter8/exercise1/">8.1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise2/">8.2</a>
+    <a href="../../chapter8/exercise2/">8.2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise3/">8.3</a>
+    <a href="../../chapter8/exercise3/">8.3</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise4/">8.4</a>
+    <a href="../../chapter8/exercise4/">8.4</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise5/">8.5</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">8.6</a>
+    <a href="../../chapter8/exercise5/">8.5</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise7/">8.7</a>
+    <a href="../../chapter8/exercise6/">8.6</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise8/">8.8</a>
+    <a href="../../chapter8/exercise7/">8.7</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise9/">8.9</a>
+    <a href="../../chapter8/exercise8/">8.8</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise10/">8.10</a>
+    <a href="../../chapter8/exercise9/">8.9</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise11/">8.11</a>
+    <a href="../../chapter8/exercise10/">8.10</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise12/">8.12</a>
+    <a href="../../chapter8/exercise11/">8.11</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise12/">8.12</a>
 </li>
 
                         
@@ -713,12 +713,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../exercise5/">
+                        <a rel="next" href="../exercise4/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../exercise7/">
+                        <a rel="prev" href="../../chapter4/exercise1/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -734,12 +734,24 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-35">Exercise 3.5</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 8 will be out in Abril 2018.</p></div>
+<h1 id="exercise-35">Exercise 3.5</h1>
+<p>This is a simple exercise of plugging the expression for <span>\(\hat{\beta}\)</span> in the formula of the ith fitted value:</p>
+<span>\[
+\hat{y}_i = x_i \hat{\beta} = x_i \left( \sum_{i'=1}^n x_{i'} y_{i'} \right) / \left( \sum_{j=1}^n x_j^2 \right) = \sum_{i'=1}^n \left( \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2} y_{i'} \right)
+\]</span><p>and comparing to the expression</p>
+<span>\[
+\hat{y}_i = \sum_{i'=1}^n a_{i'} y_{i'}
+\]</span><p>to obtain:</p>
+<span>\[
+a_{i'} =  \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2}
+\]</span></div>
         
     </div>
 

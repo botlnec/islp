@@ -456,6 +456,16 @@
             "title": "Exercise 3.4"
         },
         {
+            "location": "/sols/chapter3/exercise5/",
+            "text": "Exercise 3.5\n\n\nThis is a simple exercise of plugging the expression for \n\\(\\hat{\\beta}\\)\n in the formula of the ith fitted value:\n\n\n\\[\n\\hat{y}_i = x_i \\hat{\\beta} = x_i \\left( \\sum_{i'=1}^n x_{i'} y_{i'} \\right) / \\left( \\sum_{j=1}^n x_j^2 \\right) = \\sum_{i'=1}^n \\left( \\frac{x_i x_{i'} }{\\sum_{j=1}^n x_j^2} y_{i'} \\right)\n\\]\nand comparing to the expression\n\n\n\\[\n\\hat{y}_i = \\sum_{i'=1}^n a_{i'} y_{i'}\n\\]\nto obtain:\n\n\n\\[\na_{i'} =  \\frac{x_i x_{i'} }{\\sum_{j=1}^n x_j^2}\n\\]",
+            "title": "3.5"
+        },
+        {
+            "location": "/sols/chapter3/exercise5/#exercise-35",
+            "text": "This is a simple exercise of plugging the expression for  \\(\\hat{\\beta}\\)  in the formula of the ith fitted value:  \\[\n\\hat{y}_i = x_i \\hat{\\beta} = x_i \\left( \\sum_{i'=1}^n x_{i'} y_{i'} \\right) / \\left( \\sum_{j=1}^n x_j^2 \\right) = \\sum_{i'=1}^n \\left( \\frac{x_i x_{i'} }{\\sum_{j=1}^n x_j^2} y_{i'} \\right)\n\\] and comparing to the expression  \\[\n\\hat{y}_i = \\sum_{i'=1}^n a_{i'} y_{i'}\n\\] to obtain:  \\[\na_{i'} =  \\frac{x_i x_{i'} }{\\sum_{j=1}^n x_j^2}\n\\]",
+            "title": "Exercise 3.5"
+        },
+        {
             "location": "/sols/chapter4/exercise1/",
             "text": "We're publishing the solutions to a new chapter at least once a month. \n\n\nAt the latest, Chapter 4 will be out in December 2017.",
             "title": "4.1"
