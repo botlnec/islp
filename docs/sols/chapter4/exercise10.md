@@ -1,4 +1,4 @@
 
-We're publishing one new chapter at least once month. 
+We're publishing the solutions to a new chapter at least once a month. 
 
 At the latest, Chapter 4 will be out in December 2017.
