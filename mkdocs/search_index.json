@@ -456,6 +456,11 @@
             "title": "Exercise 3.4"
         },
         {
+            "location": "/sols/chapter4/exercise1/",
+            "text": "We're publishing one new chapter at least once month. \n\n\nChapter 4 will be out in December at the latest.",
+            "title": "4.1"
+        },
+        {
             "location": "/about/",
             "text": "This is a project by \nbotlnec\n, a group of friends working in different areas of data science. \n\n\nThis project was developed by two members of the Botlnec team and is included in a set of activities that this group of friends has been developping.\n\n\nPedro Marcelino\n\n\nPedro works as a researcher at \nLNEC\n and he is also a PhD candidate at \nIST\n.\nCurrently, he is developing a new approach to the maintenance management of transport infrastructures using machine learning.\nIn his spare time, he likes to work on TreeTree2, read books and play sports. \n\n\nJo\u00e3o Rico\n\n\nJo\u00e3o is a researcher at LNEC interested in machine and human learning.",
             "title": "About"
