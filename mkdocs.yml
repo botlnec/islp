@@ -17,7 +17,8 @@ pages:
       - '3.2': 'sols/chapter3/exercise2.md' 
       - '3.3': 'sols/chapter3/exercise3.md' 
       - '3.4': 'sols/chapter3/exercise4.md'
-      - '3.5': 'sols/chapter3/exercise5.md'   
+      - '3.5': 'sols/chapter3/exercise5.md'  
+      - '3.6': 'sols/chapter3/exercise6.md'   
   - '4':
       - '4.1': 'sols/chapter4/exercise1.md'
       - '4.2': 'sols/chapter4/exercise2.md'
