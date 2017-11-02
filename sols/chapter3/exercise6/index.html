@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>10.2 - Statistical Learning with Python</title>
+    <title>3.6 - Statistical Learning with Python</title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -139,43 +139,43 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">3 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../../chapter3/exercise1/">3.1</a>
+    <a href="../exercise1/">3.1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise2/">3.2</a>
+    <a href="../exercise2/">3.2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise3/">3.3</a>
+    <a href="../exercise3/">3.3</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise4/">3.4</a>
+    <a href="../exercise4/">3.4</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../chapter3/exercise5/">3.5</a>
+    <a href="../exercise5/">3.5</a>
 </li>
 
                         
                             
-<li >
-    <a href="../../chapter3/exercise6/">3.6</a>
+<li class="active">
+    <a href="./">3.6</a>
 </li>
 
                         
@@ -628,73 +628,73 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">10 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../exercise1/">10.1</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">10.2</a>
+    <a href="../../chapter10/exercise1/">10.1</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise3/">10.3</a>
+    <a href="../../chapter10/exercise2/">10.2</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise4/">10.4</a>
+    <a href="../../chapter10/exercise3/">10.3</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise5/">10.5</a>
+    <a href="../../chapter10/exercise4/">10.4</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise6/">10.6</a>
+    <a href="../../chapter10/exercise5/">10.5</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise7/">10.7</a>
+    <a href="../../chapter10/exercise6/">10.6</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise8/">10.8</a>
+    <a href="../../chapter10/exercise7/">10.7</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise9/">10.9</a>
+    <a href="../../chapter10/exercise8/">10.8</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise10/">10.10</a>
+    <a href="../../chapter10/exercise9/">10.9</a>
 </li>
 
                         
                             
 <li >
-    <a href="../exercise11/">10.11</a>
+    <a href="../../chapter10/exercise10/">10.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise11/">10.11</a>
 </li>
 
                         
@@ -719,12 +719,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../exercise1/">
+                        <a rel="next" href="../exercise5/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../exercise3/">
+                        <a rel="prev" href="../../chapter4/exercise1/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -740,12 +740,23 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-36">Exercise 3.6</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 10 will be out in June 2018.</p></div>
+<h1 id="exercise-36">Exercise 3.6</h1>
+<p>The least squares line is given by:</p>
+<span>\[\hat{y} = \hat{\beta_0} + \hat{\beta_1} \times x\]</span><p>where <span>\(\hat{\beta_0}\)</span> and <span>\(\hat{\beta_1}\)</span> are the least squares coefficient estimates for simple linear regression.</p>
+<p>By definition, <span>\(\hat{\beta_0}\)</span> is:</p>
+<span>\[\hat{\beta_0} = \bar{y} - \hat{\beta_1} \times \bar{x}\]</span><p>where <span>\(\bar{y}\)</span> and <span>\(\bar{x}\)</span> are the average values of <span>\(y\)</span> and <span>\(x\)</span>, respectively.</p>
+<p>Since we want to know if the least squares line always passes through the point (<span>\(\bar{x}\)</span>, <span>\(\bar{y}\)</span>), all we have to do is to substitute (<span>\(\bar{x}\)</span>, <span>\(\bar{y}\)</span>) into the first equation above and see if the condition is satisfied. We get:</p>
+<p><span>\(<span>\(\bar{y} = \hat{\beta_0} + \hat{\beta_1} \times \bar{x}\)</span>\)</span>,</p>
+<p>and substituting the expression above for <span>\(\hat{\beta_0}\)</span>, we obtain:</p>
+<p><span>\(<span>\(\bar{y} = \bar{y} - \hat{\beta_1} \times \bar{x} + \hat{\beta_1} \times \bar{x}\)</span>\)</span>.</p>
+<p>Since this is always true, we conclude that the least squares line always passes through the point (<span>\(\bar{x}\)</span>, <span>\(\bar{y}\)</span>). </p></div>
         
     </div>
 
