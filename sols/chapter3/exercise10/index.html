@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    <title>3.10 - Statistical Learning with Python</title>
+
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise1/">2.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise2/">2.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise3/">2.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise4/">2.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise5/">2.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise6/">2.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise7/">2.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise8/">2.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise9/">2.9</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter2/exercise10/">2.10</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../exercise1/">3.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise2/">3.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise3/">3.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise4/">3.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise5/">3.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise6/">3.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise7/">3.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise8/">3.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise9/">3.9</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">3.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise11/">3.11</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise12/">3.12</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise13/">3.13</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise14/">3.14</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../exercise15/">3.15</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise1/">4.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise2/">4.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise3/">4.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise4/">4.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise5/">4.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise6/">4.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise7/">4.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise8/">4.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise9/">4.9</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise10/">4.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise11/">4.11</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise12/">4.12</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter4/exercise13/">4.13</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise1/">5.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise2/">5.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise3/">5.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise4/">5.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise5/">5.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise6/">5.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise7/">5.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise8/">5.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter5/exercise9/">5.9</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">6 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise1/">6.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise2/">6.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise3/">6.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise4/">6.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise5/">6.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise6/">6.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise7/">6.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise8/">6.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise9/">6.9</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise10/">6.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter6/exercise11/">6.11</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">7 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise1/">7.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise2/">7.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise3/">7.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise4/">7.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise5/">7.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise6/">7.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise7/">7.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise8/">7.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise9/">7.9</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise10/">7.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise11/">7.11</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter7/exercise12/">7.12</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">8 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise1/">8.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise2/">8.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise3/">8.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise4/">8.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise5/">8.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise6/">8.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise7/">8.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise8/">8.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise9/">8.9</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise10/">8.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise11/">8.11</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter8/exercise12/">8.12</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">9 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise1/">9.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise2/">9.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise3/">9.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise4/">9.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise5/">9.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise6/">9.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise7/">9.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter9/exercise8/">9.8</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">10 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise1/">10.1</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise2/">10.2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise3/">10.3</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise4/">10.4</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise5/">10.5</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise6/">10.6</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise7/">10.7</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise8/">10.8</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise9/">10.9</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise10/">10.10</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chapter10/exercise11/">10.11</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../about/">About</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../exercise9/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../exercise11/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#exercise-310">Exercise 3.10</a></li>
+        
+            <li class="second-level"><a href="#a">(a)</a></li>
+            
+        
+            <li class="second-level"><a href="#b">(b)</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#d">(d)</a></li>
+        
+    
+        <li class="first-level "><a href="#e">(e)</a></li>
+        
+    
+        <li class="first-level "><a href="#f">(f)</a></li>
+        
+    
+        <li class="first-level "><a href="#g">(g)</a></li>
+        
+    
+        <li class="first-level "><a href="#h">(h)</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="exercise-310">Exercise 3.10</h1>
+<pre><code class="python">import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import statsmodels.formula.api as smf #statsmodels is a Python module for statistics
+
+%matplotlib inline
+</code></pre>
+
+<pre><code class="python">url = 'https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/ISLR/Carseats.csv '
+df = pd.read_csv(url,index_col=0)
+</code></pre>
+
+<pre><code class="python">df.head()
+</code></pre>
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sales</th>
+      <th>CompPrice</th>
+      <th>Income</th>
+      <th>Advertising</th>
+      <th>Population</th>
+      <th>Price</th>
+      <th>ShelveLoc</th>
+      <th>Age</th>
+      <th>Education</th>
+      <th>Urban</th>
+      <th>US</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>9.50</td>
+      <td>138</td>
+      <td>73</td>
+      <td>11</td>
+      <td>276</td>
+      <td>120</td>
+      <td>Bad</td>
+      <td>42</td>
+      <td>17</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11.22</td>
+      <td>111</td>
+      <td>48</td>
+      <td>16</td>
+      <td>260</td>
+      <td>83</td>
+      <td>Good</td>
+      <td>65</td>
+      <td>10</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.06</td>
+      <td>113</td>
+      <td>35</td>
+      <td>10</td>
+      <td>269</td>
+      <td>80</td>
+      <td>Medium</td>
+      <td>59</td>
+      <td>12</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.40</td>
+      <td>117</td>
+      <td>100</td>
+      <td>4</td>
+      <td>466</td>
+      <td>97</td>
+      <td>Medium</td>
+      <td>55</td>
+      <td>14</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4.15</td>
+      <td>141</td>
+      <td>64</td>
+      <td>3</td>
+      <td>340</td>
+      <td>128</td>
+      <td>Bad</td>
+      <td>38</td>
+      <td>13</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="a">(a)</h2>
+<pre><code class="python"># fit regression model
+mod = smf.ols(formula='Sales ~ Price + Urban + US',data=df)
+res = mod.fit()
+res.summary()
+</code></pre>
+
+<table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>          <td>Sales</td>      <th>  R-squared:         </th> <td>   0.239</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.234</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   41.52</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Fri, 08 Dec 2017</td> <th>  Prob (F-statistic):</th> <td>2.39e-23</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>09:49:21</td>     <th>  Log-Likelihood:    </th> <td> -927.66</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   400</td>      <th>  AIC:               </th> <td>   1863.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   396</td>      <th>  BIC:               </th> <td>   1879.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     3</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+
+<table class="simpletable">
+<tr>
+        <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>    <td>   13.0435</td> <td>    0.651</td> <td>   20.036</td> <td> 0.000</td> <td>   11.764</td> <td>   14.323</td>
+</tr>
+<tr>
+  <th>Urban[T.Yes]</th> <td>   -0.0219</td> <td>    0.272</td> <td>   -0.081</td> <td> 0.936</td> <td>   -0.556</td> <td>    0.512</td>
+</tr>
+<tr>
+  <th>US[T.Yes]</th>    <td>    1.2006</td> <td>    0.259</td> <td>    4.635</td> <td> 0.000</td> <td>    0.691</td> <td>    1.710</td>
+</tr>
+<tr>
+  <th>Price</th>        <td>   -0.0545</td> <td>    0.005</td> <td>  -10.389</td> <td> 0.000</td> <td>   -0.065</td> <td>   -0.044</td>
+</tr>
+</table>
+
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 0.676</td> <th>  Durbin-Watson:     </th> <td>   1.912</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.713</td> <th>  Jarque-Bera (JB):  </th> <td>   0.758</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.093</td> <th>  Prob(JB):          </th> <td>   0.684</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.897</td> <th>  Cond. No.          </th> <td>    628.</td>
+</tr>
+</table>
+
+<h2 id="b">(b)</h2>
+<p><b>Interpretation</b>
+<em> <b>Urban.</b> This coefficient is not statistically significant, suggesting that there is no relationship between this variable and the sales.
+</em> <b>US.</b> Qualitative variable with positive relationship. This means that when the observation is US, there will be a tendency for higher sales values. On average, if a store is located in the US, it will sell 1201 more units, approximately.
+* <b>Price.</b> Quantitative variable with negative relationship. This means that the higher the prices, the lower the sales. On average, for every dollar that the price increases sales will drop by 55 units, approximately.</p>
+<p># (c)</p>
+<span>\[
+Sales = 13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price =
+\begin{cases} 
+      13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price &amp; Urban=1, US=1 \\
+      13.0435-0.0219 \times Urban + 1.2006 \times Price &amp; Urban=1, US=0 \\
+      13.0435+1.2006 \times US - 0.0545 \times Price &amp; Urban=0, US=1 \\
+      13.0435- 0.0545 \times Price &amp; Urban=0, US=0
+\end{cases}
+\]</span><h1 id="d">(d)</h1>
+<p>From the p-values in the summary above, we can reject the null hypothesis for the intercept, US and Price, but not for Urban.</p>
+<h1 id="e">(e)</h1>
+<pre><code class="python">mod = smf.ols(formula='Sales ~ Price + US',data=df)
+res = mod.fit()
+print(res.summary())
+</code></pre>
+
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Sales   R-squared:                       0.239
+Model:                            OLS   Adj. R-squared:                  0.235
+Method:                 Least Squares   F-statistic:                     62.43
+Date:                Fri, 08 Dec 2017   Prob (F-statistic):           2.66e-24
+Time:                        09:49:21   Log-Likelihood:                -927.66
+No. Observations:                 400   AIC:                             1861.
+Df Residuals:                     397   BIC:                             1873.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     13.0308      0.631     20.652      0.000      11.790      14.271
+US[T.Yes]      1.1996      0.258      4.641      0.000       0.692       1.708
+Price         -0.0545      0.005    -10.416      0.000      -0.065      -0.044
+==============================================================================
+Omnibus:                        0.666   Durbin-Watson:                   1.912
+Prob(Omnibus):                  0.717   Jarque-Bera (JB):                0.749
+Skew:                           0.092   Prob(JB):                        0.688
+Kurtosis:                       2.895   Cond. No.                         607.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</code></pre>
+<h1 id="f">(f)</h1>
+<p>To compare how well the models fit, we can consider the value of R-squared. R-squared is the coefficient of determination. The coefficient of determination measures how much of the variance can be explained by the independent variables considered in the model.</p>
+<p>Since R-squared has the same value, namely 0.239, for both models we can conclude that the strictly smaller model (e), is a better model since it uses less variables for the same value of R-squared. This can also be seen in the value of the adjusted R-squared which is smaller for (e). In any case neither model fits the data very well given the low value of R-squared.</p>
+<h1 id="g">(g)</h1>
+<p>For linear regression, the 95% confidence interval for the coefficients approximately takes the form:</p>
+<span>\[ \hat{\beta} \pm 2 \times SE(\hat{\beta})\]</span><p>where <span>\(SE\)</span> is the standard error of the coefficient <span>\(\hat{\beta}\)</span>.</p>
+<pre><code class="python"># confidence interval for intercept
+intercept_coef = 13.0308
+intercept_stderr = .631
+
+us_coef = 1.1996
+us_stderr = .258
+
+price_coef = -.0545
+price_stderr = .005
+
+print('95%% confidence interval for Intercept: [ %2.4f; %2.4f] ' % (intercept_coef-2*intercept_stderr, intercept_coef+2*intercept_stderr))
+print('95%% confidence interval for Intercept: [ %2.4f; %2.4f] ' % (us_coef-2*us_stderr, us_coef+2*us_stderr))
+print('95%% confidence interval for Intercept: [ %2.4f; %2.4f] ' % (price_coef-2*price_stderr, price_coef+2*price_stderr))
+</code></pre>
+
+<pre><code>95% confidence interval for Intercept: [ 11.7688; 14.2928] 
+95% confidence interval for Intercept: [ 0.6836; 1.7156] 
+95% confidence interval for Intercept: [ -0.0645; -0.0445]
+</code></pre>
+<p>As we can check this does not precisely equal the values in the summary table above. This is because of the approximation mentioned in the footnote on page 66 of the text.</p>
+<h1 id="h">(h)</h1>
+<p>To investigate the presence of outliers or high leverage points, we analyse a plot of standardized residuals against leverages.</p>
+<pre><code class="python">import statsmodels.formula.api as smf
+from statsmodels.graphics.gofplots import ProbPlot
+
+plt.style.use('seaborn') # pretty matplotlib plots
+plt.rc('font', size=14)
+plt.rc('figure', titlesize=18)
+plt.rc('axes', labelsize=15)
+plt.rc('axes', titlesize=18)
+
+model_f = 'Sales ~ Price + US'
+
+df.reset_index(drop=True, inplace=True)
+
+model = smf.ols(formula=model_f, data=df)
+
+model_fit = model.fit()
+
+# fitted values (need a constant term for intercept)
+model_fitted_y = model_fit.fittedvalues
+
+# model residuals
+model_residuals = model_fit.resid
+
+# normalized residuals
+model_norm_residuals = model_fit.get_influence().resid_studentized_internal
+
+# absolute squared normalized residuals
+model_norm_residuals_abs_sqrt = np.sqrt(np.abs(model_norm_residuals))
+
+# absolute residuals
+model_abs_resid = np.abs(model_residuals)
+
+# leverage, from statsmodels internals
+model_leverage = model_fit.get_influence().hat_matrix_diag
+
+# cook's distance, from statsmodels internals
+model_cooks = model_fit.get_influence().cooks_distance[0]
+</code></pre>
+
+<pre><code class="python">plot_lm_4 = plt.figure(4)
+plot_lm_4.set_figheight(8)
+plot_lm_4.set_figwidth(12)
+
+plt.scatter(model_leverage, model_norm_residuals, alpha=0.5)
+sns.regplot(model_leverage, model_norm_residuals, 
+            scatter=False, 
+            ci=False, 
+            lowess=True,
+            line_kws={'color': 'red', 'lw': 1, 'alpha': 0.8})
+
+plot_lm_4.axes[0].set_xlim(0, 0.20)
+plot_lm_4.axes[0].set_ylim(-3, 5)
+plot_lm_4.axes[0].set_title('Residuals vs Leverage')
+plot_lm_4.axes[0].set_xlabel('Leverage')
+plot_lm_4.axes[0].set_ylabel('Standardized Residuals')
+
+# annotations
+leverage_top_3 = np.flip(np.argsort(model_cooks), 0)[:3]
+
+for i in leverage_top_3:
+    plot_lm_4.axes[0].annotate(i, 
+                               xy=(model_leverage[i], 
+                                   model_norm_residuals[i]))
+
+# shenanigans for cook's distance contours
+def graph(formula, x_range, label=None, ls='-'):
+    x = x_range
+    y = formula(x)
+    plt.plot(x, y, label=label, lw=1, ls=ls, color='red')
+
+p = len(model_fit.params) # number of model parameters
+
+graph(lambda x: np.sqrt((0.5 * p * (1 - x)) / x), 
+      np.linspace(0.001, 0.200, 50), 
+      'Cook\'s distance = .5', ls='--') # 0.5 line
+
+graph(lambda x: np.sqrt((1 * p * (1 - x)) / x), 
+      np.linspace(0.001, 0.200, 50), 'Cook\'s distance = 1', ls=':') # 1 line
+
+plt.legend(loc='upper right');
+</code></pre>
+
+<p><img alt="png" src="../03_10_files/03_10_23_0.png" /></p>
+<p>From this plot we can that no outliers (all less than 3). Since <span>\((p+1)/n=3/400=0.0075\)</span>, we can see that there a few candidates for high leverage points, although every point is well below a Cook's distance of 1.</p>
+<p>So on the whole this indicates that there are no outliers, but that there are some high leverage points although likely not very influential.</p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '../../..';
+    </script>
+    <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+    <script src="../../../js/base.js"></script>
+    <script src="../../../mathjax-config.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
