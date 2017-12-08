@@ -794,12 +794,37 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-45">Exercise 4.5</a></li>
+        
+            <li class="second-level"><a href="#a">(a)</a></li>
+            
+        
+            <li class="second-level"><a href="#b">(b)</a></li>
+            
+        
+            <li class="second-level"><a href="#c">(c)</a></li>
+            
+        
+            <li class="second-level"><a href="#d">(d)</a></li>
+            
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 4 will be out in December 2017.</p></div>
+<h1 id="exercise-45">Exercise 4.5</h1>
+<h2 id="a">(a)</h2>
+<p>Regardless of the Bayes decision boundary, we expect QDA to perform better than LDA on the training set. This is because QDA is more flexible which leads to a closer fit. However if the Bayes decision boundary is linear, the additional flexibility of QDA leads to overfit, and LDA is expected to perform better than QDA on the test set.</p>
+<h2 id="b">(b)</h2>
+<p>As mentioned in the previous paragraph, due to the additional flexibility we expect QDA to perform better than LDA on the training set. If the Bayes decision boundary is non-linear we expect that QDA will also perform better on the test set, since the additional flexibility allows it to capture at least some of the non-linearity. In other words, LDA is biased leading to a worse performance on the test set (QDA could be biased as well depending on the nature of the non-linearity of the Bayes decision boundary, but it will be less so in general).</p>
+<h2 id="c">(c)</h2>
+<p>In both cases of linear and non-linear Bayes decision boundary we expect the performance of QDA to improve relative to LDA, as <span>\(n\)</span> increases.
+In the linear boundary case, QDA will have a worse performance on the test set since its excessive flexibility will cause it to overfit, but <a href="https://www.youtube.com/watch?v=DQWI1kvmwRg">this overfitting</a> will decrease as <span>\(n\)</span> increases as the variance is reduced, and QDA will improve relative to LDA.
+For a non-linear Bayes decision boundary, LDA is biased and will not improve significantly past a certain sample size. QDA on the other hand, will see its variance reduced while benefitting from a more flexible model that captures the underlying non-linearity better leading to a closer fit.</p>
+<p>In general, as <span>\(n\)</span> increases the more flexible model (QDA) sees its fit improve as the variance is reduced with the increasing sample size.</p>
+<h2 id="d">(d)</h2>
+<p>False. For a linear Bayes decision boundary, QDA is too flexible compared to LDA and the noise in the data will cause it to overfit. As the sample size increases the overfitting is reduced, but in general we still expect LDA to better since it is unbiased and less prone to fit the noise.</p></div>
         
     </div>
 

@@ -794,12 +794,26 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-43">Exercise 4.3</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 4 will be out in December 2017.</p></div>
+<h1 id="exercise-43">Exercise 4.3</h1>
+<p>This proceeds in much the same way as for the LDA case, with the additional consideration that the variance parameters are now different for each class. This means that we will not be able to dispose of these terms in the final expression which, it turns out, makes us pick up terms quadratic in x. So starting from Bayes' theorem </p>
+<span>\[ p_k(x) = \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}  ,\]</span><p>we substitute with the normal density for each class:</p>
+<span>\[ f_k(x) \frac{1}{\sqrt{2\pi}\sigma_k } \exp \left( - \frac{1}{2\sigma_k^2} (x-\mu_k)^2\right)   .\]</span><p>We obtain the following expression</p>
+<span>\[ p_k(x) = \frac{\pi_k \frac{1}{\sqrt{2\pi}\sigma_k } \exp \left( - \frac{1}{2\sigma_k^2 } (x-\mu_k)^2\right) } { \sum_{l=1}^K \pi_l \frac{1}{\sqrt{2\pi}\sigma_l } \exp \left( \frac{1}{2\sigma_l^2 } (x-\mu_k)^2\right)}. \]</span><p>for which we have to find class <span>\(k\)</span> that maximizes this expression. Following the reasoning from the previous exercise, we obtain </p>
+<span>\[\begin{align}
+\underset{k}{\operatorname{arg max}} p_k(x) &amp; =  \underset{k}{\operatorname{arg max}} \pi_k \frac{1}{\sqrt{2\pi}\sigma_k } \exp \left( - \frac{1}{2\sigma_k^2 } (x-\mu_k)^2\right) = \\
+&amp; = \underset{k}{\operatorname{arg max}} \log \left(  \pi_k \frac{1}{\sqrt{2\pi}\sigma_k } \exp \left( - \frac{1}{2\sigma_k^2 } (x-\mu_k)^2\right)\right)  = \\
+&amp; = \underset{k}{\operatorname{arg max}} \log(\pi_k) - \log(\sqrt{2\pi}\sigma_k)  - \frac{1}{2\sigma_k^2 } (x-\mu_k)^2 = \\
+&amp; = \underset{k}{\operatorname{arg max}} \log(\pi_k) - \frac{1}{2\sigma_k^2 } (x^2 - 2x \mu_k + \mu_k^2) = \\
+&amp; = \underset{k}{\operatorname{arg max}}  - \frac{\mu_k^2}{2\sigma_k^2 } +  \log(\pi_k)  + x \cdot \frac{\mu_k}{\sigma_k^2} - x^2 \cdot \frac{1}{2\sigma_k^2} = \\
+&amp; = \underset{k}{\operatorname{arg max}} \delta_k(x),
+\end{align}\]</span><p>It is clear that this simplified expression in quadratic in x (hence the name - quadratic discriminant analysis), since the variance is in general different for each class, and we cannot reduce it further.</p></div>
         
     </div>
 

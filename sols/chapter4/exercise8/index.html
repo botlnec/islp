@@ -794,12 +794,21 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-48">Exercise 4.8</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 4 will be out in December 2017.</p></div>
+<h1 id="exercise-48">Exercise 4.8</h1>
+<p>We should prefer the method that has a lower error rate on the test data because this shows how well the model works on unseen data.
+In other words, choosing the model with the lowest error rate on the test data means that we're choosing the model with better prediction capacity.</p>
+<p>In this case, the error rate on test data for the logistic regression is explicit: 30%. For the 1-nearest neighbor we have to do some computations.</p>
+<p>We know that when we use the 1-nearest neighbor, the average error rate is 18%. This error (<span>\(\varepsilon\)</span>) is averaged over both test and training sets, which means that:</p>
+<span>\[ \frac{\varepsilon_{training} + \varepsilon_{test}}{2} = 0.18 \Leftrightarrow \varepsilon_{test} = 2 \times 0.18 - \varepsilon_{training}\]</span><p>For a 1-nearest neighbor model, we have <span>\(\varepsilon_{training} = 0\)</span>. This happens because for any training example, its nearest neighbor is always going to be itself.
+Therefore:</p>
+<span>\[ \varepsilon_{test} = 2 \times 0.18 - \varepsilon_{training} \Leftrightarrow \varepsilon_{test} = 0.36 - 0 \Leftrightarrow \varepsilon_{test} = 0.36\]</span><p>The method we should prefer to use for classification of new observations is the <b>logistic regression</b> method, even though its error rate on the training data is larger than the one for the 1-nearest neighbor model (18% vs. 0%).</p></div>
         
     </div>
 

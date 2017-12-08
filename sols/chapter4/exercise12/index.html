@@ -794,12 +794,148 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-412">Exercise 4.12</a></li>
+        
+            <li class="second-level"><a href="#a">(a)</a></li>
+            
+        
+            <li class="second-level"><a href="#b">(b)</a></li>
+            
+        
+            <li class="second-level"><a href="#c">(c)</a></li>
+            
+        
+            <li class="second-level"><a href="#d">(d)</a></li>
+            
+        
+            <li class="second-level"><a href="#e">(e)</a></li>
+            
+        
+            <li class="second-level"><a href="#f">(f)</a></li>
+            
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 4 will be out in December 2017.</p></div>
+<h1 id="exercise-412">Exercise 4.12</h1>
+<pre><code class="python">import matplotlib.pyplot as plt
+import numpy as np
+
+%matplotlib inline
+</code></pre>
+
+<h2 id="a">(a)</h2>
+<pre><code class="python">def Power():
+    print(2**3)
+</code></pre>
+
+<pre><code class="python">Power()
+</code></pre>
+
+<pre><code>8
+</code></pre>
+<h2 id="b">(b)</h2>
+<pre><code class="python">def Power2(x,a):
+    print(x**a)
+</code></pre>
+
+<pre><code class="python">Power2(3,8)
+</code></pre>
+
+<pre><code>6561
+</code></pre>
+<h2 id="c">(c)</h2>
+<pre><code class="python">Power2(10,3)
+</code></pre>
+
+<pre><code>1000
+</code></pre>
+<pre><code class="python">Power2(8,17)
+</code></pre>
+
+<pre><code>2251799813685248
+</code></pre>
+<pre><code class="python">Power2(131,3)
+</code></pre>
+
+<pre><code>2248091
+</code></pre>
+<h2 id="d">(d)</h2>
+<pre><code class="python">def Power3(x,a):
+    result = x**a
+    return result
+</code></pre>
+
+<h2 id="e">(e)</h2>
+<pre><code class="python">def Plot(log=''):
+    x = np.arange(1,10)
+    y = Power3(x,2)
+
+    #create plot
+    fig, ax = plt.subplots()
+
+    #config plot
+    ax.set_xlabel('x')
+    ax.set_ylabel('y=x^2')
+    ax.set_title('Power3()')
+
+    #change scale according to axis
+    if log == 'x':
+        ax.set_xscale('log')
+        ax.set_xlabel('log(x)')
+    if log == 'y':
+        ax.set_yscale('log')
+        ax.set_ylabel('log(y=x^2)')
+    if log == 'xy':
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        ax.set_xlabel('log(x)')
+        ax.set_ylabel('log(y=x^2)')
+
+    #draw plot
+    ax.plot(x, y)
+</code></pre>
+
+<pre><code class="python">Plot(log='xy')
+</code></pre>
+
+<p><img alt="png" src="../04_12_files/04_12_16_0.png" /></p>
+<h2 id="f">(f)</h2>
+<pre><code class="python">def PlotPower(start,end,power,log=''):
+    x = np.arange(start,end)
+    y = np.power(x,end)
+
+    #create plot
+    fig, ax = plt.subplots()
+
+    #config plot
+    ax.set_xlabel('x')
+    ax.set_ylabel('y=x^2')
+    ax.set_title('PlotPower()')
+
+    #change scale according to axis
+    if log == 'x':
+        ax.set_xscale('log')
+        ax.set_xlabel('log(x)')
+    if log == 'y':
+        ax.set_yscale('log')
+        ax.set_ylabel('log(y=x^2)')
+    if log == 'xy':
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        ax.set_xlabel('log(x)')
+        ax.set_ylabel('log(y=x^2)')
+
+    #draw plot
+    ax.plot(x, y)
+</code></pre>
+
+<pre><code class="python">PlotPower(1,10,3)
+</code></pre>
+
+<p><img alt="png" src="../04_12_files/04_12_19_0.png" /></p></div>
         
     </div>
 

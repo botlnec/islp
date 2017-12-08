@@ -794,12 +794,27 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-47">Exercise 4.7</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 4 will be out in December 2017.</p></div>
+<h1 id="exercise-47">Exercise 4.7</h1>
+<p>From the statement of the exercise, we know that</p>
+<span>\[\begin{align}
+\ Pr(X \mid Y = yes) &amp; = f_{yes}(x)  = N(\mu = 10, \sigma^2 = 36),\\
+Pr(X \mid Y = no) &amp; = f_{no}(x) = N(\mu = 0, \sigma^2 =36),\\
+Pr(Y = yes) &amp; = \pi_{yes} = 0.8,\\
+Pr(Y = no)&amp;  = \pi_{no} = 0.2.\\
+\end{align}\]</span><p>We want to calculate <span>\(Pr(Y = "Yes \mid X = 4)\)</span>. Using Bayes' theorem and substituting the expressions above:</p>
+<span>\[\begin{align}
+\ \pi_{yes}(x) &amp; =  \frac{\pi_{yes} f_{yes}(x) }{ \pi_{yes} f_{yes}(x) + \pi_{no} f_{no}(x)},\\
+\ \pi_{yes}(4) &amp; =  \frac{\pi_{yes} f_{yes}(4) }{ \pi_{yes} f_{yes}(4) + \pi_{no} f_{no}(4)} = \\
+&amp; = \frac{0.8 e^{\left( -\frac{1}{2\times 36}(4-10)^2 \right)} }{  0.8 e^{\left( -\frac{1}{2\times 36}(4-10)^2 \right)} + 0.2 e^{\left( -\frac{1}{2\times 36}(4-0)^2 \right)}} \\
+&amp; = 0.7571.\\
+\end{align}\]</span></div>
         
     </div>
 
