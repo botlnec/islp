@@ -1,11 +1,4 @@
 
-# 2DO
-
-* Paraphrase text about outliers and high leverage points. It's just copy/paste
-* Check (g) carefully. I answered in a qualitative way. I believe it's correct but it's different from regular solutions.
-* JR: in (g) the analysis done was univariate, not bivariate as indicated, should be corrected either way.
-* JR: for me, all good, except revision of (g)
-
 # Exercise 3.14
 
 
@@ -14,16 +7,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import statsmodels.api as sm #to use statsmodel
-import statsmodels.formula.api as smf #to use statsmodel with R-style formulas
+import statsmodels.api as sm # To use statsmodel
+import statsmodels.formula.api as smf # To use statsmodel with R-style formulas
 from statsmodels.stats import outliers_influence
+from sklearn.linear_model import LinearRegression
 
 %matplotlib inline
 ```
-
-    /Users/disciplina/anaconda3/envs/islp/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
-      from pandas.core import datetools
-
 
 # (a)
 
@@ -48,7 +38,7 @@ $$
 
 
 ```python
-# get correlations
+# Get correlations
 np.corrcoef(x1,x2)
 ```
 
@@ -64,29 +54,29 @@ The correlation coefficient between $X_1$ and $X_2$ is <b>0.819</b>.
 
 
 ```python
-# draw scatterplot
+# Draw scatterplot
 plt.scatter(x1,x2);
 ```
 
 
-![png](03_14_files/03_14_9_0.png)
+![png](03_14_files/03_14_8_0.png)
 
 
 # (c)
 
 
 ```python
-# define data
+# Define data
 X = pd.DataFrame({'x1':x1, 'x2':x2})
-X = sm.add_constant(X) # no constant is added by the model unless we're using formulas, so we have to add it
+X = sm.add_constant(X)  # No constant is added by the model unless we're using formulas, so we have to add it
 
-# create model
+# Create model
 model = sm.OLS(y, X)
 
-# fit regression model
+# Fit regression model
 results = model.fit()
 
-# print results
+# Print results
 results.summary()
 ```
 
@@ -105,10 +95,10 @@ results.summary()
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   38.74</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 30 Nov 2017</td> <th>  Prob (F-statistic):</th> <td>4.31e-13</td>
+  <th>Date:</th>             <td>Fri, 08 Dec 2017</td> <th>  Prob (F-statistic):</th> <td>4.31e-13</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>20:25:36</td>     <th>  Log-Likelihood:    </th> <td> -123.67</td>
+  <th>Time:</th>                 <td>09:50:56</td>     <th>  Log-Likelihood:    </th> <td> -123.67</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   100</td>      <th>  AIC:               </th> <td>   253.3</td>
@@ -168,7 +158,7 @@ These values are estimators of the true coefficients, which have the following v
 
 As we can see, there are some differences between the coefficients, especially in the case of $\hat{\beta_2}$ (0.7584 vs. 0.3). 
 
-<b> $H_0 : \beta_1 = 0$ </b>. The rejection of the null hypothesis depends on the t-statistic (t). In the case of $\beta_1$, this value is high. If the t-statistics is high, the p-value will be low. The p-value is the probability of observing any value equal to |t| or larger (P>|t|), assuming that the coefficient is zero. Thus, if the p-value is low we should <b>reject the null hypothesis and accept the alternative hypothesis</b>.
+<b> $H_0 : \beta_1 = 0$ </b>. The rejection of the null hypothesis depends on the t-statistic (t). In the case of $\beta_1$, this value is high. If the t-statistics is high, the p-value will be low. The p-value is the probability of observing any value equal to |t| or larger than (P>|t|), assuming that the coefficient is zero. Thus, if the p-value is low we should <b>reject the null hypothesis and accept the alternative hypothesis</b>.
 
 <b> $H_0 : \beta_2 = 0$ </b>. In this case the t-statistic is low (0.929) and the p-value is high (0.355). Accordingly, the <b>null hypothesis can't be rejected</b>.
 
@@ -178,16 +168,16 @@ A different way to approximate the equation using R-style formula in StatsModel.
 
 
 ```python
-# define data
-df = pd.DataFrame({'x1':x1, 'x2':x2, 'y':y}) # dataframe to be read like R; we don't need to add constant because we will use formulas
+# Define data
+df = pd.DataFrame({'x1':x1, 'x2':x2, 'y':y})  # We don't need to add constant because we will use formulas
 
-# create model
-mod = smf.ols(formula='y ~ x1 + x2', data=df) # R-style command
+# Create model
+mod = smf.ols(formula='y ~ x1 + x2', data=df)  # R-style command
 
-# fit model
+# Fit model
 res = mod.fit()
 
-# print results
+# Print results
 print (res.summary())
 ```
 
@@ -196,8 +186,8 @@ print (res.summary())
     Dep. Variable:                      y   R-squared:                       0.444
     Model:                            OLS   Adj. R-squared:                  0.433
     Method:                 Least Squares   F-statistic:                     38.74
-    Date:                Thu, 30 Nov 2017   Prob (F-statistic):           4.31e-13
-    Time:                        20:25:38   Log-Likelihood:                -123.67
+    Date:                Fri, 08 Dec 2017   Prob (F-statistic):           4.31e-13
+    Time:                        09:50:56   Log-Likelihood:                -123.67
     No. Observations:                 100   AIC:                             253.3
     Df Residuals:                      97   BIC:                             261.1
     Df Model:                           2                                         
@@ -225,13 +215,13 @@ This is an alternative solution using Scikit instead of StatsModel.
 
 
 ```python
-#create model
+# Create model
 lr = LinearRegression()
 
-#fit model
+# Fit model
 mod = lr.fit(X,y)
 
-#get coefficients
+# Get coefficients
 mod.coef_
 ```
 
@@ -259,8 +249,8 @@ print(results.summary())
     Dep. Variable:                      y   R-squared:                       0.439
     Model:                            OLS   Adj. R-squared:                  0.433
     Method:                 Least Squares   F-statistic:                     76.72
-    Date:                Thu, 30 Nov 2017   Prob (F-statistic):           5.93e-14
-    Time:                        20:25:39   Log-Likelihood:                -124.11
+    Date:                Fri, 08 Dec 2017   Prob (F-statistic):           5.93e-14
+    Time:                        09:50:56   Log-Likelihood:                -124.11
     No. Observations:                 100   AIC:                             252.2
     Df Residuals:                      98   BIC:                             257.4
     Df Model:                           1                                         
@@ -300,8 +290,8 @@ print(results.summary())
     Dep. Variable:                      y   R-squared:                       0.340
     Model:                            OLS   Adj. R-squared:                  0.333
     Method:                 Least Squares   F-statistic:                     50.53
-    Date:                Thu, 30 Nov 2017   Prob (F-statistic):           1.92e-10
-    Time:                        20:25:40   Log-Likelihood:                -132.23
+    Date:                Fri, 08 Dec 2017   Prob (F-statistic):           1.92e-10
+    Time:                        09:50:56   Log-Likelihood:                -132.23
     No. Observations:                 100   AIC:                             268.5
     Df Residuals:                      98   BIC:                             273.7
     Df Model:                           1                                         
@@ -332,29 +322,29 @@ The results <b>do not contradict</b>.
 What's happening here is a <b>collinearity</b> phenomenon.
 As suggested by the high correlation values and by the scatter plot (and, of course, from the generation of Y), we can linearly predict $x_1$ from $x_2$ (and vice-versa) with a substantial degree of accuracy. This is a clue of collinearity that is confirmed by the regression model. When both variables are combined in the same linear model, one of them loses explanatory power because the variance it explains is already being explained by the other variable. Accordingly, if considered individually, both variables lead to the rejection of the null hypothesis but, if considered together, one of the variables is dismissable.
 
-Finally, the values of the coefficients agree what we know from the underlying model. If one writes $X2$ in terms of $X1$, substitutes it in the model and adds both coefficients of $X1$, we get 2.15. This value is well within the confidence interval calculated in (d), namely [1.892; 3.001]. Likewise, for $X2$ the expected value of the coefficient is 4.3 which is inside the [2.600; 4.614] interval calculated in (e).
+Finally, the values of the coefficients agree with what we know from the underlying model. If one writes $X2$ in terms of $X1$, substitutes it in the model and adds both coefficients of $X1$, we get 2.15. This value is well within the confidence interval calculated in (d), namely [1.892; 3.001]. Likewise, for $X2$ the expected value of the coefficient is 4.3 which is inside the [2.600; 4.614] interval calculated in (e).
 
 # (g)
 
 
 ```python
-# add observation 
-x1 = np.append(x1, 0.1) #to x1
-x2 = np.append(x2, 0.8) #to x2
-y = np.append(y, 6) #to y
+# Add observation 
+x1 = np.append(x1, 0.1)  # To x1
+x2 = np.append(x2, 0.8)  # To x2
+y = np.append(y, 6)  # To y
 
-# add to dataframe (easier for outlier analysis plots)
-sample = {'x1': .1, 'x2': .8, 'y': 6} #create point
-df = df.append(sample, ignore_index=True) #append sample to existing dataframe
+# Add to dataframe (easier for outlier analysis plots)
+sample = {'x1': .1, 'x2': .8, 'y': 6}  # Create point
+df = df.append(sample, ignore_index=True)  # Append sample to existing dataframe
 ```
 
 ### Models analysis
 
 
 ```python
-# model (c)
+# Model (c)
 X = pd.DataFrame({'x1':x1, 'x2':x2})
-X = sm.add_constant(X) # no constant is added by the model unless we're using formulas, so we have to add it
+X = sm.add_constant(X)  # No constant is added by the model unless we're using formulas, so we have to add it
 
 model = sm.OLS(y, X)
 results = model.fit()
@@ -367,8 +357,8 @@ print(results.summary())
     Dep. Variable:                      y   R-squared:                       0.425
     Model:                            OLS   Adj. R-squared:                  0.414
     Method:                 Least Squares   F-statistic:                     36.26
-    Date:                Thu, 30 Nov 2017   Prob (F-statistic):           1.64e-12
-    Time:                        20:26:20   Log-Likelihood:                -129.50
+    Date:                Fri, 08 Dec 2017   Prob (F-statistic):           1.64e-12
+    Time:                        09:50:56   Log-Likelihood:                -129.50
     No. Observations:                 101   AIC:                             265.0
     Df Residuals:                      98   BIC:                             272.8
     Df Model:                           2                                         
@@ -392,9 +382,9 @@ print(results.summary())
 
 
 ```python
-# model (d)
+# Model (d)
 X = pd.DataFrame({'x1':x1})
-X = sm.add_constant(X) #no constant is added by the model unless we're using formulas, so we have to add it
+X = sm.add_constant(X)  # No constant is added by the model unless we're using formulas, so we have to add it
 
 model = sm.OLS(y, X)
 results = model.fit()
@@ -407,8 +397,8 @@ print(results.summary())
     Dep. Variable:                      y   R-squared:                       0.363
     Model:                            OLS   Adj. R-squared:                  0.357
     Method:                 Least Squares   F-statistic:                     56.46
-    Date:                Thu, 30 Nov 2017   Prob (F-statistic):           2.60e-11
-    Time:                        20:26:25   Log-Likelihood:                -134.68
+    Date:                Fri, 08 Dec 2017   Prob (F-statistic):           2.60e-11
+    Time:                        09:50:56   Log-Likelihood:                -134.68
     No. Observations:                 101   AIC:                             273.4
     Df Residuals:                      99   BIC:                             278.6
     Df Model:                           1                                         
@@ -431,9 +421,9 @@ print(results.summary())
 
 
 ```python
-# model (e)
+# Model (e)
 X = pd.DataFrame({'x2':x2})
-X = sm.add_constant(X) #no constant is added by the model unless we're using formulas, so we have to add it
+X = sm.add_constant(X)  # No constant is added by the model unless we're using formulas, so we have to add it
 
 model = sm.OLS(y, X)
 results = model.fit()
@@ -446,8 +436,8 @@ print(results.summary())
     Dep. Variable:                      y   R-squared:                       0.377
     Model:                            OLS   Adj. R-squared:                  0.370
     Method:                 Least Squares   F-statistic:                     59.84
-    Date:                Thu, 30 Nov 2017   Prob (F-statistic):           8.79e-12
-    Time:                        20:26:30   Log-Likelihood:                -133.59
+    Date:                Fri, 08 Dec 2017   Prob (F-statistic):           8.79e-12
+    Time:                        09:50:56   Log-Likelihood:                -133.59
     No. Observations:                 101   AIC:                             271.2
     Df Residuals:                      99   BIC:                             276.4
     Df Model:                           1                                         
@@ -469,7 +459,7 @@ print(results.summary())
 
 
 Effect on models:
-* <b>Model (c)</b>. R-squared decreased, which means that the prediction capacity of the model was reduced. The value of the regression coefficients changed: x1 coefficient decreased and x2 coefficient increased. As a consequence, x2 became the coefficient with higher value. The null hypothesis is now rejected in both variables.
+* <b>Model (c)</b>. R-squared decreased, which means that the predictive capacity of the model was reduced. The value of the regression coefficients changed: x1 coefficient decreased and x2 coefficient increased. As a consequence, x2 became the coefficient with higher value. The null hypothesis is now rejected in both variables.
 * <b>Model (d)</b>. The only significant change was the reduction of R-squared.
 * <b>Model (e)</b>. The only significant change was a small increase of R-squared.
 
@@ -479,15 +469,13 @@ Effect on models:
 
 An outlier is a point for which $y_i$ is far from the expected range predicted by the fit of the model. This raises the question of whether it is representative of the population.
 
-Outliers can be identified from a univariate, bivariate, or multivariate perspective based on the number of variables (characteristics) considered. The researcher should utilize as many of these perspectives as possible, looking for a consistent pattern across perspectives to identify outliers.
+Outliers can be identified from a univariate, bivariate, or multivariate perspective based on the number of variables (characteristics) considered. We should use as many perspectives as possible, looking for a consistent pattern across them to identify outliers.
    
-Cases that fall markedly outside the range of the other observations will be seen as isolated points in the scatterplot. A drawback of the bivariate method in general is the potentially large number of scatterplots that arise as the number of variables increases. For three variables, it is only three graphs for all pairwise comparisons. But for five variables, it takes 10 graphs, and for 10 variables it takes 45 scatterplots! Since this analysis doesn't involve more than two variables, we can perform all pairwise comparisons.
-
-
+Cases that fall markedly outside the range of other observations will be seen as isolated points in the scatterplot. A drawback of the bivariate method in general is the potentially large number of scatterplots that arise as the number of variables increases. For 3 variables, it is only 3 graphs for all pairwise comparisons. But for 5 variables, it takes 10 graphs, and for 10 variables it takes 45 scatterplots! Since this analysis doesn't involve more than 2 variables, we can perform all pairwise comparisons.
 
 <b>High leverage points</b>
 
-We just saw that outliers are observations for which the response yi is unusual given the predictor xi. In contrast, observations with high leverage have an unusual value for xi. In statistics and in particular in regression analysis, leverage is a measure of how far away the independent variable values of an observation are from those of the other observations.
+We just saw that outliers are observations for which the response $y_i$ is unusual given the predictor $x_i$. In contrast, observations with high leverage have an unusual value for $x_i$. In statistics, particularly in regression analysis, leverage is a measure of how far away the independent variable values of an observation are from those of the other observations.
 
 In a simple linear regression, high leverage observations are fairly easy to
 identify, since we can simply look for observations for which the predictor
@@ -497,56 +485,56 @@ But in a multiple linear regression with many predictors, it is possible to have
 
 
 ```python
-# bivariate analysis (x1,x2)
-sample = df.iloc[-1:] #to get the last observation
-other = df.iloc[:-1] #to get all the observations but the last
-ax = other.plot(kind='scatter',x='x1',y='x2', color='blue'); #plot all observations but the last in blue
-sample.plot(ax=ax, kind='scatter',x='x1',y='x2', color='red'); #plot last observation added in red
+# Bivariate analysis (x1,x2)
+sample = df.iloc[-1:]  # To get the last observation
+other = df.iloc[:-1]  # To get all the observations but the last
+ax = other.plot(kind='scatter',x='x1',y='x2', color='blue');  # Plot all observations but the last in blue
+sample.plot(ax=ax, kind='scatter',x='x1',y='x2', color='red');  # Plot last observation added in red
 ```
 
 
-![png](03_14_files/03_14_35_0.png)
+![png](03_14_files/03_14_34_0.png)
 
 
 * There is an unusual combination of predictor values, so it looks like an high leverage point.
 
-<b>Note:</b> we are not comparing predictors with responses nor evaluating if yi is far from the value predicted by the model. Therefore, it doesn't make sense to discuss if it's an outlier or not based on this plot.
+<b>Note:</b> we are not comparing predictors with responses nor evaluating if $y_i$ is far from the value predicted by the model. Therefore, it doesn't make sense to discuss if it's an outlier or not based on this plot.
 
 
 ```python
-# bivariate analysis (x1,y)
-sample = df.iloc[-1:] # to get the last observation
-other = df.iloc[:-1] # to get all the observations but the last
-ax = other.plot(kind='scatter',x='x1',y='y', color='blue'); # plot all observations but the last in blue
-sample.plot(ax=ax, kind='scatter',x='x1',y='y', color='red'); # plot last observation added in red
+# Bivariate analysis (x1,y)
+sample = df.iloc[-1:]  # To get the last observation
+other = df.iloc[:-1]  # To get all the observations but the last
+ax = other.plot(kind='scatter',x='x1',y='y', color='blue');  # Plot all observations but the last in blue
+sample.plot(ax=ax, kind='scatter',x='x1',y='y', color='red');  # Plot last observation added in red
 ```
 
 
-![png](03_14_files/03_14_37_0.png)
+![png](03_14_files/03_14_36_0.png)
 
 
 * The red point does not follow the trend, so it looks like an outlier.
-* The red point doesn't have an unusual x1 value, so it doesn't look like an high leverage point.
+* The red point doesn't have an unusual $x_1$ value, so it doesn't look like an high leverage point.
 
 
 ```python
-# bivariate analysis (x2,y)
-sample = df.iloc[-1:] # to get the last observation
-other = df.iloc[:-1] # to get all the observations but the last
-ax = other.plot(kind='scatter',x='x2',y='y', color='blue'); # plot all observations but the last in blue
-sample.plot(ax=ax, kind='scatter',x='x2',y='y', color='red'); # plot last observation added in red
+# Bivariate analysis (x2,y)
+sample = df.iloc[-1:]  # To get the last observation
+other = df.iloc[:-1]  # To get all the observations but the last
+ax = other.plot(kind='scatter',x='x2',y='y', color='blue');  # Plot all observations but the last in blue
+sample.plot(ax=ax, kind='scatter',x='x2',y='y', color='red');  # Plot last observation added in red
 ```
 
 
-![png](03_14_files/03_14_39_0.png)
+![png](03_14_files/03_14_38_0.png)
 
 
 * The red point follows the trend, so it doesn't look like an outlier.
-* The red point has an extreme x2 value, so it looks like an high leverage point.
+* The red point has an extreme $x_2$ value, so it looks like an high leverage point.
 
-<b>In summary:</b> the observation added influences significantly the model, in particular if we consider the regression model that includes x1 and x2. In this case, x2 passed from a neglected variable to a significant variable. This means that even being just 1  observation in 100, this observation reduced the existing phenomenon of collinearity. Also, the R-squared of the model reduced, which signifies a decrease in the model predicition capacity.
+<b>In summary:</b> the observation added influences significantly the model, in particular if we consider the regression model that includes $x_1$ and $x_2$. In this case, $x_2$ passed from a neglected variable to a significant variable. This means that even being just 1  observation in 100, this observation reduced the existing phenomenon of collinearity. Also, the R-squared of the model reduced, which signifies a decrease in the model predicition capacity.
 
-According to the scatter plots, the observation added seems to be both an outlier and and an high leverage point. This conclusion can be taken from the visual observation of the observation added when confronted with the remaining observations. The added observations shows an unusual combination of predictor values, extreme predictor values and a substantial different behaviour when compared with other observations in several cases
+According to the scatter plots, the observation added seems to be both an outlier and and an high leverage point. This conclusion can be taken from the visual observation of the observation added when confronted with the remaining observations. The added observations shows an unusual combination of predictor values, extreme predictor values and a substantial different behaviour when compared with other observations in several cases.
 
 ## References
 
