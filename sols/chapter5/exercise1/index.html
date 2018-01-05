@@ -794,12 +794,32 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="first-level active"><a href="#exercise-51">Exercise 5.1</a></li>
+        
+    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 5 will be out in January 2018.</p></div>
+<h1 id="exercise-51">Exercise 5.1</h1>
+<p>We will use the following properties of the variance:</p>
+<span>\[\begin{align}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\Var(X + Y)    &amp; = \Var(X)+\Var(Y) + 2\Cov(X,Y)\\
+\Var(\alpha X) &amp; = \alpha^2 \Var(X) \\
+\Cov(\alpha X, \beta Y) &amp; = \alpha \beta \Cov(X,Y)
+\end{align}\]</span><p>With these properties, we get:</p>
+<span>\[\begin{align}
+\Var(\alpha X + (1-\alpha) Y) &amp; = \Var(\alpha X)   + \Var((1-\alpha)Y)    + 2\Cov(\alpha X,(1-\alpha) Y)\\
+\                             &amp; = \alpha^2 \Var(X) + (1-\alpha)^2 \Var(Y) + 2\alpha\beta\Cov(X,Y)
+\end{align}\]</span><p>Now, we should find the minimum in the expression above. To do so, we differentiate the expression, equal it to 0 and solve for <span>\(\alpha\)</span>:</p>
+<span>\[\begin{align}
+\  0 &amp; = 2 \alpha\Var(X) - 2(1-\alpha) \Var(Y)  + 2(1-2\alpha)\Cov(X,Y) \Leftrightarrow \\
+\ \Leftrightarrow   0 &amp; = \alpha\Var(X) - (1-\alpha) \Var(Y)  + (1-2\alpha)\Cov(X,Y) \Leftrightarrow \\
+\ \Leftrightarrow   \alpha\Var(X) + \alpha\Var(Y) - 2\alpha\Cov(X,Y) &amp; =  \Var(Y)  -\Cov(X,Y) \Leftrightarrow \\
+\ \Leftrightarrow   \alpha &amp; =  \frac{\Var(Y)  -\Cov(X,Y)}{\Var(X) + \Var(Y) - 2\Cov(X,Y)} = \frac{\sigma^2_Y - \sigma_{XY}}{\sigma^2_X + \sigma^2_Y - 2\sigma_X\sigma_Y}\\
+\end{align}\]</span></div>
         
     </div>
 
