@@ -788,12 +788,89 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#exercise-92">Exercise 9.2</a></li>
+        <li class="first-level "><a href="#a">(a)</a></li>
+        <li class="first-level "><a href="#b">(b)</a></li>
+        <li class="first-level "><a href="#c">(c)</a></li>
+        <li class="first-level "><a href="#references">References</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 9 will be out in May 2018.</p></div>
+<h1 id="exercise-92">Exercise 9.2</h1>
+<pre><code class="python">import pandas as pd
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+</code></pre>
+
+<h1 id="a">(a)</h1>
+<p><span><span class="MathJax_Preview">(1+X_1)^2+(2-X_2)^2=4</span><script type="math/tex">(1+X_1)^2+(2-X_2)^2=4</script></span> is the equation of a circle. The circle equation is in the format <span><span class="MathJax_Preview">(x – h)^2 + (y – k)^2 = r^2</span><script type="math/tex">(x – h)^2 + (y – k)^2 = r^2</script></span>, where <em>h</em> and <em>k</em> are the center of the circle and <em>r</em> is the radius.</p>
+<pre><code class="python"># Draw circle
+circle =plt.Circle((-1,2), 2, color='r', fill=False)
+
+fig, ax = plt.subplots()
+
+ax.axis(&quot;equal&quot;)  # To avoid oval circles. Check the References.
+ax.add_artist(circle)
+ax.set_xlim((-10,10))
+ax.set_ylim((-10,10))
+</code></pre>
+
+<pre><code>(-10, 10)
+</code></pre>
+<p><img alt="png" src="../09_02_files/09_02_4_1.png" /></p>
+<h1 id="b">(b)</h1>
+<pre><code class="python"># Draw circle
+circle_background =plt.Circle((-1,2), 20, color='b')  # Way to fool matplotlib and have a colored background.
+circle =plt.Circle((-1,2), 2, color='r')
+
+fig, ax = plt.subplots()
+
+ax.axis(&quot;equal&quot;)  # To avoid oval circles. Check the References.
+ax.add_artist(circle_background)
+ax.add_artist(circle)
+ax.set_xlim((-10,10))
+ax.set_ylim((-10,10))
+plt.show()
+</code></pre>
+
+<p><img alt="png" src="../09_02_files/09_02_6_0.png" /></p>
+<ul>
+<li><span><span class="MathJax_Preview">(1+X_1)^2+(2-X_2)^2&gt;4</span><script type="math/tex">(1+X_1)^2+(2-X_2)^2>4</script></span> - Blue region.</li>
+<li><span><span class="MathJax_Preview">(1+X_1)^2+(2-X_2)^2 \leq 4</span><script type="math/tex">(1+X_1)^2+(2-X_2)^2 \leq 4</script></span> - Red region.</li>
+</ul>
+<h1 id="c">(c)</h1>
+<pre><code class="python"># Draw circle
+circle_background =plt.Circle((-1,2), 20, color='b')  # Way to fool matplotlib and have a colored background.
+circle =plt.Circle((-1,2), 2, color='r')
+
+fig, ax = plt.subplots()
+fig.set_size_inches(10, 9)
+
+ax.axis(&quot;equal&quot;)  # To avoid oval circles. Check the References.
+ax.add_artist(circle_background)
+ax.add_artist(circle)
+ax.set_xlim((-10,10))
+ax.set_ylim((-1,10))
+
+plt.annotate('X (0,0)', xy=(0,0), xytext=(0,0))
+plt.annotate('X (-1,1)', xy=(-1,1), xytext=(-1,1))
+plt.annotate('X (2,2)', xy=(2,2), xytext=(2,2))
+plt.annotate('X (3,8)', xy=(3,8), xytext=(3,8))
+plt.show()
+</code></pre>
+
+<p><img alt="png" src="../09_02_files/09_02_9_0.png" /></p>
+<ul>
+<li>Blue region - (0,0); (2,2); (3,8).</li>
+<li>Red region - (-1,1).</li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li>http://stackoverflow.com/questions/9215658/plot-a-circle-with-pyplot (how to draw a circle)</li>
+<li>http://stackoverflow.com/questions/9230389/why-is-matplotlib-plotting-my-circles-as-ovals/9232513#9232513 (solving matplot oval circles)</li>
+</ul></div>
         
     </div>
 
