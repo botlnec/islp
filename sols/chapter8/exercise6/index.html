@@ -788,12 +788,25 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#exercise-86">Exercise 8.6</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 8 will be out in Abril 2018.</p></div>
+<h1 id="exercise-86">Exercise 8.6</h1>
+<p>The algorithm to fit a regression tree is as follows:</p>
+<ol>
+<li>Use the recursive binary splitting to obtain a large tree. Consider a minimum number of observations in the terminal nodes as a criterion to stop the recursive binary splitting.</li>
+<li>Apply the cost complexity pruning to get the optimum subtree. The cost complexity pruning is defined as a function of <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>, which works as a tuning parameter. </li>
+<li>The tuning parameter <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is determined using the K-fold cross-validation. A training and a test set are then defined. In each fold, the training set is splitten applying the recursive binary splitting. To the resulting tree, the cost complexity pruning is applied. Then, for a different set of specific <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>s, the mean squared prediction error on the test set is evaluated. The results for the different folds and for the different <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>s are averaged, being <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> the value that minimizes the average error.</li>
+<li>Once we get the <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> value, we replace it in Step 2 equation to get the optimum subtree.</li>
+</ol>
+<p>Some important definitions:</p>
+<ul>
+<li><b>Subtree</b>. A tree that results from pruning a larger tree.</li>
+<li><b>Recursive binary splitting.</b> Top-down greedy approach to divide the data into distinct and non-overlapping regions. It is top-down because it begins at the top of the tree (at which point all observations belong to a single region) and then successively splits the predictor space; each split is indicated via two new branches further down on the tree. It is greedy because at each step of the tree-building process, the best split is made at that particular step, rather than looking ahead and picking a split that will lead to a better tree in some future step.</li>
+<li><b>Cost complexity pruning.</b> It is a way to get optimum subtrees. Mathematically, this is done adding a penalty term to the mean squared prediction error expression. This penalty term is governed by a tuning parameter, which controls the trade-off between the subtree’s complexity and its fit to the training data.</li>
+</ul></div>
         
     </div>
 
