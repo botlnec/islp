@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.11 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise10/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,31 +788,21 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-311">Exercise 3.11</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#c">(c)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#d">(d)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#e">(e)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#f">(f)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#references">References:</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -911,7 +896,7 @@ reg.summary()
 </tr>
 </table>
 
-<p>From the table above, we see that the coefficient estimate <span>\(\hat{\beta} = 2.1067\)</span> and the standard error of this coefficient estimate is 0.106. The t-statistic is equal to 19.792 and the p-value is close to 0 (less than 0.0005). We can therefore reject the null hypothesis and conclude that there is evidence for a relationship between x and y.</p>
+<p>From the table above, we see that the coefficient estimate <span><span class="MathJax_Preview">\hat{\beta} = 2.1067</span><script type="math/tex">\hat{\beta} = 2.1067</script></span> and the standard error of this coefficient estimate is 0.106. The t-statistic is equal to 19.792 and the p-value is close to 0 (less than 0.0005). We can therefore reject the null hypothesis and conclude that there is evidence for a relationship between x and y.</p>
 <h2 id="b">(b)</h2>
 <pre><code class="python">reg = smf.ols('x ~ y + 0', df).fit()
 reg.summary()
@@ -972,30 +957,30 @@ reg.summary()
 </tr>
 </table>
 
-<p>From the table above, we see that the coefficient estimate <span>\(\hat{\beta} = 0.3789\)</span> and the standard error of this coefficient estimate is 0.019. The t-statistic is equal to 19.792 and the p-value is close to 0 (less than 0.0005). We can therefore reject the null hypothesis and conclude that there is evidence for a relationship between x and y.</p>
+<p>From the table above, we see that the coefficient estimate <span><span class="MathJax_Preview">\hat{\beta} = 0.3789</span><script type="math/tex">\hat{\beta} = 0.3789</script></span> and the standard error of this coefficient estimate is 0.019. The t-statistic is equal to 19.792 and the p-value is close to 0 (less than 0.0005). We can therefore reject the null hypothesis and conclude that there is evidence for a relationship between x and y.</p>
 <h2 id="c">(c)</h2>
 <p>As we can see from the two tables above, the t-statistics are the same, which means that the p-values are the same. Why the t-statistics are the same is the subject of question (e) below.
 Perhaps surprisingly, the coefficient estimates are not the inverse of each other.
-That is, <span>\(\hat{\beta}_y \neq 1/ \hat{\beta}_x\)</span>, where <span>\(\hat{\beta}_y\)</span> and <span>\(\hat{\beta}_x\)</span> are the coefficients of the models <span>\(Y = \hat{\beta}_y X\)</span> and <span>\(X = \hat{\beta}_x Y\)</span>, respectively.
-We know <span>\(\hat{\beta}_x \simeq 2\)</span>, but <span>\(\hat{\beta}_y\)</span> seems to be closer to 0.4 than 0.5.
+That is, <span><span class="MathJax_Preview">\hat{\beta}_y \neq 1/ \hat{\beta}_x</span><script type="math/tex">\hat{\beta}_y \neq 1/ \hat{\beta}_x</script></span>, where <span><span class="MathJax_Preview">\hat{\beta}_y</span><script type="math/tex">\hat{\beta}_y</script></span> and <span><span class="MathJax_Preview">\hat{\beta}_x</span><script type="math/tex">\hat{\beta}_x</script></span> are the coefficients of the models <span><span class="MathJax_Preview">Y = \hat{\beta}_y X</span><script type="math/tex">Y = \hat{\beta}_y X</script></span> and <span><span class="MathJax_Preview">X = \hat{\beta}_x Y</span><script type="math/tex">X = \hat{\beta}_x Y</script></span>, respectively.
+We know <span><span class="MathJax_Preview">\hat{\beta}_x \simeq 2</span><script type="math/tex">\hat{\beta}_x \simeq 2</script></span>, but <span><span class="MathJax_Preview">\hat{\beta}_y</span><script type="math/tex">\hat{\beta}_y</script></span> seems to be closer to 0.4 than 0.5.
 What is going on here?</p>
 <p>The short answer: it has to do with the fitting method and with the non-symmetric loss function.</p>
 <p>The visual insight is given in this <a href="https://stats.stackexchange.com/a/20560">answer</a>. As the two figures in this link suggest, we are not minimizing the same loss function when we find the estimate coefficient. </p>
 <p>This can also be seen algebraically. The coefficient estimates are the values that minimize the loss functions of ordinary least squares for these linear models without intercept, which leads to:</p>
-<p><span>\(\hat{\beta}_y = \underset{\beta}{\operatorname{argmin}} \sum (y_i-\beta x_i)^2 = \frac{\sum y_i x_i}{\sum y_i^2} \left(= \frac{\operatorname{E}[X Y]}{\operatorname{E}[Y^2]} = \frac{\operatorname{E}[X Y] - \operatorname{E}[X]\operatorname{E}[Y]}{\operatorname{E}[(Y-\operatorname{E}[Y])^2]} = \frac{\operatorname{cov}(X, Y)}{\operatorname{var}(Y)}\right)\)</span>,</p>
-<p><span>\(\hat{\beta}_x = \underset{\beta}{\operatorname{argmin}} \sum (x_i-\beta y_i)^2 = \frac{\sum y_i x_i}{\sum x_i^2}  \left(= \frac{\operatorname{E}[X Y]}{\operatorname{E}[X^2]} = \frac{\operatorname{E}[X Y] - \operatorname{E}[X]\operatorname{E}[Y]}{\operatorname{E}[(X-\operatorname{E}[X])^2]} = \frac{\operatorname{cov}(X, Y)}{\operatorname{var}(X)}\right)\)</span>, </p>
-<p>since <span>\(\operatorname{E}[X]=\operatorname{E}[Y]=0\)</span>.</p>
+<p><span><span class="MathJax_Preview">\hat{\beta}_y = \underset{\beta}{\operatorname{argmin}} \sum (y_i-\beta x_i)^2 = \frac{\sum y_i x_i}{\sum y_i^2} \left(= \frac{\operatorname{E}[X Y]}{\operatorname{E}[Y^2]} = \frac{\operatorname{E}[X Y] - \operatorname{E}[X]\operatorname{E}[Y]}{\operatorname{E}[(Y-\operatorname{E}[Y])^2]} = \frac{\operatorname{cov}(X, Y)}{\operatorname{var}(Y)}\right)</span><script type="math/tex">\hat{\beta}_y = \underset{\beta}{\operatorname{argmin}} \sum (y_i-\beta x_i)^2 = \frac{\sum y_i x_i}{\sum y_i^2} \left(= \frac{\operatorname{E}[X Y]}{\operatorname{E}[Y^2]} = \frac{\operatorname{E}[X Y] - \operatorname{E}[X]\operatorname{E}[Y]}{\operatorname{E}[(Y-\operatorname{E}[Y])^2]} = \frac{\operatorname{cov}(X, Y)}{\operatorname{var}(Y)}\right)</script></span>,</p>
+<p><span><span class="MathJax_Preview">\hat{\beta}_x = \underset{\beta}{\operatorname{argmin}} \sum (x_i-\beta y_i)^2 = \frac{\sum y_i x_i}{\sum x_i^2}  \left(= \frac{\operatorname{E}[X Y]}{\operatorname{E}[X^2]} = \frac{\operatorname{E}[X Y] - \operatorname{E}[X]\operatorname{E}[Y]}{\operatorname{E}[(X-\operatorname{E}[X])^2]} = \frac{\operatorname{cov}(X, Y)}{\operatorname{var}(X)}\right)</span><script type="math/tex">\hat{\beta}_x = \underset{\beta}{\operatorname{argmin}} \sum (x_i-\beta y_i)^2 = \frac{\sum y_i x_i}{\sum x_i^2}  \left(= \frac{\operatorname{E}[X Y]}{\operatorname{E}[X^2]} = \frac{\operatorname{E}[X Y] - \operatorname{E}[X]\operatorname{E}[Y]}{\operatorname{E}[(X-\operatorname{E}[X])^2]} = \frac{\operatorname{cov}(X, Y)}{\operatorname{var}(X)}\right)</script></span>, </p>
+<p>since <span><span class="MathJax_Preview">\operatorname{E}[X]=\operatorname{E}[Y]=0</span><script type="math/tex">\operatorname{E}[X]=\operatorname{E}[Y]=0</script></span>.</p>
 <p>Since the covariance is symmetric the coefficient estimates will depend on the respective variances.
-In other words, the coefficients estimates will depend on and differ by the respectives spreads of the data, <span>\(\sum y_i^2\)</span> and <span>\(\sum x_i^2\)</span>.</p>
+In other words, the coefficients estimates will depend on and differ by the respectives spreads of the data, <span><span class="MathJax_Preview">\sum y_i^2</span><script type="math/tex">\sum y_i^2</script></span> and <span><span class="MathJax_Preview">\sum x_i^2</span><script type="math/tex">\sum x_i^2</script></span>.</p>
 <p>We can see how the additional noise of Y breaks the symmetry.
-We know that the <span>\(\operatorname{var}(X) = 1\)</span>, so that <span>\(\operatorname{var}(Y) = \operatorname{var}(2X + \epsilon ) = 4 \operatorname{var}(X) + \operatorname{var}(\epsilon) = 4 (1) + 1 = 5\)</span>.
-Since <span>\(\sum y_i x_i =\sum (2 x_i + \epsilon_i) x_i = 2 \sum x_i^2 + \sum x_i \epsilon_i \sim 2\)</span>. So  <span>\(\hat{\beta}_x \sim 2/1 = 2\)</span> and <span>\(\hat{\beta}_y \sim 2/5 = .4\)</span></p>
+We know that the <span><span class="MathJax_Preview">\operatorname{var}(X) = 1</span><script type="math/tex">\operatorname{var}(X) = 1</script></span>, so that <span><span class="MathJax_Preview">\operatorname{var}(Y) = \operatorname{var}(2X + \epsilon ) = 4 \operatorname{var}(X) + \operatorname{var}(\epsilon) = 4 (1) + 1 = 5</span><script type="math/tex">\operatorname{var}(Y) = \operatorname{var}(2X + \epsilon ) = 4 \operatorname{var}(X) + \operatorname{var}(\epsilon) = 4 (1) + 1 = 5</script></span>.
+Since <span><span class="MathJax_Preview">\sum y_i x_i =\sum (2 x_i + \epsilon_i) x_i = 2 \sum x_i^2 + \sum x_i \epsilon_i \sim 2</span><script type="math/tex">\sum y_i x_i =\sum (2 x_i + \epsilon_i) x_i = 2 \sum x_i^2 + \sum x_i \epsilon_i \sim 2</script></span>. So  <span><span class="MathJax_Preview">\hat{\beta}_x \sim 2/1 = 2</span><script type="math/tex">\hat{\beta}_x \sim 2/1 = 2</script></span> and <span><span class="MathJax_Preview">\hat{\beta}_y \sim 2/5 = .4</span><script type="math/tex">\hat{\beta}_y \sim 2/5 = .4</script></span></p>
 <p>If we use a loss function symmetrical in x and y (as the rectangles or total least squares regression, or PCA, figured below), then the coeffiecients will be the same.</p>
 <h2 id="d">(d)</h2>
 <p>This is a simple exercise of manipulating the formulas given.</p>
-<p>We start with a simplification of a part of the formula for <span>\(SE(\hat{\beta})\)</span>:</p>
+<p>We start with a simplification of a part of the formula for <span><span class="MathJax_Preview">SE(\hat{\beta})</span><script type="math/tex">SE(\hat{\beta})</script></span>:</p>
 <p>$\sum_{i=1}^{n} (y_i - x_i \beta)^2 = \sum_{i=1}^{n} (y_i^2 - 2 x_i \beta + x_i^2 \beta^2) =  \sum_{i=1}^{n} y_i^2 - 2 \beta  \sum_{i=1}^{n} x_i  +  \beta^2 \sum_{i=1}^{n} x_i^2  $</p>
-<p>which using the formula (3.38) from the text <span>\(\hat{\beta}=\sum_{i=1}^{n} x_i y_i/\sum_{j=1}^{n} x_j^2\)</span> becomes:</p>
+<p>which using the formula (3.38) from the text <span><span class="MathJax_Preview">\hat{\beta}=\sum_{i=1}^{n} x_i y_i/\sum_{j=1}^{n} x_j^2</span><script type="math/tex">\hat{\beta}=\sum_{i=1}^{n} x_i y_i/\sum_{j=1}^{n} x_j^2</script></span> becomes:</p>
 <p>$  \sum_{i=1}^{n} y_i^2 - 2 \frac{(\sum_{i=1}^{n} x_i y_i)^2}{\sum_{j=1}^{n} x_j^2 } + \frac{(\sum_{i=1}^{n} x_i y_i)^2}{\sum_{j=1}^{n} x_j^2 } =  \sum_{i=1}^{n} y_i^2 -  \frac{(\sum_{i=1}^{n} x_i y_i)^2}{\sum_{i=1}^{n} x_i^2 }.$</p>
 <p>With this, we restart from the formula for the t-statistic and simplify:</p>
 <p>$\frac{\hat{\beta}}{SE(\hat{\beta})}=   \frac{(\sum_{i=1}^{n} x_i y_i) \sqrt{n-1} \sqrt{\sum_{i=1}^{n} x_i^2}  }{  ( \sum_{i=1}^{n} x_i^2  )  \sqrt{\sum_{i=1}^{n} (y_i - x_i \beta)^2}} = \frac{(\sum_{i=1}^{n} x_i y_i) \sqrt{n-1}    }{ \sqrt{ (\sum_{i=1}^{n} x_i^2  ) \sum_{i=1}^{n} (y_i - x_i \beta)^2}} $</p>
@@ -1003,7 +988,7 @@ Since <span>\(\sum y_i x_i =\sum (2 x_i + \epsilon_i) x_i = 2 \sum x_i^2 + \sum 
 <p>$  \frac{(\sum_{i=1}^{n} x_i y_i) \sqrt{n-1}    }{ \sqrt{ (\sum_{i=1}^{n} x_i^2  )   \left( \sum_{i=1}^{n} y_i^2 -  \frac{(\sum_{i=1}^{n} x_i y_i)^2}{\sum_{i=1}^{n} x_i^2 } \right)}} = \frac{  (\sqrt{n-1} )   \sum_{i=1}^{n} x_i y_i    }{ \sqrt{ (\sum_{i=1}^{n} x_i^2  )( \sum_{i=1}^{n} y_i^2 ) -  (\sum_{i=1}^{n} x_i y_i)^2 }  }, $</p>
 <p>as we wanted.</p>
 <h2 id="e">(e)</h2>
-<p>Since the expression for the t-statistic is symmetric in <span>\(x_i\)</span> and <span>\(y_i\)</span>, it will have the same value whether we regress Y on X or X on Y.</p>
+<p>Since the expression for the t-statistic is symmetric in <span><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> and <span><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span>, it will have the same value whether we regress Y on X or X on Y.</p>
 <h2 id="f">(f)</h2>
 <pre><code class="python">regyx = smf.ols('y ~ x', df).fit()
 regxy = smf.ols('x ~ y', df).fit()
@@ -1043,6 +1028,8 @@ dtype: float64
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

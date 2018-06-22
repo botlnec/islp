@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>4.1 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../../chapter3/exercise15/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,22 +788,30 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-41">Exercise 4.1</a></li>
-        
-    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="exercise-41">Exercise 4.1</h1>
-<p>Writing <span>\(Y=\beta_0 + \beta_1 X\)</span> for clarity, we start with</p>
-<span>\[\begin{align}
+<p>Writing <span><span class="MathJax_Preview">Y=\beta_0 + \beta_1 X</span><script type="math/tex">Y=\beta_0 + \beta_1 X</script></span> for clarity, we start with</p>
+<div>
+<div class="MathJax_Preview">\begin{align}
 P(X) &amp; = \frac{e^Y}{1+e^Y}, 
-\end{align}\]</span><p>and "using a little bit of algebra", we get</p>
-<span>\[\begin{align}
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+P(X) & = \frac{e^Y}{1+e^Y}, 
+\end{align}</script>
+</div>
+<p>and "using a little bit of algebra", we get</p>
+<div>
+<div class="MathJax_Preview">\begin{align}
 \frac{P(X)}{1-P(X)} &amp; = \frac{e^Y}{1+e^Y} \left( 1 - \frac{e^Y}{1+e^Y}  \right)^{-1} = \left( \frac{(1+e^Y)-e^Y}{1+e^Y}  \right)^{-1} = \frac{e^Y}{1+e^Y} \frac{1+e^Y}{1} = e^Y = e^{\beta_0 + \beta_1 X}.
-\end{align}\]</span></div>
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+\frac{P(X)}{1-P(X)} & = \frac{e^Y}{1+e^Y} \left( 1 - \frac{e^Y}{1+e^Y}  \right)^{-1} = \left( \frac{(1+e^Y)-e^Y}{1+e^Y}  \right)^{-1} = \frac{e^Y}{1+e^Y} \frac{1+e^Y}{1} = e^Y = e^{\beta_0 + \beta_1 X}.
+\end{align}</script>
+</div></div>
         
     </div>
 
@@ -829,6 +832,8 @@ P(X) &amp; = \frac{e^Y}{1+e^Y},
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>4.6 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise5/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,16 +788,11 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-46">Exercise 4.6</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -810,13 +800,41 @@
 <h1 id="exercise-46">Exercise 4.6</h1>
 <h2 id="a">(a)</h2>
 <p>Multiple logistic regression model is represented by the following equation:</p>
-<span>\[ p(x) = \frac{e^{\beta_0 + \beta_1 \times X_1 + ... + \beta_p \times X_p}}{1 + e^{\beta_0 + \beta_1 \times X_1 + ... + \beta_p \times X_p}}\]</span><p>In this case, since we have two features, the equation is as follows:</p>
-<span>\[ p(x) = \frac{e^{\beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2}}{1 + e^{\beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2}}\]</span><p>Considering that <span>\(\beta_0 = -6\)</span>, <span>\(\beta_1 = 0.05\)</span>, <span>\(\beta_2 = 1\)</span>, <span>\(X_1 = 40\)</span> and <span>\(X_2 = 3.5\)</span>, we have:</p>
-<span>\[ p(x) = \frac{e^{-6 + 0.05 \times 40 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times 40 + 1 \times 3.5}} = 0.3775\]</span><p>Thus, the probability that a student who studies for 40 h and has an undergrad GPA of 3.5 gets an A in the class is <b>37.75%</b>.</p>
+<div>
+<div class="MathJax_Preview"> p(x) = \frac{e^{\beta_0 + \beta_1 \times X_1 + ... + \beta_p \times X_p}}{1 + e^{\beta_0 + \beta_1 \times X_1 + ... + \beta_p \times X_p}}</div>
+<script type="math/tex; mode=display"> p(x) = \frac{e^{\beta_0 + \beta_1 \times X_1 + ... + \beta_p \times X_p}}{1 + e^{\beta_0 + \beta_1 \times X_1 + ... + \beta_p \times X_p}}</script>
+</div>
+<p>In this case, since we have two features, the equation is as follows:</p>
+<div>
+<div class="MathJax_Preview"> p(x) = \frac{e^{\beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2}}{1 + e^{\beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2}}</div>
+<script type="math/tex; mode=display"> p(x) = \frac{e^{\beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2}}{1 + e^{\beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2}}</script>
+</div>
+<p>Considering that <span><span class="MathJax_Preview">\beta_0 = -6</span><script type="math/tex">\beta_0 = -6</script></span>, <span><span class="MathJax_Preview">\beta_1 = 0.05</span><script type="math/tex">\beta_1 = 0.05</script></span>, <span><span class="MathJax_Preview">\beta_2 = 1</span><script type="math/tex">\beta_2 = 1</script></span>, <span><span class="MathJax_Preview">X_1 = 40</span><script type="math/tex">X_1 = 40</script></span> and <span><span class="MathJax_Preview">X_2 = 3.5</span><script type="math/tex">X_2 = 3.5</script></span>, we have:</p>
+<div>
+<div class="MathJax_Preview"> p(x) = \frac{e^{-6 + 0.05 \times 40 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times 40 + 1 \times 3.5}} = 0.3775</div>
+<script type="math/tex; mode=display"> p(x) = \frac{e^{-6 + 0.05 \times 40 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times 40 + 1 \times 3.5}} = 0.3775</script>
+</div>
+<p>Thus, the probability that a student who studies for 40 h and has an undergrad GPA of 3.5 gets an A in the class is <b>37.75%</b>.</p>
 <h2 id="b">(b)</h2>
-<p>What we are asking is how many hours a student needs to study (<span>\(X_1\)</span>) to have p(x) = 0.5. Replacing in the equation presented before:</p>
-<span>\[ p(x) = \frac{e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times X_1 + 1 \times 3.5}} \Leftrightarrow \frac{1}{2} = \frac{e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}.\]</span><p>This will be true when the numerator equals 1, that is, when</p>
-<span>\[e^{-6 + 0.05 \times X_1 + 1 \times 3.5 }= 1 \Leftrightarrow \]</span><span>\[ \Leftrightarrow -6 + 0.05 \times X_1 + 1 \times 3.5 = \log(1) = 0 \Leftrightarrow \]</span><span>\[ \Leftrightarrow X_1 = 50.\]</span><p>To have a 50% chance of getting an A in the class a student needs to study <b>50 hours</b>.</p></div>
+<p>What we are asking is how many hours a student needs to study (<span><span class="MathJax_Preview">X_1</span><script type="math/tex">X_1</script></span>) to have p(x) = 0.5. Replacing in the equation presented before:</p>
+<div>
+<div class="MathJax_Preview"> p(x) = \frac{e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times X_1 + 1 \times 3.5}} \Leftrightarrow \frac{1}{2} = \frac{e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}.</div>
+<script type="math/tex; mode=display"> p(x) = \frac{e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times X_1 + 1 \times 3.5}} \Leftrightarrow \frac{1}{2} = \frac{e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}{1 + e^{-6 + 0.05 \times X_1 + 1 \times 3.5}}.</script>
+</div>
+<p>This will be true when the numerator equals 1, that is, when</p>
+<div>
+<div class="MathJax_Preview">e^{-6 + 0.05 \times X_1 + 1 \times 3.5 }= 1 \Leftrightarrow </div>
+<script type="math/tex; mode=display">e^{-6 + 0.05 \times X_1 + 1 \times 3.5 }= 1 \Leftrightarrow </script>
+</div>
+<div>
+<div class="MathJax_Preview"> \Leftrightarrow -6 + 0.05 \times X_1 + 1 \times 3.5 = \log(1) = 0 \Leftrightarrow </div>
+<script type="math/tex; mode=display"> \Leftrightarrow -6 + 0.05 \times X_1 + 1 \times 3.5 = \log(1) = 0 \Leftrightarrow </script>
+</div>
+<div>
+<div class="MathJax_Preview"> \Leftrightarrow X_1 = 50.</div>
+<script type="math/tex; mode=display"> \Leftrightarrow X_1 = 50.</script>
+</div>
+<p>To have a 50% chance of getting an A in the class a student needs to study <b>50 hours</b>.</p></div>
         
     </div>
 
@@ -837,6 +855,8 @@
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

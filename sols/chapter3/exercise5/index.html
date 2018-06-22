@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.5 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise4/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,25 +788,39 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-35">Exercise 3.5</a></li>
-        
-    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="exercise-35">Exercise 3.5</h1>
-<p>This is a simple exercise of plugging the expression for <span>\(\hat{\beta}\)</span> in the formula of the ith fitted value:</p>
-<span>\[
+<p>This is a simple exercise of plugging the expression for <span><span class="MathJax_Preview">\hat{\beta}</span><script type="math/tex">\hat{\beta}</script></span> in the formula of the ith fitted value:</p>
+<div>
+<div class="MathJax_Preview">
 \hat{y}_i = x_i \hat{\beta} = x_i \left( \sum_{i'=1}^n x_{i'} y_{i'} \right) / \left( \sum_{j=1}^n x_j^2 \right) = \sum_{i'=1}^n \left( \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2} y_{i'} \right)
-\]</span><p>and comparing to the expression</p>
-<span>\[
+</div>
+<script type="math/tex; mode=display">
+\hat{y}_i = x_i \hat{\beta} = x_i \left( \sum_{i'=1}^n x_{i'} y_{i'} \right) / \left( \sum_{j=1}^n x_j^2 \right) = \sum_{i'=1}^n \left( \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2} y_{i'} \right)
+</script>
+</div>
+<p>and comparing to the expression</p>
+<div>
+<div class="MathJax_Preview">
 \hat{y}_i = \sum_{i'=1}^n a_{i'} y_{i'}
-\]</span><p>to obtain:</p>
-<span>\[
+</div>
+<script type="math/tex; mode=display">
+\hat{y}_i = \sum_{i'=1}^n a_{i'} y_{i'}
+</script>
+</div>
+<p>to obtain:</p>
+<div>
+<div class="MathJax_Preview">
 a_{i'} =  \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2}
-\]</span></div>
+</div>
+<script type="math/tex; mode=display">
+a_{i'} =  \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2}
+</script>
+</div></div>
         
     </div>
 
@@ -832,6 +841,8 @@ a_{i'} =  \frac{x_i x_{i'} }{\sum_{j=1}^n x_j^2}
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.10 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise9/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,31 +788,16 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-310">Exercise 3.10</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
-    
+                
         <li class="first-level "><a href="#d">(d)</a></li>
-        
-    
         <li class="first-level "><a href="#e">(e)</a></li>
-        
-    
         <li class="first-level "><a href="#f">(f)</a></li>
-        
-    
         <li class="first-level "><a href="#g">(g)</a></li>
-        
-    
         <li class="first-level "><a href="#h">(h)</a></li>
-        
-    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -1022,7 +1002,8 @@ res.summary()
 </em> <b>US.</b> Qualitative variable with positive relationship. This means that when the observation is US, there will be a tendency for higher sales values. On average, if a store is located in the US, it will sell 1201 more units, approximately.
 * <b>Price.</b> Quantitative variable with negative relationship. This means that the higher the prices, the lower the sales. On average, for every dollar that the price increases sales will drop by 55 units, approximately.</p>
 <p># (c)</p>
-<span>\[
+<div>
+<div class="MathJax_Preview">
 Sales = 13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price =
 \begin{cases} 
       13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price &amp; Urban=1, US=1 \\
@@ -1030,7 +1011,18 @@ Sales = 13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price =
       13.0435+1.2006 \times US - 0.0545 \times Price &amp; Urban=0, US=1 \\
       13.0435- 0.0545 \times Price &amp; Urban=0, US=0
 \end{cases}
-\]</span><h1 id="d">(d)</h1>
+</div>
+<script type="math/tex; mode=display">
+Sales = 13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price =
+\begin{cases} 
+      13.0435-0.0219 \times Urban + 1.2006 \times US - 0.0545 \times Price & Urban=1, US=1 \\
+      13.0435-0.0219 \times Urban + 1.2006 \times Price & Urban=1, US=0 \\
+      13.0435+1.2006 \times US - 0.0545 \times Price & Urban=0, US=1 \\
+      13.0435- 0.0545 \times Price & Urban=0, US=0
+\end{cases}
+</script>
+</div>
+<h1 id="d">(d)</h1>
 <p>From the p-values in the summary above, we can reject the null hypothesis for the intercept, US and Price, but not for Urban.</p>
 <h1 id="e">(e)</h1>
 <pre><code class="python">mod = smf.ols(formula='Sales ~ Price + US',data=df)
@@ -1070,7 +1062,11 @@ Warnings:
 <p>Since R-squared has the same value, namely 0.239, for both models we can conclude that the strictly smaller model (e), is a better model since it uses less variables for the same value of R-squared. This can also be seen in the value of the adjusted R-squared which is smaller for (e). In any case neither model fits the data very well given the low value of R-squared.</p>
 <h1 id="g">(g)</h1>
 <p>For linear regression, the 95% confidence interval for the coefficients approximately takes the form:</p>
-<span>\[ \hat{\beta} \pm 2 \times SE(\hat{\beta})\]</span><p>where <span>\(SE\)</span> is the standard error of the coefficient <span>\(\hat{\beta}\)</span>.</p>
+<div>
+<div class="MathJax_Preview"> \hat{\beta} \pm 2 \times SE(\hat{\beta})</div>
+<script type="math/tex; mode=display"> \hat{\beta} \pm 2 \times SE(\hat{\beta})</script>
+</div>
+<p>where <span><span class="MathJax_Preview">SE</span><script type="math/tex">SE</script></span> is the standard error of the coefficient <span><span class="MathJax_Preview">\hat{\beta}</span><script type="math/tex">\hat{\beta}</script></span>.</p>
 <pre><code class="python"># confidence interval for intercept
 intercept_coef = 13.0308
 intercept_stderr = .631
@@ -1176,7 +1172,7 @@ plt.legend(loc='upper right');
 </code></pre>
 
 <p><img alt="png" src="../03_10_files/03_10_23_0.png" /></p>
-<p>From this plot we can that no outliers (all less than 3). Since <span>\((p+1)/n=3/400=0.0075\)</span>, we can see that there a few candidates for high leverage points, although every point is well below a Cook's distance of 1.</p>
+<p>From this plot we can that no outliers (all less than 3). Since <span><span class="MathJax_Preview">(p+1)/n=3/400=0.0075</span><script type="math/tex">(p+1)/n=3/400=0.0075</script></span>, we can see that there a few candidates for high leverage points, although every point is well below a Cook's distance of 1.</p>
 <p>So on the whole this indicates that there are no outliers, but that there are some high leverage points although likely not very influential.</p></div>
         
     </div>
@@ -1198,6 +1194,8 @@ plt.legend(loc='upper right');
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

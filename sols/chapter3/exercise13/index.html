@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.13 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise12/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,43 +788,29 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-313">Exercise 3.13</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#c">(c)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#d">(d)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#e">(e)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#f">(f)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#g">(g)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#h">(h)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#i">(i)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#i_1">(i)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#j">(j)</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -881,7 +862,7 @@ print('Length of y = ' + str(len(y)))
 <pre><code>Length of y = 100
 </code></pre>
 <p>Naturally, vector y has length 100, since it is a linear combination of 2 vectors of length 100.</p>
-<p>In this model <span>\(\beta_0 = -1\)</span> and <span>\(\beta_1=1/2\)</span>.</p>
+<p>In this model <span><span class="MathJax_Preview">\beta_0 = -1</span><script type="math/tex">\beta_0 = -1</script></span> and <span><span class="MathJax_Preview">\beta_1=1/2</span><script type="math/tex">\beta_1=1/2</script></span>.</p>
 <h2 id="d">(d)</h2>
 <pre><code class="python">df = pd.DataFrame({'x': x, 'y': y})
 sns.jointplot(x='x', y='y', data=df);
@@ -1040,7 +1021,7 @@ reg.summary()
 </tr>
 </table>
 
-<p>After fitting a model with basis functions <span>\(X\)</span> and <span>\(X^2\)</span>, looking at the table above we can see that the p-value for the squared term is 0.856, so we can conclude that there is no evidence to reject the null hypothesis asserting the coefficient of the second order term is zero. In other words, there is no statistically significant relationship between <span>\(X^2\)</span> and <span>\(Y\)</span> - the quadratic term does not improve the model fit. This is also evident when comparing the R-squared of both fits. They are equal, even though the second model has an additional variable.</p>
+<p>After fitting a model with basis functions <span><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> and <span><span class="MathJax_Preview">X^2</span><script type="math/tex">X^2</script></span>, looking at the table above we can see that the p-value for the squared term is 0.856, so we can conclude that there is no evidence to reject the null hypothesis asserting the coefficient of the second order term is zero. In other words, there is no statistically significant relationship between <span><span class="MathJax_Preview">X^2</span><script type="math/tex">X^2</script></span> and <span><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> - the quadratic term does not improve the model fit. This is also evident when comparing the R-squared of both fits. They are equal, even though the second model has an additional variable.</p>
 <h2 id="h">(h)</h2>
 <pre><code class="python">x = np.random.normal(size=100)
 eps = np.random.normal(scale = .05, size=100)
@@ -1235,17 +1216,17 @@ reg.summary()
 <thead>
 <tr>
 <th align="right">Noise</th>
-<th align="right">lower <span>\(\beta_0\)</span></th>
-<th align="right"><span>\(\beta_0\)</span></th>
-<th>upper <span>\(\beta_0\)</span></th>
-<th>lower <span>\(\beta_1\)</span></th>
-<th><span>\(\beta_1\)</span></th>
-<th>upper <span>\(\beta_1\)</span></th>
+<th align="right">lower <span><span class="MathJax_Preview">\beta_0</span><script type="math/tex">\beta_0</script></span></th>
+<th align="right"><span><span class="MathJax_Preview">\beta_0</span><script type="math/tex">\beta_0</script></span></th>
+<th>upper <span><span class="MathJax_Preview">\beta_0</span><script type="math/tex">\beta_0</script></span></th>
+<th>lower <span><span class="MathJax_Preview">\beta_1</span><script type="math/tex">\beta_1</script></span></th>
+<th><span><span class="MathJax_Preview">\beta_1</span><script type="math/tex">\beta_1</script></span></th>
+<th>upper <span><span class="MathJax_Preview">\beta_1</span><script type="math/tex">\beta_1</script></span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="right"><span>\(\varepsilon = .05\)</span></td>
+<td align="right"><span><span class="MathJax_Preview">\varepsilon = .05</span><script type="math/tex">\varepsilon = .05</script></span></td>
 <td align="right">-1.009</td>
 <td align="right">0.9984</td>
 <td>-0.987</td>
@@ -1254,7 +1235,7 @@ reg.summary()
 <td>0.512</td>
 </tr>
 <tr>
-<td align="right"><span>\(\varepsilon=.25\)</span></td>
+<td align="right"><span><span class="MathJax_Preview">\varepsilon=.25</span><script type="math/tex">\varepsilon=.25</script></span></td>
 <td align="right">-1.010</td>
 <td align="right">-0.9632</td>
 <td>-0.917</td>
@@ -1263,7 +1244,7 @@ reg.summary()
 <td>0.576</td>
 </tr>
 <tr>
-<td align="right"><span>\(\varepsilon = 1\)</span></td>
+<td align="right"><span><span class="MathJax_Preview">\varepsilon = 1</span><script type="math/tex">\varepsilon = 1</script></span></td>
 <td align="right">-1.098</td>
 <td align="right">-0.8869</td>
 <td>-0.675</td>
@@ -1294,6 +1275,8 @@ reg.summary()
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

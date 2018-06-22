@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.1 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../../chapter2/exercise10/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,19 +788,13 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-31">Exercise 3.1</a></li>
-        
             <li class="second-level"><a href="#additional-comment">Additional comment</a></li>
-            
-        
+                
             <li class="second-level"><a href="#auxiliary-calculations">Auxiliary calculations</a></li>
-            
-        
+                
             <li class="second-level"><a href="#further-reading">Further reading</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -813,23 +802,23 @@
 <h1 id="exercise-31">Exercise 3.1</h1>
 <p>The t-statistics computed on Table 3.4 are computed individually for each coefficient since they are independent variables. Accordingly, there are 4 null hypotheses that we are testing:</p>
 <ol>
-<li><span>\(H_0\)</span> for "TV": <strong>in the presence of</strong> Radio and Newspaper ads (and in addition to the intercept), there is no relationship between TV and Sales;</li>
-<li><span>\(H_0\)</span> for "Radio": <strong>in the presence of</strong> TV and Newspaper ads (and in addition to the intercept), there is no relationship between Radio and Sales;</li>
-<li><span>\(H_0\)</span> for "Newspaper": <strong>in the presence of</strong> TV and Radio ads (and in addition to the intercept), there is no relationship between Newspaper and Sales;</li>
-<li><span>\(H_0\)</span> for the intercept: <strong>in the absence of</strong> TV, Radio and Newspaper ads, Sales are zero;</li>
+<li><span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> for "TV": <strong>in the presence of</strong> Radio and Newspaper ads (and in addition to the intercept), there is no relationship between TV and Sales;</li>
+<li><span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> for "Radio": <strong>in the presence of</strong> TV and Newspaper ads (and in addition to the intercept), there is no relationship between Radio and Sales;</li>
+<li><span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> for "Newspaper": <strong>in the presence of</strong> TV and Radio ads (and in addition to the intercept), there is no relationship between Newspaper and Sales;</li>
+<li><span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> for the intercept: <strong>in the absence of</strong> TV, Radio and Newspaper ads, Sales are zero;</li>
 </ol>
 <p>versus the 4 corresponding alternative hypotheses:</p>
-<p><span>\(H_a\)</span>: There is some relationship between TV/Radio/Newspaper and Sales, or Sales are non-zero in the absence of the other variables.</p>
+<p><span><span class="MathJax_Preview">H_a</span><script type="math/tex">H_a</script></span>: There is some relationship between TV/Radio/Newspaper and Sales, or Sales are non-zero in the absence of the other variables.</p>
 <p><br><br>
 Mathematically, this can be written as</p>
-<p><span>\(H_0:\)</span> <span>\(\beta_i=0\)</span>, for <span>\(i = 0,1,2,3\)</span>,</p>
+<p><span><span class="MathJax_Preview">H_0:</span><script type="math/tex">H_0:</script></span> <span><span class="MathJax_Preview">\beta_i=0</span><script type="math/tex">\beta_i=0</script></span>, for <span><span class="MathJax_Preview">i = 0,1,2,3</span><script type="math/tex">i = 0,1,2,3</script></span>,</p>
 <p>versus the 4 corresponding alternative hypotheses</p>
-<p><span>\(H_a:\)</span> <span>\(\beta_i\neq0\)</span>, for <span>\(i = 0,1,2,3\)</span>.</p>
+<p><span><span class="MathJax_Preview">H_a:</span><script type="math/tex">H_a:</script></span> <span><span class="MathJax_Preview">\beta_i\neq0</span><script type="math/tex">\beta_i\neq0</script></span>, for <span><span class="MathJax_Preview">i = 0,1,2,3</span><script type="math/tex">i = 0,1,2,3</script></span>.</p>
 <p>As can been seen on Table 3.4 (and below with Python), for all the variables the p-value is practically zero, except for <em>Newspaper</em> for which it is very high, namely .86, much larger than the typical confidence levels, 0.05, 0.01 and 0.001.  Given the t-statistics and the p-values we can reject the null hypothesis for the intercept, TV and Radio, but not for Newspaper.</p>
-<p>This means that we can conclude that <strong>there is a relationship between TV and Sales, and between Radio and Sales</strong>. Also rejecting <span>\(\beta_0=0\)</span>, allows us to conclude that <strong>in the absence of TV, Radio and Newspaper, Sales are non-zero</strong>. Not being able to reject the null hypothesis <span>\(\beta_{Newspaper}=0\)</span>, suggests that there is indeed <strong>no relationship between Newspaper and Sales, in the presence of TV and Radio</strong>.</p>
+<p>This means that we can conclude that <strong>there is a relationship between TV and Sales, and between Radio and Sales</strong>. Also rejecting <span><span class="MathJax_Preview">\beta_0=0</span><script type="math/tex">\beta_0=0</script></span>, allows us to conclude that <strong>in the absence of TV, Radio and Newspaper, Sales are non-zero</strong>. Not being able to reject the null hypothesis <span><span class="MathJax_Preview">\beta_{Newspaper}=0</span><script type="math/tex">\beta_{Newspaper}=0</script></span>, suggests that there is indeed <strong>no relationship between Newspaper and Sales, in the presence of TV and Radio</strong>.</p>
 <h3 id="additional-comment">Additional comment</h3>
 <p>At a 5% p-value, there would be a 19% chance of having one appear as significant out of 3 variables, even if there was no relationship for all of them. </p>
-<p>(<span>\(1-.95^4\)</span>) </p>
+<p>(<span><span class="MathJax_Preview">1-.95^4</span><script type="math/tex">1-.95^4</script></span>) </p>
 <h2 id="auxiliary-calculations">Auxiliary calculations</h2>
 <pre><code class="python">import pandas as pd
 import statsmodels.api as sm
@@ -875,7 +864,7 @@ Warnings:
 <li>Page 67, 68</li>
 <li>Footnote page 68</li>
 </ul>
-<p><span>\(H_0\)</span>:</p>
+<p><span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>:</p>
 <ul>
 <li><a href="http://quant.stackexchange.com/questions/16056/null-and-alternative-hypothesis-for-multiple-linear-regression">http://quant.stackexchange.com/questions/16056/null-and-alternative-hypothesis-for-multiple-linear-regression</a></li>
 </ul>
@@ -906,6 +895,8 @@ Warnings:
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

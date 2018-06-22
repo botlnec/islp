@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>5.2 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise1/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,34 +788,15 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-52">Exercise 5.2</a></li>
-        
-    
         <li class="first-level "><a href="#a">(a)</a></li>
-        
-    
         <li class="first-level "><a href="#b">(b)</a></li>
-        
-    
         <li class="first-level "><a href="#c">(c)</a></li>
-        
-    
         <li class="first-level "><a href="#d">(d)</a></li>
-        
-    
         <li class="first-level "><a href="#e">(e)</a></li>
-        
-    
         <li class="first-level "><a href="#f">(f)</a></li>
-        
-    
         <li class="first-level "><a href="#g">(g)</a></li>
-        
-    
         <li class="first-level "><a href="#h">(h)</a></li>
-        
-    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -829,22 +805,46 @@
 <p>To solve this exercise, it is important to remember that bootstrap samples have <b>replacement</b>.</p>
 <h1 id="a">(a)</h1>
 <p>The probability that the first bootstrap observation is not the jth observation is:</p>
-<span>\[\frac{n-1}{n}.\]</span><p>Why? Since all observations have the same chance of being chosen (equiprobable events), the probability we are looking for is just the number of favorable cases dividing by the total number of possible cases. That is, <span>\(n-1\)</span> observations other than the <span>\(j\)</span>th observation dividing by the <span>\(n\)</span> total observations.</p>
+<div>
+<div class="MathJax_Preview">\frac{n-1}{n}.</div>
+<script type="math/tex; mode=display">\frac{n-1}{n}.</script>
+</div>
+<p>Why? Since all observations have the same chance of being chosen (equiprobable events), the probability we are looking for is just the number of favorable cases dividing by the total number of possible cases. That is, <span><span class="MathJax_Preview">n-1</span><script type="math/tex">n-1</script></span> observations other than the <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>th observation dividing by the <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> total observations.</p>
 <h1 id="b">(b)</h1>
 <p>The probability that the second bootstrap observation is not the jth observation is also:</p>
-<span>\[\frac{n-1}{n}\]</span><p>Since we sample with replacement, everything stays the same as in (a). So, when we go for the second bootstrap observation, our set of observations is composed by all the initial observations. Thus, from <em>n</em> possible observations, <em>n-1</em> observations correspond to the probability that we want to compute (probability that the second observation is not the jth observation).</p>
+<div>
+<div class="MathJax_Preview">\frac{n-1}{n}</div>
+<script type="math/tex; mode=display">\frac{n-1}{n}</script>
+</div>
+<p>Since we sample with replacement, everything stays the same as in (a). So, when we go for the second bootstrap observation, our set of observations is composed by all the initial observations. Thus, from <em>n</em> possible observations, <em>n-1</em> observations correspond to the probability that we want to compute (probability that the second observation is not the jth observation).</p>
 <h1 id="c">(c)</h1>
-<p>We already saw that the probability of <em>not</em> taking the jth observation is <span>\(\frac{n-1}{n}\)</span>. Now, we want to the probability of not having the jth observation in the boostrap sample. In other words, we are saying that we don't get the jth observation in the first boostrap observation, nor in the second, nor in the third and so one.</p>
-<p>Crucially, these events are independent. That is, the probability of picking the <span>\(j\)</span>th observation in, say, the second observation does not depend on whether it was chosen on the first, and so on. This means, we need only multiply the probabilities of all events. Let's consider that our boostrap sample has size equal to the number of observations <em>n</em>. If so, the probability of <em>not</em> taking the jth observation is:</p>
-<span>\[ (\frac{n-1}{n})_1 \times (\frac{n-1}{n})_2 \times \ldots \times (\frac{n-1}{n})_n = \left(\frac{n-1}{n}\right)^n  = \left(1 - \frac{1}{n}\right)^n \]</span><h1 id="d">(d)</h1>
-<p>Having the <span>\(j\)</span>th observation in the bootstrap sample is the complementary event of <em>not</em> having the jth observation in any of the bootstrap samples. 
-This means, that the probabiliy of the <span>\(j\)</span>th observation <em>being in the bootstrap sample</em> (<em>Pr(in)</em>) is one minus the probability of <em>not being in the bootstrap sample</em> (<em>Pr(out)</em>).</p>
-<p>Using the general expression deducted in (c) and considering that <span>\(n = 5\)</span>, it follows that:</p>
-<span>\[ Pr(in) = 1 - Pr(out) = 1 - \left(1-\frac{1}{5}\right)^5 \approx 0.67232.\]</span><h1 id="e">(e)</h1>
-<p>This exercise is similar to (d), the only difference is that now we have <span>\(n=100\)</span>. Applying the same reasoning as before:</p>
-<span>\[ Pr(in) = 1 - Pr(out) = 1 - \left(1-\frac{1}{100}\right)^{100} \approx 0.63397. \]</span><h1 id="f">(f)</h1>
+<p>We already saw that the probability of <em>not</em> taking the jth observation is <span><span class="MathJax_Preview">\frac{n-1}{n}</span><script type="math/tex">\frac{n-1}{n}</script></span>. Now, we want to the probability of not having the jth observation in the boostrap sample. In other words, we are saying that we don't get the jth observation in the first boostrap observation, nor in the second, nor in the third and so one.</p>
+<p>Crucially, these events are independent. That is, the probability of picking the <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>th observation in, say, the second observation does not depend on whether it was chosen on the first, and so on. This means, we need only multiply the probabilities of all events. Let's consider that our boostrap sample has size equal to the number of observations <em>n</em>. If so, the probability of <em>not</em> taking the jth observation is:</p>
+<div>
+<div class="MathJax_Preview"> (\frac{n-1}{n})_1 \times (\frac{n-1}{n})_2 \times \ldots \times (\frac{n-1}{n})_n = \left(\frac{n-1}{n}\right)^n  = \left(1 - \frac{1}{n}\right)^n </div>
+<script type="math/tex; mode=display"> (\frac{n-1}{n})_1 \times (\frac{n-1}{n})_2 \times \ldots \times (\frac{n-1}{n})_n = \left(\frac{n-1}{n}\right)^n  = \left(1 - \frac{1}{n}\right)^n </script>
+</div>
+<h1 id="d">(d)</h1>
+<p>Having the <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>th observation in the bootstrap sample is the complementary event of <em>not</em> having the jth observation in any of the bootstrap samples. 
+This means, that the probabiliy of the <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>th observation <em>being in the bootstrap sample</em> (<em>Pr(in)</em>) is one minus the probability of <em>not being in the bootstrap sample</em> (<em>Pr(out)</em>).</p>
+<p>Using the general expression deducted in (c) and considering that <span><span class="MathJax_Preview">n = 5</span><script type="math/tex">n = 5</script></span>, it follows that:</p>
+<div>
+<div class="MathJax_Preview"> Pr(in) = 1 - Pr(out) = 1 - \left(1-\frac{1}{5}\right)^5 \approx 0.67232.</div>
+<script type="math/tex; mode=display"> Pr(in) = 1 - Pr(out) = 1 - \left(1-\frac{1}{5}\right)^5 \approx 0.67232.</script>
+</div>
+<h1 id="e">(e)</h1>
+<p>This exercise is similar to (d), the only difference is that now we have <span><span class="MathJax_Preview">n=100</span><script type="math/tex">n=100</script></span>. Applying the same reasoning as before:</p>
+<div>
+<div class="MathJax_Preview"> Pr(in) = 1 - Pr(out) = 1 - \left(1-\frac{1}{100}\right)^{100} \approx 0.63397. </div>
+<script type="math/tex; mode=display"> Pr(in) = 1 - Pr(out) = 1 - \left(1-\frac{1}{100}\right)^{100} \approx 0.63397. </script>
+</div>
+<h1 id="f">(f)</h1>
 <p>Similar to (d) and (e):</p>
-<span>\[ Pr(in) = 1 - Pr(out)  = 1 - \left(1- \frac{1}{10000}\right)^{10000}  \approx 0.63231 \]</span><h1 id="g">(g)</h1>
+<div>
+<div class="MathJax_Preview"> Pr(in) = 1 - Pr(out)  = 1 - \left(1- \frac{1}{10000}\right)^{10000}  \approx 0.63231 </div>
+<script type="math/tex; mode=display"> Pr(in) = 1 - Pr(out)  = 1 - \left(1- \frac{1}{10000}\right)^{10000}  \approx 0.63231 </script>
+</div>
+<h1 id="g">(g)</h1>
 <pre><code class="python">import matplotlib.pyplot as plt
 
 %matplotlib inline
@@ -861,8 +861,12 @@ plt.ylim(.5,1);
 <p><img alt="png" src="../05_02_files/05_02_15_0.png" /></p>
 <p>As we can see, the first point has probability equal to one, which makes sense because if we only have on observation it must be in the bootstrap sample.
 After, the probability starts decreasing until it reaches a plateau close to the value 0.63.</p>
-<p>The limit of the probability when <span>\(n\)</span> goes to infinity is well known:</p>
-<span>\[ \lim_{n\to\infty} 1-\left(\frac{n-1}{n}\right)^n \Leftrightarrow 1 -  \lim_{n\to\infty} \left(1-\frac{1}{n}\right)^n = 1 - e^{-1} \approx 1 - 0.36788 = 0.63212.\]</span><p>Let's try zooming in the plot above for smaller values of <span>\(n\)</span> so we can better observe the approach to the asymptote.</p>
+<p>The limit of the probability when <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> goes to infinity is well known:</p>
+<div>
+<div class="MathJax_Preview"> \lim_{n\to\infty} 1-\left(\frac{n-1}{n}\right)^n \Leftrightarrow 1 -  \lim_{n\to\infty} \left(1-\frac{1}{n}\right)^n = 1 - e^{-1} \approx 1 - 0.36788 = 0.63212.</div>
+<script type="math/tex; mode=display"> \lim_{n\to\infty} 1-\left(\frac{n-1}{n}\right)^n \Leftrightarrow 1 -  \lim_{n\to\infty} \left(1-\frac{1}{n}\right)^n = 1 - e^{-1} \approx 1 - 0.36788 = 0.63212.</script>
+</div>
+<p>Let's try zooming in the plot above for smaller values of <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> so we can better observe the approach to the asymptote.</p>
 <pre><code class="python">n = 500   # Number of observations
 prob = [1 - (1-1/n)**n for n in range(1, n)]
 
@@ -932,6 +936,8 @@ plt.hist(x)
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

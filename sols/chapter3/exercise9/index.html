@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.9 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise8/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,51 +788,33 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-39">Exercise 3.9</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#c">(c)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#i">i</a></li>
-            
-        
+                
             <li class="second-level"><a href="#ii">ii</a></li>
-            
-        
+                
             <li class="second-level"><a href="#iii">iii</a></li>
-            
-        
+                
             <li class="second-level"><a href="#d">(d)</a></li>
-            
+                
                 <li class="third-level"><a href="#residuals-against-fitted-values">Residuals against fitted values</a></li>
-            
                 <li class="third-level"><a href="#normal-q-q-plot">Normal Q-Q plot</a></li>
-            
                 <li class="third-level"><a href="#scale-location-plot-of-sqrtresiduals-against-fitted-values">Scale-Location plot of sqrt(|residuals|) against fitted values</a></li>
-            
                 <li class="third-level"><a href="#residuals-against-leverages">Residuals against leverages</a></li>
-            
-        
             <li class="second-level"><a href="#comments">Comments</a></li>
-            
-        
+                
             <li class="second-level"><a href="#references">References</a></li>
-            
-        
+                
             <li class="second-level"><a href="#e">(e)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#f">(f)</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -1191,9 +1168,15 @@ reg.summary()
 <h2 id="i">i</h2>
 <p>Yes, there is a relationship between the predictors and the response. 
 In the table above we can see that the value of the F-statistic is 252 which is much larger than 1, so we can reject the corresponding null hypothesis:</p>
-<span>\[
+<div>
+<div class="MathJax_Preview">
 H_0 :\beta_{cylinders} = \beta_{displacement} = \beta_{weight} = \beta_{acceleration} = \beta_{year} = \beta_{origin}  =0.  
-\]</span><p>In fact, the probability this data would be generated if <span>\(H_0\)</span> was true is <span>\(Prob(F-Statistic) = 2 \times 10^{-139}\)</span>, a ridiculously low value.</p>
+</div>
+<script type="math/tex; mode=display">
+H_0 :\beta_{cylinders} = \beta_{displacement} = \beta_{weight} = \beta_{acceleration} = \beta_{year} = \beta_{origin}  =0.  
+</script>
+</div>
+<p>In fact, the probability this data would be generated if <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> was true is <span><span class="MathJax_Preview">Prob(F-Statistic) = 2 \times 10^{-139}</span><script type="math/tex">Prob(F-Statistic) = 2 \times 10^{-139}</script></span>, a ridiculously low value.</p>
 <h2 id="ii">ii</h2>
 <p>We can see which predictors have a statistically significant relationship with the response by looking at the p-values in the table above.
 The predictors that have a statistically significant relationship to the response are definitely weight, year and origin, and we could say displacement as well; while cylinders, horsepower, and acceleration do not. </p>
@@ -1581,7 +1564,7 @@ Interestingly, when these are considered the only first order terms that are sta
 By the hierarchy principle (page 89), we should nonetheless include all of the main effects (for more on this, see <a href="https://stats.stackexchange.com/questions/27724/do-all-interactions-terms-need-their-individual-terms-in-regression-model">these</a> answers).</p>
 <p>We could also have a try at <a href="https://en.wikipedia.org/wiki/Interaction_%28statistics%29#Interaction_plots">interaction plots</a>, which are not covered in the book, but we will leave it as a <a href="https://en.wikipedia.org/wiki/Interaction_%28statistics%29#/media/File:GSS_sealevel_interaction.png">mention</a> only.</p>
 <h2 id="f">(f)</h2>
-<p>As an example, we fit the data with a model containing the transformations indicated for the variable horsepower, starting with <span>\(X^2\)</span>. </p>
+<p>As an example, we fit the data with a model containing the transformations indicated for the variable horsepower, starting with <span><span class="MathJax_Preview">X^2</span><script type="math/tex">X^2</script></span>. </p>
 <pre><code class="python">reg = smf.ols('mpg ~ horsepower + np.power(horsepower,2) + weight + year + origin', df).fit()
 reg.summary()
 </code></pre>
@@ -1849,6 +1832,8 @@ reg.summary()
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

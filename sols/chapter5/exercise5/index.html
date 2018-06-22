@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>5.5 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise4/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,34 +788,23 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-55">Exercise 5.5</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#i">i.</a></li>
-            
-        
+                
             <li class="second-level"><a href="#ii">ii.</a></li>
-            
-        
+                
             <li class="second-level"><a href="#iii">iii.</a></li>
-            
-        
+                
             <li class="second-level"><a href="#iv">iv.</a></li>
-            
-        
+                
             <li class="second-level"><a href="#c">(c)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#d">(d)</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -1165,11 +1149,11 @@ show_confusion_matrix(C, ['No Default', 'Default'])
 </em> TN - true negative (correct rejection)
 <em> FP - false positive (false alarm, Type I error)
 </em> FN - false negative (miss, Type II error)
-<em> True positive rate, TPR = <span>\(\frac{TP}{P} = \frac{TP}{TP + FN}\)</span>
-</em> False positive rate, FPR = <span>\(\frac{FP}{N} = \frac{FP}{FP + TN}\)</span>
-<em> Positive predictive value, PPV = <span>\(\frac{TP}{TP + FP}\)</span>
-</em> Negative predictive value, NPV = <span>\(\frac{TN}{TN + FN}\)</span>
-* Accuracy, ACC = <span>\(\frac{TP + TN}{P+N} = \frac{TP+TN}{TP+TN+FP+FN}\)</span></p>
+<em> True positive rate, TPR = <span><span class="MathJax_Preview">\frac{TP}{P} = \frac{TP}{TP + FN}</span><script type="math/tex">\frac{TP}{P} = \frac{TP}{TP + FN}</script></span>
+</em> False positive rate, FPR = <span><span class="MathJax_Preview">\frac{FP}{N} = \frac{FP}{FP + TN}</span><script type="math/tex">\frac{FP}{N} = \frac{FP}{FP + TN}</script></span>
+<em> Positive predictive value, PPV = <span><span class="MathJax_Preview">\frac{TP}{TP + FP}</span><script type="math/tex">\frac{TP}{TP + FP}</script></span>
+</em> Negative predictive value, NPV = <span><span class="MathJax_Preview">\frac{TN}{TN + FN}</span><script type="math/tex">\frac{TN}{TN + FN}</script></span>
+* Accuracy, ACC = <span><span class="MathJax_Preview">\frac{TP + TN}{P+N} = \frac{TP+TN}{TP+TN+FP+FN}</span><script type="math/tex">\frac{TP + TN}{P+N} = \frac{TP+TN}{TP+TN+FP+FN}</script></span></p>
 <p>So, our true positive rate (or sensitivity, recall or hit rate) is 0.3648, our false positive rate (or fall-out) is 0.0050, our positive predictive value (or precision) is 0.7073, our negative predictive value is 0.9795, and our accuracy is 0.9750.</p>
 <h2 id="c">(c)</h2>
 <p>Let's keep a vector of the confusion matrices, and compute the different errors for each validation set. </p>
@@ -1396,6 +1380,8 @@ show_confusion_matrix(C, ['No Default', 'Default'])
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

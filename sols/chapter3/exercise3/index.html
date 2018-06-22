@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>3.3 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise2/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,38 +788,31 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-33">Exercise 3.3</a></li>
-        
             <li class="second-level"><a href="#a">(a)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#b">(b)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#c">(c)</a></li>
-            
-        
+                
             <li class="second-level"><a href="#additional-calculations">Additional calculations</a></li>
-            
-        
-    
+                
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="exercise-33">Exercise 3.3</h1>
 <h2 id="a">(a)</h2>
-<p><span>\(Y = \beta_0 + \beta_1 \times GPA + \beta_2 \times IQ + \beta_3 \times Gender + \beta_4 \times GPA \times IQ + \beta_5 \times GPA \times Gender\)</span></p>
+<p><span><span class="MathJax_Preview">Y = \beta_0 + \beta_1 \times GPA + \beta_2 \times IQ + \beta_3 \times Gender + \beta_4 \times GPA \times IQ + \beta_5 \times GPA \times Gender</span><script type="math/tex">Y = \beta_0 + \beta_1 \times GPA + \beta_2 \times IQ + \beta_3 \times Gender + \beta_4 \times GPA \times IQ + \beta_5 \times GPA \times Gender</script></span></p>
 <p>For a fixed value of GPA and IQ, the difference between female and male is given by:</p>
-<p><span>\(Y_{female} - Y_{male} = \beta_3 + \beta_5 \times GPA = 35 - 10 GPA\)</span>, </p>
+<p><span><span class="MathJax_Preview">Y_{female} - Y_{male} = \beta_3 + \beta_5 \times GPA = 35 - 10 GPA</span><script type="math/tex">Y_{female} - Y_{male} = \beta_3 + \beta_5 \times GPA = 35 - 10 GPA</script></span>, </p>
 <p>which depends on GPA. It is clear that in the normal range of the GPA (0 to 4.0), the difference in expected salary between female and male ranges linearly from 35 to -5. In particular, if GPA &gt; 3.5, males earn on average more than females. Therefore, <strong> the correct answer is (iii)</strong>.</p>
 <h2 id="b">(b)</h2>
 <p>The <strong>predicted salary is 137.1 (thousand dollars)</strong>. Given the coefficients from the fit, GPA = 4.0, IQ = 110 and Gender = 1, the model predicts:</p>
-<p><span>\(Y = \beta_0 + \beta_1 GPA + \beta_2 IQ + \beta_3 Gender + \beta_4 (GPA \times IQ) + \beta_5 (GPA \times Gender)\)</span></p>
-<p><span>\(Y = 50 + 20 \times 4.0 + 0.07 \times 110 + 35 \times 1  + 0.01 \times 4.0 \times 110 + (-10) \times 4.0 \times 1\)</span> = 137.1</p>
+<p><span><span class="MathJax_Preview">Y = \beta_0 + \beta_1 GPA + \beta_2 IQ + \beta_3 Gender + \beta_4 (GPA \times IQ) + \beta_5 (GPA \times Gender)</span><script type="math/tex">Y = \beta_0 + \beta_1 GPA + \beta_2 IQ + \beta_3 Gender + \beta_4 (GPA \times IQ) + \beta_5 (GPA \times Gender)</script></span></p>
+<p><span><span class="MathJax_Preview">Y = 50 + 20 \times 4.0 + 0.07 \times 110 + 35 \times 1  + 0.01 \times 4.0 \times 110 + (-10) \times 4.0 \times 1</span><script type="math/tex">Y = 50 + 20 \times 4.0 + 0.07 \times 110 + 35 \times 1  + 0.01 \times 4.0 \times 110 + (-10) \times 4.0 \times 1</script></span> = 137.1</p>
 <h2 id="c">(c)</h2>
-<p><strong>False</strong>. Although the coefficient for the GPA/IQ interaction term is very small, specially when compared to the other coefficients, this does not indicate whether there is an interaction effect. First, this coefficient is multiplied by the product  of IQ and GPA which ranges from 0 to a few hundred, so that the contribution to the response would tipically add up to a value between 2 and 6, let's say. Secondly, and more importantly, evidence for the interaction effect has to be evaluated with a t-statistic or an F-statistic for a null hypothesis (<span>\(H_0: \beta_4 = 0\)</span>), yielding a certain p-value. This requires the standard error of which we have no information, and therefore cannot conclude whether there is evidence for a interaction effect.</p>
+<p><strong>False</strong>. Although the coefficient for the GPA/IQ interaction term is very small, specially when compared to the other coefficients, this does not indicate whether there is an interaction effect. First, this coefficient is multiplied by the product  of IQ and GPA which ranges from 0 to a few hundred, so that the contribution to the response would tipically add up to a value between 2 and 6, let's say. Secondly, and more importantly, evidence for the interaction effect has to be evaluated with a t-statistic or an F-statistic for a null hypothesis (<span><span class="MathJax_Preview">H_0: \beta_4 = 0</span><script type="math/tex">H_0: \beta_4 = 0</script></span>), yielding a certain p-value. This requires the standard error of which we have no information, and therefore cannot conclude whether there is evidence for a interaction effect.</p>
 <h2 id="additional-calculations">Additional calculations</h2>
 <pre><code class="python">50 + 20*4 + 0.07*110 + 35*1 + 0.01*4*110 + (-10)*4*1
 </code></pre>
@@ -851,6 +839,8 @@
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

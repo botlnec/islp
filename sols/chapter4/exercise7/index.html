@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>4.7 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise6/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,28 +788,42 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="first-level active"><a href="#exercise-47">Exercise 4.7</a></li>
-        
-    
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="exercise-47">Exercise 4.7</h1>
 <p>From the statement of the exercise, we know that</p>
-<span>\[\begin{align}
+<div>
+<div class="MathJax_Preview">\begin{align}
 \ Pr(X \mid Y = yes) &amp; = f_{yes}(x)  = N(\mu = 10, \sigma^2 = 36),\\
 Pr(X \mid Y = no) &amp; = f_{no}(x) = N(\mu = 0, \sigma^2 =36),\\
 Pr(Y = yes) &amp; = \pi_{yes} = 0.8,\\
 Pr(Y = no)&amp;  = \pi_{no} = 0.2.\\
-\end{align}\]</span><p>We want to calculate <span>\(Pr(Y = "Yes \mid X = 4)\)</span>. Using Bayes' theorem and substituting the expressions above:</p>
-<span>\[\begin{align}
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+\ Pr(X \mid Y = yes) & = f_{yes}(x)  = N(\mu = 10, \sigma^2 = 36),\\
+Pr(X \mid Y = no) & = f_{no}(x) = N(\mu = 0, \sigma^2 =36),\\
+Pr(Y = yes) & = \pi_{yes} = 0.8,\\
+Pr(Y = no)&  = \pi_{no} = 0.2.\\
+\end{align}</script>
+</div>
+<p>We want to calculate <span><span class="MathJax_Preview">Pr(Y = "Yes \mid X = 4)</span><script type="math/tex">Pr(Y = "Yes \mid X = 4)</script></span>. Using Bayes' theorem and substituting the expressions above:</p>
+<div>
+<div class="MathJax_Preview">\begin{align}
 \ \pi_{yes}(x) &amp; =  \frac{\pi_{yes} f_{yes}(x) }{ \pi_{yes} f_{yes}(x) + \pi_{no} f_{no}(x)},\\
 \ \pi_{yes}(4) &amp; =  \frac{\pi_{yes} f_{yes}(4) }{ \pi_{yes} f_{yes}(4) + \pi_{no} f_{no}(4)} = \\
 &amp; = \frac{0.8 e^{\left( -\frac{1}{2\times 36}(4-10)^2 \right)} }{  0.8 e^{\left( -\frac{1}{2\times 36}(4-10)^2 \right)} + 0.2 e^{\left( -\frac{1}{2\times 36}(4-0)^2 \right)}} \\
 &amp; = 0.7571.\\
-\end{align}\]</span></div>
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+\ \pi_{yes}(x) & =  \frac{\pi_{yes} f_{yes}(x) }{ \pi_{yes} f_{yes}(x) + \pi_{no} f_{no}(x)},\\
+\ \pi_{yes}(4) & =  \frac{\pi_{yes} f_{yes}(4) }{ \pi_{yes} f_{yes}(4) + \pi_{no} f_{no}(4)} = \\
+& = \frac{0.8 e^{\left( -\frac{1}{2\times 36}(4-10)^2 \right)} }{  0.8 e^{\left( -\frac{1}{2\times 36}(4-10)^2 \right)} + 0.2 e^{\left( -\frac{1}{2\times 36}(4-0)^2 \right)}} \\
+& = 0.7571.\\
+\end{align}</script>
+</div></div>
         
     </div>
 
@@ -835,6 +844,8 @@ Pr(Y = no)&amp;  = \pi_{no} = 0.2.\\
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-    <title>10.6 - Statistical Learning with Python</title>
+    <title></title>
 
     <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
@@ -43,7 +43,6 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -54,12 +53,12 @@
             
 
             <!-- Main title -->
+
             <a class="navbar-brand" href="../../..">Statistical Learning with Python</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
@@ -763,15 +762,13 @@
                 
                 
                 </ul>
-            
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fa fa-search"></i> Search
+                        </a>
+                    </li>
                     <li >
                         <a rel="next" href="../exercise5/">
                             <i class="fa fa-arrow-left"></i> Previous
@@ -782,8 +779,6 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                
-                
             </ul>
         </div>
     </div>
@@ -793,13 +788,24 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
+        <li class="first-level active"><a href="#exercise-106">Exercise 10.6</a></li>
+        <li class="first-level "><a href="#a">(a)</a></li>
+        <li class="first-level "><a href="#references">References</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 10 will be out in June 2018.</p></div>
+<h1 id="exercise-106">Exercise 10.6</h1>
+<h1 id="a">(a)</h1>
+<p>When we say that a variable 'explains 10% of the variation', we are talking about the variable's capacity to distinguish different observations.</p>
+<p>Imagine that you want to move out of your parents house and you're trying to buy a new house. You go to the real estate agency and they show you a set of houses that you could like. Since we live in a capitalist world, the first thing that you'll try to do is to determine the price of each house. Imagine that each house is described by it's <em>location</em>, <em>condition</em> and <em>area</em>. For example, house H1 is in location A, its condition is 'Good', and it has 50 m2 (H1=(A,'Good',50)). The remaining ones can be described like this: H2=(A,'Bad',500) and H3=(A,'Good',5000).</p>
+<p>In this case, <em>location</em> would be a variable that doesn't allow us to distinguish the houses. All houses have the same exact location, so that it's not possibile to distinguish, for example, H1 from H2 just based on the location. Thus, the location can't explain why prices are different. This means that its explanatory power is reduced (it doesn't explains the variation that we have between the different observations).</p>
+<p>In contrast, since all the houses have different areas, <em>area</em> could be a good explanatory variable. If someone asks you which house has 50 m2, you can confidently say 'H1!'. This means that area gives you enough information to distinguish the observations. Accordingly, we can say that it is able to explain the variation. </p>
+<p>To conclude, just remember that the first principal component considered in this exercise explains 10% of the variation. There are still 90% of the variation to be explained or, by other words, 90% of the information is missing if we just consider the first principal component.</p>
+<h1 id="references">References</h1>
+<ol>
+<li>http://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579  (nice storytelling and figures to understand PCA)</li>
+</ol></div>
         
     </div>
 
@@ -820,6 +826,8 @@
     <script src="../../../js/base.js"></script>
     <script src="../../../mathjax-config.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../search/require.js"></script>
+    <script src="../../../search/search.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">
