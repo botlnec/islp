@@ -788,12 +788,37 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#exercise-61">Exercise 6.1</a></li>
+            <li class="second-level"><a href="#a">(a)</a></li>
+                
+            <li class="second-level"><a href="#b">(b)</a></li>
+                
+            <li class="second-level"><a href="#c">(c)</a></li>
+                
+                <li class="third-level"><a href="#i-and-ii">(i) and (ii)</a></li>
+                <li class="third-level"><a href="#iii-and-iv">(iii) and (iv)</a></li>
+                <li class="third-level"><a href="#v">(v)</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 6 will be out in February 2018.</p></div>
+<h1 id="exercise-61">Exercise 6.1</h1>
+<h2 id="a">(a)</h2>
+<p>By construction, the best subset method picks the model with exactly <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> predictors that has the lowest training error, searching all <span><span class="MathJax_Preview">p!/(p-k)!</span><script type="math/tex">p!/(p-k)!</script></span> possibilities. Forward and backward stepwise methodes only pick from (p-k) models and, if, in any earlier step it chooses any predictors not chosen by the <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>-th best subset, then it will have these predictors in the <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>-th step which lead to higher training error.</p>
+<h2 id="b">(b)</h2>
+<p>In general this will depend on the method of validation and the training and test set, because the best subset method might overfit the training data. Forward and backward stepwise selection methods may eventually, while picking different predictors with higher training error, avoid some overfitting and fit the test set better. This will also depend on how close to the true underlying model is to one with <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> predictors.</p>
+<h2 id="c">(c)</h2>
+<h3 id="i-and-ii">(i) and (ii)</h3>
+<p>True.</p>
+<p>Since the <span><span class="MathJax_Preview">(k+1)</span><script type="math/tex">(k+1)</script></span>-th step model is chosen by picking one more predictor in addition to those of step <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>.</p>
+<h3 id="iii-and-iv">(iii) and (iv)</h3>
+<p>False.</p>
+<p>Let's explain (iii) with a counter-example, which applies in similar way to (iv). </p>
+<p>Say <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> the total number of predictors is 4, and <span><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>.
+Then backward selection will have chosen 2 predictors, by starting out with 4, and picking one out at each step. Let's say we end up with <span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span> and <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>. Forward selection with 3 predictors is chosen by an unrelated process: it starts with 1 predictors, adding an additional 1 at each step. In general, this will not include all the predictors chosen by backward selection. We could, for example, have ended up with <span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>, <span><span class="MathJax_Preview">x_3</span><script type="math/tex">x_3</script></span> and <span><span class="MathJax_Preview">x_4</span><script type="math/tex">x_4</script></span>.</p>
+<h3 id="v">(v)</h3>
+<p>False.</p>
+<p>Model 1 is the best (less trainging error) of all models with exactly k predictors. In general, these predictors will not all be included in the best of all models with exactly k+1 predictors. See Table 6.1 of the text for a concrete example.</p></div>
         
     </div>
 

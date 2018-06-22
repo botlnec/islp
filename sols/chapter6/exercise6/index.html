@@ -788,12 +788,104 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#exercise-66">Exercise 6.6</a></li>
+        <li class="first-level "><a href="#a">(a)</a></li>
+        <li class="first-level "><a href="#b">(b)</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 6 will be out in February 2018.</p></div>
+<h1 id="exercise-66">Exercise 6.6</h1>
+<pre><code class="python">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+</code></pre>
+
+<h1 id="a">(a)</h1>
+<p>For p = 1, (6.12) takes the form: <span><span class="MathJax_Preview">(y-\beta)^2 + \lambda \beta^2</span><script type="math/tex">(y-\beta)^2 + \lambda \beta^2</script></span>.</p>
+<pre><code class="python"># Random variables
+np.random.seed(1)
+y1 = np.random.randint(low=1, high=10)
+lamb = np.random.randint(low=1, high=10)
+</code></pre>
+
+<pre><code class="python"># Functions
+beta = np.arange(-10,10,.1)
+y = (y1 - beta)**2 + lamb*beta**2 
+
+min_beta = y1/(1+lamb)
+y_min = (y1 - min_beta)**2 + lamb*min_beta**2 
+</code></pre>
+
+<pre><code class="python"># Plot
+plt.scatter(beta,y);
+plt.plot(min_beta, y_min, 'ro');
+</code></pre>
+
+<p><img alt="png" src="../06_06_files/06_06_6_0.png" /></p>
+<p>As we can see, the point that corresponds to (6.14) solves (6.12). By other words, the point resulting from (6.14) is the point that minimizes the ridge regression.</p>
+<h1 id="b">(b)</h1>
+<p>For p = 1, (6.12) takes the form: <span><span class="MathJax_Preview">(y-\beta)^2 + \lambda |\beta|</span><script type="math/tex">(y-\beta)^2 + \lambda |\beta|</script></span>.</p>
+<pre><code class="python"># Case 1: y1 &gt; lamb/2
+y1 = 6
+lamb = 4
+</code></pre>
+
+<pre><code class="python"># Functions
+beta = np.arange(-10,10,.1)
+y = (y1 - beta)**2 + lamb*abs(beta)
+
+min_beta = y1 - (lamb/2)
+y_min = (y1 - min_beta)**2 + lamb*abs(min_beta)
+</code></pre>
+
+<pre><code class="python"># Plot 
+plt.scatter(beta,y)
+plt.plot(min_beta, y_min, 'ro');
+</code></pre>
+
+<p><img alt="png" src="../06_06_files/06_06_12_0.png" /></p>
+<pre><code class="python"># Case 1: y1 &lt; -lamb/2
+y1 = -6
+lamb = 4
+</code></pre>
+
+<pre><code class="python"># Functions
+beta = np.arange(-10,10,.1)
+y = (y1 - beta)**2 + lamb*abs(beta)
+
+min_beta = y1 + (lamb/2)
+y_min = (y1 - min_beta)**2 + lamb*abs(min_beta)
+</code></pre>
+
+<pre><code class="python"># Plot 
+plt.scatter(beta,y)
+plt.plot(min_beta, y_min, 'ro');
+</code></pre>
+
+<p><img alt="png" src="../06_06_files/06_06_15_0.png" /></p>
+<pre><code class="python"># Case 3: |y1| &lt;= lamb/2
+y1 = -2
+lamb = 4
+</code></pre>
+
+<pre><code class="python"># Functions
+beta = np.arange(-10,10,.1)
+y = (y1 - beta)**2 + lamb*abs(beta)
+
+min_beta = 0
+y_min = (y1 - min_beta)**2 + lamb*abs(min_beta)
+</code></pre>
+
+<pre><code class="python"># Plot 
+plt.scatter(beta,y)
+plt.plot(min_beta, y_min, 'ro');
+</code></pre>
+
+<p><img alt="png" src="../06_06_files/06_06_18_0.png" /></p>
+<p>As we can see in the figures above, (6.13) is solved by (6.15). This means that (6.15) minimizes the lasso estimates.</p></div>
         
     </div>
 
