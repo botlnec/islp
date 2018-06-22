@@ -788,12 +788,72 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#exercise-72">Exercise 7.2</a></li>
+        <li class="first-level "><a href="#a">(a)</a></li>
+        <li class="first-level "><a href="#b">(b)</a></li>
+        <li class="first-level "><a href="#c">(c)</a></li>
+        <li class="first-level "><a href="#d">(d)</a></li>
+        <li class="first-level "><a href="#e">(e)</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<p>We're publishing the solutions to a new chapter at least once a month. </p>
-<p>At the latest, Chapter 7 will be out in March 2017.</p></div>
+<h1 id="exercise-72">Exercise 7.2</h1>
+<pre><code class="python">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+</code></pre>
+
+<p><span><span class="MathJax_Preview">\hat{g} = arg</span><script type="math/tex">\hat{g} = arg</script></span> <span><span class="MathJax_Preview">min_g(\sum_{i=1}^{n} (y_i - g(x_i))^2 + \lambda \int(g^{(m)}(x))^2 dx)</span><script type="math/tex">min_g(\sum_{i=1}^{n} (y_i - g(x_i))^2 + \lambda \int(g^{(m)}(x))^2 dx)</script></span></p>
+<p><span><span class="MathJax_Preview">arg</span><script type="math/tex">arg</script></span> <span><span class="MathJax_Preview">min_g</span><script type="math/tex">min_g</script></span> is the value of <em>g</em> that minimizes the function.</p>
+<h1 id="a">(a)</h1>
+<p>When <span><span class="MathJax_Preview">\lambda = \infty</span><script type="math/tex">\lambda = \infty</script></span> the first term loses significance and can be ignored. If <span><span class="MathJax_Preview">g^{(0)}(x) = g(x) = 0</span><script type="math/tex">g^{(0)}(x) = g(x) = 0</script></span> the function will be minimized, which means that <b><span><span class="MathJax_Preview">\hat{g}</span><script type="math/tex">\hat{g}</script></span> must be 0</b>. </p>
+<pre><code class="python"># Example sketch
+x = np.arange(0,10,1)
+y = np.full(10,0,dtype='int')
+
+plt.plot(x,y,'-r');
+</code></pre>
+
+<p><img alt="png" src="../07_02_files/07_02_5_0.png" /></p>
+<h1 id="b">(b)</h1>
+<p>When <span><span class="MathJax_Preview">\lambda = \infty</span><script type="math/tex">\lambda = \infty</script></span> the first term loses significance and can be ignored. If <span><span class="MathJax_Preview">g^{(1)}(x) = g'(x) = c</span><script type="math/tex">g^{(1)}(x) = g'(x) = c</script></span> the function will be minimized because the first derivative of a constant is 0. This means that <b><span><span class="MathJax_Preview">\hat{g}</span><script type="math/tex">\hat{g}</script></span> must be an horizontal line</b>. </p>
+<pre><code class="python"># Example sketch
+# We used c=5 but it could have been done with any other c.
+x = np.arange(0,10,1)
+y = np.full(10,5,dtype='int')
+
+plt.plot(x,y,'-r');
+</code></pre>
+
+<p><img alt="png" src="../07_02_files/07_02_8_0.png" /></p>
+<h1 id="c">(c)</h1>
+<p>When <span><span class="MathJax_Preview">\lambda = \infty</span><script type="math/tex">\lambda = \infty</script></span> the first term loses significance and can be ignored. If <span><span class="MathJax_Preview">g^{(2)}(x) = g''(x) = bx + c</span><script type="math/tex">g^{(2)}(x) = g''(x) = bx + c</script></span> the function will be minimized because the second derivative of a linear function is 0. This means that <b><span><span class="MathJax_Preview">\hat{g}</span><script type="math/tex">\hat{g}</script></span> must be a linear function</b>. </p>
+<pre><code class="python"># Example sketch
+# We used y=x but it could have been done with any other linear function.
+x = np.arange(0,10,1)
+y = np.arange(0,10,1)
+
+plt.plot(x,y,'-r');
+</code></pre>
+
+<p><img alt="png" src="../07_02_files/07_02_11_0.png" /></p>
+<h1 id="d">(d)</h1>
+<p>When <span><span class="MathJax_Preview">\lambda = \infty</span><script type="math/tex">\lambda = \infty</script></span> the first term loses significance and can be ignored. If <span><span class="MathJax_Preview">g^{(3)}(x) = g'''(x) = ax^2 + bx + c</span><script type="math/tex">g^{(3)}(x) = g'''(x) = ax^2 + bx + c</script></span> the function will be minimized because the third derivative of a quadratic function is 0. This means that <b><span><span class="MathJax_Preview">\hat{g}</span><script type="math/tex">\hat{g}</script></span> must be a quadratic function</b>. </p>
+<pre><code class="python"># Example sketch
+# We used y=x^2 but it could have been done with any other quadratic function.
+x = np.arange(0,10,1)
+y = np.arange(0,10,1)**2
+
+plt.plot(x,y,'-r');
+</code></pre>
+
+<p><img alt="png" src="../07_02_files/07_02_14_0.png" /></p>
+<h1 id="e">(e)</h1>
+<p>This situation corresponds to a linear regression least squares fit. If <span><span class="MathJax_Preview">\lambda = 0</span><script type="math/tex">\lambda = 0</script></span>, the second term loses significance and can be ignored. Therefore, the function will be minimized when <span><span class="MathJax_Preview">\sum_{i=1}^{n} (y_i - g(x_i)^2</span><script type="math/tex">\sum_{i=1}^{n} (y_i - g(x_i)^2</script></span> is minimum. This means that <b><span><span class="MathJax_Preview">\hat{g}</span><script type="math/tex">\hat{g}</script></span> must be such that it interpolates all of the <span><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span></b>.</p>
+<p>Since there are many different shapes that can express this situation, we didn't draw any example sketch.</p></div>
         
     </div>
 
