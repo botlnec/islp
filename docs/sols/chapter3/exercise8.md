@@ -362,54 +362,24 @@ The relationship is negative because the coefficient corresponding to horsepower
 
 ### iv
 
-This exercise is a bit trickier to do in Python, since there's no standard out-of-the-box function for it (please let us know if you could find one). If we were solving this exercise in R, we would just need to use the functions confint() and predict() (see bottom of page 111 of ISLR). 
+On page 82 of ISLR, they describe the qualitative difference between a confidence and a prediction interval. However, the text does not explain how to calculate the intervals. For a good description and derivation on how to calculate these intervals see Casella and Berger [1], section 11.3.5 ("Estimation and Prediction at a Specified x=x0"). The distinction between the two types of interval is also well laid out in the answer [2], adapted from section 4.1 of Faraway [3].
 
-On page 82 of ISLR, they describe the qualitative difference between a confidence and a prediction interval. However, the text does not explain how to calculate the intervals.
-For a good description and derivation on how to calculate these intervals see Casella and Berger [1], section 11.3.5 ("Estimation and Prediction at a Specified x=x0"). 
-The distinction between the two types of interval is also well laid out in the answer [2], adapted from section 4.1 of Faraway [3].
+The answer is calculated below using `statsmodels.regression.linear_model.OLSResults.get_prediction`. The values for which we want to predict are passed on to this function as a `pandas.DataFrame` whose column names are the same as the predictors', with an additional `Intercept` predictor which takes the value of 1. The method `summary_frame` returns a table with the prediction, including its mean and standard error; the confidence interval (`mean_ci_lower/upper`); and the prediction interval (`obs_ci_lower/upper`).
 
-The answer is calculated below. 
-The predicted 'mpg' is equal to 24.46708, with a 95% confidence interval of (23.97308, 24.96108) and a 95% prediction interval of (14.80940, 34.12476).
-These are the same values as calculated with the R functions confint() and predict().
+The predicted `mpg` is equal to 24.46708, with a 95% confidence interval of (23.973079, 24.961075) and a 95% prediction interval of (14.809396, 34.124758). These are the same values as calculated with the R functions confint() and predict().
 
 
  
 
 
 ```python
-# this code follows Chapter 11 of Casella and Berger [1]
-# below we comment the lines with the page numbers of the text where the corresponding formulas appear
-
-from scipy.stats import t
-from math import sqrt
-
-def interval(x, y, x0,alpha = .05):
-    n = np.size(x)
-    x_bar = np.mean(x)
-    y_bar = np.mean(y)
-    S_xx = np.sum((x-x_bar)**2)         # page 541
-    S_xy = np.sum((x-x_bar)*(y-y_bar))  # page 541
-    b = S_xy/S_xx                       # page 542
-    a = y_bar - b*x_bar                 # page 542
-    S2 = np.sum((y-a-b*x)**2)/(n-2)     # page 552
-    S = sqrt(S2)
-    ts = t.ppf(1-alpha/2, n-2)
-    w_conf = ts*S*sqrt(1/n + (x0-x_bar)**2/S_xx)      # page 558
-    w_pred = ts*S*sqrt(1 + 1/n + (x0-x_bar)**2/S_xx)  # page 559
-    print("                fit \t lwr \t  upr")
-    print("confidence %3.5f %3.5f %3.5f" % (a+b*x0, a+b*x0 - w_conf, a+b*x0 + w_conf))
-    print("prediction %3.5f %3.5f %3.5f" % (a+b*x0, a+b*x0 - w_pred, a+b*x0 + w_pred))
-
-x = df['horsepower']
-y = df['mpg']
-x0 = 98    
-    
-interval(x, y, x0)
+Xnew = pd.DataFrame([[1, 98]], columns=['Intercept', 'horsepower'])
+prediction = mod.get_prediction(Xnew)
+prediction.summary_frame(alpha=0.05)
 ```
 
-                    fit 	 lwr 	  upr
-    confidence 24.46708 23.97308 24.96108
-    prediction 24.46708 14.80940 34.12476
+      mean	    mean_se	    mean_ci_lower	mean_ci_upper	obs_ci_lower	obs_ci_upper
+    0 24.467077	0.251262	23.973079	    24.961075	    14.809396	    34.124758
 
 
 ### References
