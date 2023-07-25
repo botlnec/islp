@@ -3,21 +3,16 @@
 
 To answer to this exercise, we need to understand the <b>sources of error</b> in a statistical learning method. For regression, assuming $Y = f(X) + \varepsilon$, where $E[\varepsilon]=0$ and $Var[\varepsilon]=\sigma_\varepsilon^2$, we can always obtain a decomposition of the test mean squared error, $E[(Y - \hat{f}(x_0))^2$, into the sum of the irreducible error, the squared bias and the variance [1, page 223]:
 
-\begin{align}
-\mathrm{E}\Big[\big(Y - \hat{f}(x)\big)^2 \Big|\, X=x_0 \Big]
- & =  \sigma_\varepsilon^2 + \mathrm{Bias}^2\big[\hat{f}(x_0)\big] + \mathrm{Var}\left[ \hat{f}(x_0) \right] , \\
-\end{align}
+$$\mathrm{E}\big[\big(Y - \hat{f}(x)\big)^2 \big| X=x_0 \big] = \sigma_\varepsilon^2 + \mathrm{Bias}^2\big[\hat{f}(x_0)\big] + \mathrm{Var}\big[ \hat{f}(x_0) \big]$$
+
+
 where $\sigma_\varepsilon^2$ is the noise or irreducible error, 
 
-\begin{align}
- \mathrm{Bias}\big[\hat{f}(x_0)\big] = \mathrm{E}\big[\hat{f}(x_0) - f(x_0)\big],
-\end{align}
+$$\mathrm{Bias}\big[\hat{f}(x_0)\big] = \mathrm{E}\big[\hat{f}(x_0) - f(x_0)\big]$$
 
 and
 
-\begin{align}
-\mathrm{Var}\big[\hat{f}(x_0)\big] = \mathrm{E}[\hat{f}(x_0)^2] - \mathrm{E}[\hat{f}(x_0)]^2.
-\end{align}
+$$\mathrm{Var}\big[\hat{f}(x_0)\big] = \mathrm{E}[\hat{f}(x_0)^2] - \mathrm{E}[\hat{f}(x_0)]^2.$$
 
 
 Since the irreducible error corresponds to the lowest achievable error, a good test set performance of a statistical learning method requires low variance as well as low squared bias.
