@@ -260,7 +260,7 @@ print(res.summary())
     strong multicollinearity or other numerical problems.
 
 
-Inspecting the t-statistics and p-values from the table above indicates that we can reject the null-hypothesis at the 1% level for every predictor except DIS and RAD.
+Inspecting the t-statistics and p-values from the table above indicates that we can reject the null-hypothesis at the 1% level only for DIS and RAD.
 
 ## (c)
 
