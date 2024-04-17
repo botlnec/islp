@@ -3,7 +3,12 @@
 
 ## (a)
 
-Since the set of observations X is uniformly (evenly) distributed on [0, 1] and considering that we are using a 10% range, the fraction of available information used is, on average, <b>10%</b>.
+Since the set of observations X is uniformly (evenly) distributed on [0, 1] and considering that we are using a 10% range, the fraction of available information used is, on average, <b>9.75%</b>.
+
+$$
+\int_{0}^{.05} .05 + x \ dx + \int_{.05}^{.95} 1 \ dx  + \int_{.95}^{1} 1.05 -x  \ dx 
+$$
+
 
 ## (b)
 
