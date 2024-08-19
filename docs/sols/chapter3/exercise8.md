@@ -411,6 +411,36 @@ interval(x, y, x0)
     confidence 24.46708 23.97308 24.96108
     prediction 24.46708 14.80940 34.12476
 
+An alternative solution is to use result of model_fit to get predictions, and then use 
+```
+design = MS(['horsepower'])
+X = design.fit_transform(pd.DataFrame({horseposer:[98]}))
+predictions = model_fit.get_predictions(X)
+
+```
+To get the predicted mean and predicted interval, use methods predicted_mean  and conf_int (with obs=False) respectively.
+
+```python
+predictions?
+
+conf_int = predictions.conf_int(obs=False, alpha=0.05)
+print('predicted mean', predictions.predicted_mean)
+print('95 percent conf interval', conf_int)
+
+predicted mean [24.46707715]
+95 percent conf interval [[23.97307896 24.96107534]]
+```
+
+To get predcition  itnerval use same conf_int with abs = true
+```python
+pred_int = predictions.conf_int(obs=True, alpha=0.05)
+print('95 percent prediction interval', pred_int)
+
+
+95 percent prediction interval [[14.80939607 34.12475823]]
+
+```
+See my note book: https://github.com/aminehd/AminehTechnicalWritings/blob/main/assignments/ISLP_Chapter03.ipynb
 
 ### References
 
